@@ -1,0 +1,65 @@
+Traceback (most recent call last):
+  File "C:\Anaconda\lib\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
+    executenb(
+  File "C:\Anaconda\lib\site-packages\nbclient\client.py", line 1204, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "C:\Anaconda\lib\site-packages\nbclient\util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "C:\Anaconda\lib\site-packages\nbclient\util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+  File "C:\Anaconda\lib\asyncio\base_events.py", line 647, in run_until_complete
+    return future.result()
+  File "C:\Anaconda\lib\site-packages\nbclient\client.py", line 663, in async_execute
+    await self.async_execute_cell(
+  File "C:\Anaconda\lib\site-packages\nbclient\client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Anaconda\lib\site-packages\nbclient\client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+# Way 2
+
+import savReaderWriter as sav
+
+# List the names of the spss files from the path 
+file_list  = [f"../../_data/endes/2019/{x}" for x in ["REC0111.sav", "RE223132.sav", "RE516171.sav"]]
+
+# Create lists with the names of objects that will contain files and their variable and values labels
+name_files = [f"rec_{x}" for x in range(1,4)]
+name_var_labels = [f"var_labels{x}" for x in range(1,4)]
+name_val_labels = [f"value_labels{x}" for x in range(1,4)]
+
+# Apply "for" to read files and their labels of every element in file_list, 
+# saving them in various objects based on the most recent objects created
+for i, file in enumerate(file_list):
+    df = pd.read_spss(file)
+    with sav.SavHeaderReader(file, ioUtf8=True) as header:
+        metadata = header.all()
+    globals()[name_files[i]] = df    
+    globals()[name_var_labels[i]] = metadata.varLabels
+    globals()[name_val_labels[i]] = metadata.valueLabels
+------------------
+
+[1;31m---------------------------------------------------------------------------[0m
+[1;31mPyreadstatError[0m                           Traceback (most recent call last)
+[1;32m~\AppData\Local\Temp\ipykernel_13976\923185229.py[0m in [0;36m<module>[1;34m[0m
+[0;32m     14[0m [1;31m# saving them in various objects based on the most recent objects created[0m[1;33m[0m[1;33m[0m[0m
+[0;32m     15[0m [1;32mfor[0m [0mi[0m[1;33m,[0m [0mfile[0m [1;32min[0m [0menumerate[0m[1;33m([0m[0mfile_list[0m[1;33m)[0m[1;33m:[0m[1;33m[0m[1;33m[0m[0m
+[1;32m---> 16[1;33m     [0mdf[0m [1;33m=[0m [0mpd[0m[1;33m.[0m[0mread_spss[0m[1;33m([0m[0mfile[0m[1;33m)[0m[1;33m[0m[1;33m[0m[0m
+[0m[0;32m     17[0m     [1;32mwith[0m [0msav[0m[1;33m.[0m[0mSavHeaderReader[0m[1;33m([0m[0mfile[0m[1;33m,[0m [0mioUtf8[0m[1;33m=[0m[1;32mTrue[0m[1;33m)[0m [1;32mas[0m [0mheader[0m[1;33m:[0m[1;33m[0m[1;33m[0m[0m
+[0;32m     18[0m         [0mmetadata[0m [1;33m=[0m [0mheader[0m[1;33m.[0m[0mall[0m[1;33m([0m[1;33m)[0m[1;33m[0m[1;33m[0m[0m
+
+[1;32mC:\Anaconda\lib\site-packages\pandas\io\spss.py[0m in [0;36mread_spss[1;34m(path, usecols, convert_categoricals)[0m
+[0;32m     44[0m             [0musecols[0m [1;33m=[0m [0mlist[0m[1;33m([0m[0musecols[0m[1;33m)[0m  [1;31m# pyreadstat requires a list[0m[1;33m[0m[1;33m[0m[0m
+[0;32m     45[0m [1;33m[0m[0m
+[1;32m---> 46[1;33m     df, _ = pyreadstat.read_sav(
+[0m[0;32m     47[0m         [0mstringify_path[0m[1;33m([0m[0mpath[0m[1;33m)[0m[1;33m,[0m [0musecols[0m[1;33m=[0m[0musecols[0m[1;33m,[0m [0mapply_value_formats[0m[1;33m=[0m[0mconvert_categoricals[0m[1;33m[0m[1;33m[0m[0m
+[0;32m     48[0m     )
+
+[1;32mpyreadstat\pyreadstat.pyx[0m in [0;36mpyreadstat.pyreadstat.read_sav[1;34m()[0m
+
+[1;32mpyreadstat\_readstat_parser.pyx[0m in [0;36mpyreadstat._readstat_parser.run_conversion[1;34m()[0m
+
+[1;31mPyreadstatError[0m: File ../../_data/endes/2019/REC0111.sav does not exist!
+PyreadstatError: File ../../_data/endes/2019/REC0111.sav does not exist!
+

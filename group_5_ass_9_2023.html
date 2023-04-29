@@ -1,0 +1,1629 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>&lt;no title&gt; &#8212; Clases de Python</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'group_5_ass_9_2023';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="FOLIUM:" href="Folium.html" />
+    <link rel="prev" title="Shapefile" href="Tutorial.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Clases de Pyhton de la Diplomatura de Ciencia de Datos
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="Lecture_2.html">Introduction to Python: Tuples, Lists, Dictionaries, Arrays</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="group_8_ass_1_2022.html">1 Assignment</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Lecture_3.html">3. <a id="intro">Pandas</a></a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="group_8_ass_2_2022.html">1 Assignment</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="group_1_ass_3_2022.html">1 Assignment 3</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Lecture_4.html">4. If and Loops</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="group_1_ass_4_2022.html">Assigment 4</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture_5.html">5. Functions and Class</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Lecture_6.html">Inheritance, Private Variables, Fixed attributes, Costumize Exceptions with Python</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="lecture_7R.html">7. Web Scraping</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Lecture_8.html">8. API</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Visualitazion.html">1. Quantities:</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Geopandas1.html">¿Geopandas?</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Folium.html">FOLIUM:</a></li>
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Causal_Infenrece.html">1 Causal Inference</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="NLP_Tutorial.html">NLP</a></li>
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fgroup_5_ass_9_2023.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/group_5_ass_9_2023.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1><no title></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple">
+<li><p>Import the data located at this link. It has information on people infected with dengue at the district level for 2015 to 2021.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Dengue_peru</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span> <span class="sa">r</span><span class="s1">&#39;../../_data/data_dengue_peru.csv&#39;</span><span class="p">)</span>
+<span class="n">Dengue_peru</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span>\<span class="n">ipykernel_16300</span>\<span class="mf">2386219711.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">Dengue_peru</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span> <span class="sa">r</span><span class="s1">&#39;../../_data/data_dengue_peru.csv&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">Dengue_peru</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+
+<span class="nn">C:\Anaconda\lib\site-packages\pandas\util\_decorators.py</span> in <span class="ni">wrapper</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">309</span>                     <span class="n">stacklevel</span><span class="o">=</span><span class="n">stacklevel</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">310</span>                 <span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">311</span>             <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">312</span> 
+<span class="g g-Whitespace">    </span><span class="mi">313</span>         <span class="k">return</span> <span class="n">wrapper</span>
+
+<span class="nn">C:\Anaconda\lib\site-packages\pandas\io\parsers\readers.py</span> in <span class="ni">read_csv</span><span class="nt">(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, squeeze, prefix, mangle_dupe_cols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, encoding_errors, dialect, error_bad_lines, warn_bad_lines, on_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options)</span>
+<span class="g g-Whitespace">    </span><span class="mi">676</span>     <span class="n">kwds</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwds_defaults</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">677</span> 
+<span class="ne">--&gt; </span><span class="mi">678</span>     <span class="k">return</span> <span class="n">_read</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">679</span> 
+<span class="g g-Whitespace">    </span><span class="mi">680</span> 
+
+<span class="nn">C:\Anaconda\lib\site-packages\pandas\io\parsers\readers.py</span> in <span class="ni">_read</span><span class="nt">(filepath_or_buffer, kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">573</span> 
+<span class="g g-Whitespace">    </span><span class="mi">574</span>     <span class="c1"># Create the parser.</span>
+<span class="ne">--&gt; </span><span class="mi">575</span>     <span class="n">parser</span> <span class="o">=</span> <span class="n">TextFileReader</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">576</span> 
+<span class="g g-Whitespace">    </span><span class="mi">577</span>     <span class="k">if</span> <span class="n">chunksize</span> <span class="ow">or</span> <span class="n">iterator</span><span class="p">:</span>
+
+<span class="nn">C:\Anaconda\lib\site-packages\pandas\io\parsers\readers.py</span> in <span class="ni">__init__</span><span class="nt">(self, f, engine, **kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">930</span> 
+<span class="g g-Whitespace">    </span><span class="mi">931</span>         <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="p">:</span> <span class="n">IOHandles</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="ne">--&gt; </span><span class="mi">932</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_engine</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">933</span> 
+<span class="g g-Whitespace">    </span><span class="mi">934</span>     <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<span class="nn">C:\Anaconda\lib\site-packages\pandas\io\parsers\readers.py</span> in <span class="ni">_make_engine</span><span class="nt">(self, f, engine)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1214</span>             <span class="c1"># &quot;Union[str, PathLike[str], ReadCsvBuffer[bytes], ReadCsvBuffer[str]]&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1215</span>             <span class="c1"># , &quot;str&quot;, &quot;bool&quot;, &quot;Any&quot;, &quot;Any&quot;, &quot;Any&quot;, &quot;Any&quot;, &quot;Any&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1216</span>             <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="o">=</span> <span class="n">get_handle</span><span class="p">(</span>  <span class="c1"># type: ignore[call-overload]</span>
+<span class="g g-Whitespace">   </span><span class="mi">1217</span>                 <span class="n">f</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1218</span>                 <span class="n">mode</span><span class="p">,</span>
+
+<span class="nn">C:\Anaconda\lib\site-packages\pandas\io\common.py</span> in <span class="ni">get_handle</span><span class="nt">(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)</span>
+<span class="g g-Whitespace">    </span><span class="mi">784</span>         <span class="k">if</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">encoding</span> <span class="ow">and</span> <span class="s2">&quot;b&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">785</span>             <span class="c1"># Encoding</span>
+<span class="ne">--&gt; </span><span class="mi">786</span>             <span class="n">handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">787</span>                 <span class="n">handle</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">788</span>                 <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">,</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;../../_data/data_dengue_peru.csv&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Generate ubigeo for Departments and Provinces taking the first two and four numbers. Hint: Use this code.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Definimos la función que extrae los dígitos para cada columna</span>
+<span class="k">def</span> <span class="nf">extract_department</span><span class="p">(</span><span class="n">Ubigeo</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">Ubigeo</span><span class="p">)[:</span><span class="mi">2</span><span class="p">])</span>
+
+<span class="k">def</span> <span class="nf">extract_province</span><span class="p">(</span><span class="n">Ubigeo</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">Ubigeo</span><span class="p">)[:</span><span class="mi">4</span><span class="p">])</span>
+
+<span class="c1"># Aplicamos las funciones a la columna &#39;ubigeo&#39; para crear las columnas &#39;departamento&#39; y &#39;provincia&#39;</span>
+<span class="n">Dengue_peru</span><span class="p">[</span><span class="s1">&#39;departamento&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Dengue_peru</span><span class="p">[</span><span class="s1">&#39;Ubigeo&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">extract_department</span><span class="p">)</span>
+<span class="n">Dengue_peru</span><span class="p">[</span><span class="s1">&#39;provincia&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Dengue_peru</span><span class="p">[</span><span class="s1">&#39;Ubigeo&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">extract_province</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Dengue_peru</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Año</th>
+      <th>Semana</th>
+      <th>Eventos o daños</th>
+      <th>Departamento</th>
+      <th>Distrito</th>
+      <th>Provincia</th>
+      <th>Ubigeo</th>
+      <th>Casos</th>
+      <th>departamento</th>
+      <th>provincia</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2020</td>
+      <td>43</td>
+      <td>Dengue</td>
+      <td>CUSCO</td>
+      <td>MEGANTONI</td>
+      <td>LA CONVENCION</td>
+      <td>80914</td>
+      <td>2.0</td>
+      <td>80</td>
+      <td>8091</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2021</td>
+      <td>41</td>
+      <td>Dengue</td>
+      <td>MOQUEGUA</td>
+      <td>MOQUEGUA</td>
+      <td>MARISCAL NIETO</td>
+      <td>180101</td>
+      <td>NaN</td>
+      <td>18</td>
+      <td>1801</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2021</td>
+      <td>42</td>
+      <td>Dengue</td>
+      <td>MOQUEGUA</td>
+      <td>MOQUEGUA</td>
+      <td>MARISCAL NIETO</td>
+      <td>180101</td>
+      <td>NaN</td>
+      <td>18</td>
+      <td>1801</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2020</td>
+      <td>1</td>
+      <td>Dengue</td>
+      <td>CUSCO</td>
+      <td>MEGANTONI</td>
+      <td>LA CONVENCION</td>
+      <td>80914</td>
+      <td>0.0</td>
+      <td>80</td>
+      <td>8091</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2020</td>
+      <td>53</td>
+      <td>Dengue</td>
+      <td>CUSCO</td>
+      <td>MEGANTONI</td>
+      <td>LA CONVENCION</td>
+      <td>80914</td>
+      <td>2.0</td>
+      <td>80</td>
+      <td>8091</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>172139</th>
+      <td>2021</td>
+      <td>49</td>
+      <td>Dengue</td>
+      <td>MADRE DE DIOS</td>
+      <td>MADRE DE DIOS</td>
+      <td>MANU</td>
+      <td>170203</td>
+      <td>NaN</td>
+      <td>17</td>
+      <td>1702</td>
+    </tr>
+    <tr>
+      <th>172140</th>
+      <td>2021</td>
+      <td>49</td>
+      <td>Dengue</td>
+      <td>MADRE DE DIOS</td>
+      <td>TAHUAMANU</td>
+      <td>TAHUAMANU</td>
+      <td>170303</td>
+      <td>NaN</td>
+      <td>17</td>
+      <td>1703</td>
+    </tr>
+    <tr>
+      <th>172141</th>
+      <td>2021</td>
+      <td>50</td>
+      <td>Dengue</td>
+      <td>MADRE DE DIOS</td>
+      <td>MADRE DE DIOS</td>
+      <td>MANU</td>
+      <td>170203</td>
+      <td>NaN</td>
+      <td>17</td>
+      <td>1702</td>
+    </tr>
+    <tr>
+      <th>172142</th>
+      <td>2021</td>
+      <td>50</td>
+      <td>Dengue</td>
+      <td>MADRE DE DIOS</td>
+      <td>TAHUAMANU</td>
+      <td>TAHUAMANU</td>
+      <td>170303</td>
+      <td>NaN</td>
+      <td>17</td>
+      <td>1703</td>
+    </tr>
+    <tr>
+      <th>172143</th>
+      <td>2021</td>
+      <td>51</td>
+      <td>Dengue</td>
+      <td>MADRE DE DIOS</td>
+      <td>TAHUAMANU</td>
+      <td>TAHUAMANU</td>
+      <td>170303</td>
+      <td>NaN</td>
+      <td>17</td>
+      <td>1703</td>
+    </tr>
+  </tbody>
+</table>
+<p>172144 rows × 10 columns</p>
+</div></div></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Use geopandas to plot the number of cases in 2021 by the district using a continuous legend. Do not forget to indicate the color of NA values. Use this shapefile.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">distritos</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span> <span class="sa">r</span><span class="s1">&#39;../../_data/LIMITE_DISTRITAL_2020_INEI/INEI_LIMITE_DISTRITAL.shp&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">distritos</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>CCDD</th>
+      <th>NOMBDEP</th>
+      <th>CCPP</th>
+      <th>NOMBPROV</th>
+      <th>CCDI</th>
+      <th>NOMBDIST</th>
+      <th>CAPITAL</th>
+      <th>UBIGEO</th>
+      <th>IDPROV</th>
+      <th>CODIGO</th>
+      <th>CNT_CCPP</th>
+      <th>DESCRIPCIO</th>
+      <th>DESCARGAR</th>
+      <th>WHATSAPP</th>
+      <th>CONTACTO</th>
+      <th>geometry</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>06</td>
+      <td>CAJAMARCA</td>
+      <td>05</td>
+      <td>CONTUMAZA</td>
+      <td>04</td>
+      <td>GUZMANGO</td>
+      <td>GUZMANGO</td>
+      <td>060504</td>
+      <td>0605</td>
+      <td>060504</td>
+      <td>50</td>
+      <td>GUZMANGO</td>
+      <td>www.geogpsperu.com</td>
+      <td>931381206</td>
+      <td>juan.suyo@geogpsperu.com</td>
+      <td>POLYGON ((-78.91578 -7.32085, -78.91370 -7.322...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>06</td>
+      <td>CAJAMARCA</td>
+      <td>11</td>
+      <td>SAN MIGUEL</td>
+      <td>05</td>
+      <td>EL PRADO</td>
+      <td>EL PRADO</td>
+      <td>061105</td>
+      <td>0611</td>
+      <td>061105</td>
+      <td>15</td>
+      <td>EL PRADO</td>
+      <td>www.geogpsperu.com</td>
+      <td>931381206</td>
+      <td>juan.suyo@geogpsperu.com</td>
+      <td>POLYGON ((-79.01679 -6.96945, -79.01581 -6.969...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>06</td>
+      <td>CAJAMARCA</td>
+      <td>11</td>
+      <td>SAN MIGUEL</td>
+      <td>09</td>
+      <td>NIEPOS</td>
+      <td>NIEPOS</td>
+      <td>061109</td>
+      <td>0611</td>
+      <td>061109</td>
+      <td>41</td>
+      <td>NIEPOS</td>
+      <td>www.geogpsperu.com</td>
+      <td>931381206</td>
+      <td>juan.suyo@geogpsperu.com</td>
+      <td>POLYGON ((-79.21691 -6.85171, -79.21576 -6.851...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>06</td>
+      <td>CAJAMARCA</td>
+      <td>11</td>
+      <td>SAN MIGUEL</td>
+      <td>10</td>
+      <td>SAN GREGORIO</td>
+      <td>SAN GREGORIO</td>
+      <td>061110</td>
+      <td>0611</td>
+      <td>061110</td>
+      <td>48</td>
+      <td>SAN GREGORIO</td>
+      <td>www.geogpsperu.com</td>
+      <td>931381206</td>
+      <td>juan.suyo@geogpsperu.com</td>
+      <td>POLYGON ((-79.08233 -7.00544, -79.08041 -7.005...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>06</td>
+      <td>CAJAMARCA</td>
+      <td>12</td>
+      <td>SAN PABLO</td>
+      <td>03</td>
+      <td>SAN LUIS</td>
+      <td>SAN LUIS GRANDE</td>
+      <td>061203</td>
+      <td>0612</td>
+      <td>061203</td>
+      <td>9</td>
+      <td>SAN LUIS</td>
+      <td>www.geogpsperu.com</td>
+      <td>931381206</td>
+      <td>juan.suyo@geogpsperu.com</td>
+      <td>POLYGON ((-78.87623 -7.09747, -78.87471 -7.098...</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1869</th>
+      <td>04</td>
+      <td>AREQUIPA</td>
+      <td>04</td>
+      <td>CASTILLA</td>
+      <td>04</td>
+      <td>CHACHAS</td>
+      <td>CHACHAS</td>
+      <td>040404</td>
+      <td>0404</td>
+      <td>040404</td>
+      <td>19</td>
+      <td>CHACHAS</td>
+      <td>www.geogpsperu.com</td>
+      <td>931381206</td>
+      <td>juan.suyo@geogpsperu.com</td>
+      <td>POLYGON ((-71.95148 -14.83836, -71.95157 -14.8...</td>
+    </tr>
+    <tr>
+      <th>1870</th>
+      <td>04</td>
+      <td>AREQUIPA</td>
+      <td>04</td>
+      <td>CASTILLA</td>
+      <td>05</td>
+      <td>CHILCAYMARCA</td>
+      <td>CHILCAYMARCA</td>
+      <td>040405</td>
+      <td>0404</td>
+      <td>040405</td>
+      <td>24</td>
+      <td>CHILCAYMARCA</td>
+      <td>www.geogpsperu.com</td>
+      <td>931381206</td>
+      <td>juan.suyo@geogpsperu.com</td>
+      <td>POLYGON ((-72.37490 -15.24990, -72.37494 -15.2...</td>
+    </tr>
+    <tr>
+      <th>1871</th>
+      <td>04</td>
+      <td>AREQUIPA</td>
+      <td>04</td>
+      <td>CASTILLA</td>
+      <td>06</td>
+      <td>CHOCO</td>
+      <td>CHOCO</td>
+      <td>040406</td>
+      <td>0404</td>
+      <td>040406</td>
+      <td>58</td>
+      <td>CHOCO</td>
+      <td>www.geogpsperu.com</td>
+      <td>931381206</td>
+      <td>juan.suyo@geogpsperu.com</td>
+      <td>POLYGON ((-71.96976 -15.13597, -71.96952 -15.1...</td>
+    </tr>
+    <tr>
+      <th>1872</th>
+      <td>04</td>
+      <td>AREQUIPA</td>
+      <td>04</td>
+      <td>CASTILLA</td>
+      <td>07</td>
+      <td>HUANCARQUI</td>
+      <td>HUANCARQUI</td>
+      <td>040407</td>
+      <td>0404</td>
+      <td>040407</td>
+      <td>25</td>
+      <td>HUANCARQUI</td>
+      <td>www.geogpsperu.com</td>
+      <td>931381206</td>
+      <td>juan.suyo@geogpsperu.com</td>
+      <td>POLYGON ((-72.31258 -15.81426, -72.31211 -15.8...</td>
+    </tr>
+    <tr>
+      <th>1873</th>
+      <td>12</td>
+      <td>JUNIN</td>
+      <td>06</td>
+      <td>SATIPO</td>
+      <td>04</td>
+      <td>MAZAMARI</td>
+      <td>NaN</td>
+      <td>120604</td>
+      <td>1206</td>
+      <td>120604</td>
+      <td>152</td>
+      <td>MAZAMARI</td>
+      <td>www.geogpsperu.com</td>
+      <td>931381206</td>
+      <td>juan.suyo@geogpsperu.com</td>
+      <td>POLYGON ((-73.98589 -11.93382, -73.98628 -11.9...</td>
+    </tr>
+  </tbody>
+</table>
+<p>1874 rows × 16 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Check unique values</span>
+
+<span class="n">distritos</span><span class="p">[</span><span class="s1">&#39;UBIGEO&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">is_unique</span>
+
+<span class="n">distritos</span><span class="p">[</span><span class="s1">&#39;UBIGEO&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span><span class="o">.</span><span class="n">size</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1874
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Select only relevant columns</span>
+<span class="n">distritos</span> <span class="o">=</span> <span class="n">distritos</span><span class="p">[[</span><span class="s1">&#39;CCDD&#39;</span><span class="p">,</span><span class="s1">&#39;IDPROV&#39;</span><span class="p">,</span><span class="s1">&#39;UBIGEO&#39;</span><span class="p">,</span> <span class="s1">&#39;geometry&#39;</span><span class="p">]]</span>
+<span class="n">distritos</span> <span class="o">=</span> <span class="n">distritos</span><span class="o">.</span><span class="n">rename</span><span class="p">({</span><span class="s1">&#39;UBIGEO&#39;</span><span class="p">:</span><span class="s1">&#39;Ubigeo&#39;</span><span class="p">},</span> <span class="n">axis</span> <span class="o">=</span><span class="mi">1</span> <span class="p">)</span>
+<span class="n">distritos</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>CCDD</th>
+      <th>IDPROV</th>
+      <th>Ubigeo</th>
+      <th>geometry</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>06</td>
+      <td>0605</td>
+      <td>060504</td>
+      <td>POLYGON ((-78.91578 -7.32085, -78.91370 -7.322...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>06</td>
+      <td>0611</td>
+      <td>061105</td>
+      <td>POLYGON ((-79.01679 -6.96945, -79.01581 -6.969...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>06</td>
+      <td>0611</td>
+      <td>061109</td>
+      <td>POLYGON ((-79.21691 -6.85171, -79.21576 -6.851...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>06</td>
+      <td>0611</td>
+      <td>061110</td>
+      <td>POLYGON ((-79.08233 -7.00544, -79.08041 -7.005...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>06</td>
+      <td>0612</td>
+      <td>061203</td>
+      <td>POLYGON ((-78.87623 -7.09747, -78.87471 -7.098...</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1869</th>
+      <td>04</td>
+      <td>0404</td>
+      <td>040404</td>
+      <td>POLYGON ((-71.95148 -14.83836, -71.95157 -14.8...</td>
+    </tr>
+    <tr>
+      <th>1870</th>
+      <td>04</td>
+      <td>0404</td>
+      <td>040405</td>
+      <td>POLYGON ((-72.37490 -15.24990, -72.37494 -15.2...</td>
+    </tr>
+    <tr>
+      <th>1871</th>
+      <td>04</td>
+      <td>0404</td>
+      <td>040406</td>
+      <td>POLYGON ((-71.96976 -15.13597, -71.96952 -15.1...</td>
+    </tr>
+    <tr>
+      <th>1872</th>
+      <td>04</td>
+      <td>0404</td>
+      <td>040407</td>
+      <td>POLYGON ((-72.31258 -15.81426, -72.31211 -15.8...</td>
+    </tr>
+    <tr>
+      <th>1873</th>
+      <td>12</td>
+      <td>1206</td>
+      <td>120604</td>
+      <td>POLYGON ((-73.98589 -11.93382, -73.98628 -11.9...</td>
+    </tr>
+  </tbody>
+</table>
+<p>1874 rows × 4 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">distritos</span><span class="p">[</span><span class="s1">&#39;Ubigeo&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">distritos</span><span class="p">[</span><span class="s1">&#39;Ubigeo&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="n">distritos</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>CCDD</th>
+      <th>IDPROV</th>
+      <th>Ubigeo</th>
+      <th>geometry</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>06</td>
+      <td>0605</td>
+      <td>60504</td>
+      <td>POLYGON ((-78.91578 -7.32085, -78.91370 -7.322...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>06</td>
+      <td>0611</td>
+      <td>61105</td>
+      <td>POLYGON ((-79.01679 -6.96945, -79.01581 -6.969...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>06</td>
+      <td>0611</td>
+      <td>61109</td>
+      <td>POLYGON ((-79.21691 -6.85171, -79.21576 -6.851...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>06</td>
+      <td>0611</td>
+      <td>61110</td>
+      <td>POLYGON ((-79.08233 -7.00544, -79.08041 -7.005...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>06</td>
+      <td>0612</td>
+      <td>61203</td>
+      <td>POLYGON ((-78.87623 -7.09747, -78.87471 -7.098...</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1869</th>
+      <td>04</td>
+      <td>0404</td>
+      <td>40404</td>
+      <td>POLYGON ((-71.95148 -14.83836, -71.95157 -14.8...</td>
+    </tr>
+    <tr>
+      <th>1870</th>
+      <td>04</td>
+      <td>0404</td>
+      <td>40405</td>
+      <td>POLYGON ((-72.37490 -15.24990, -72.37494 -15.2...</td>
+    </tr>
+    <tr>
+      <th>1871</th>
+      <td>04</td>
+      <td>0404</td>
+      <td>40406</td>
+      <td>POLYGON ((-71.96976 -15.13597, -71.96952 -15.1...</td>
+    </tr>
+    <tr>
+      <th>1872</th>
+      <td>04</td>
+      <td>0404</td>
+      <td>40407</td>
+      <td>POLYGON ((-72.31258 -15.81426, -72.31211 -15.8...</td>
+    </tr>
+    <tr>
+      <th>1873</th>
+      <td>12</td>
+      <td>1206</td>
+      <td>120604</td>
+      <td>POLYGON ((-73.98589 -11.93382, -73.98628 -11.9...</td>
+    </tr>
+  </tbody>
+</table>
+<p>1874 rows × 4 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Filters the DataFrame &quot;Dengue_peru&quot; to get only the rows where the column &quot;Year&quot; equals 2021 and stores it in a new DataFrame named &quot;Dengue_2021&quot;.</span>
+<span class="c1">#Select only the &quot;Ubigeo&quot; and &quot;Cases&quot; columns of &quot;Dengue_2021&quot;.</span>
+<span class="c1">#Delete any row that has a missing value (NaN) in the DataFrame &quot;Dengue_2021&quot;.</span>
+<span class="c1">#Converts the &quot;Cases&quot; column to an integer data type.</span>
+<span class="c1">#Group the &quot;Dengue_2021&quot; DataFrame by the &quot;Ubigeo&quot; column and calculate the sum of the values of the &quot;Cases&quot; column for each &quot;Ubigeo&quot; group. The result is stored in a new DataFrame called &quot;Dengue_2021&quot;.</span>
+<span class="c1">#Set the column &quot;Ubigeo&quot; as a column of the DataFrame &quot;Dengue_2021&quot;.</span>
+<span class="c1">#Delete the name of the index of the DataFrame &quot;Dengue_2021&quot;.</span>
+
+<span class="n">year_list</span> <span class="o">=</span> <span class="n">Dengue_peru</span><span class="p">[</span><span class="s1">&#39;Año&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="n">year_list</span> <span class="o">=</span> <span class="n">year_list</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+<span class="n">year_list</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">year_list</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="n">year_list</span><span class="p">:</span>
+    <span class="n">alterna</span> <span class="o">=</span> <span class="n">Dengue_peru</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">Dengue_peru</span><span class="p">[</span><span class="s1">&#39;Año&#39;</span><span class="p">]</span><span class="o">==</span><span class="n">year</span><span class="p">]</span>
+    <span class="n">alterna</span><span class="o">=</span><span class="n">alterna</span><span class="p">[[</span><span class="s1">&#39;Ubigeo&#39;</span><span class="p">,</span><span class="s1">&#39;Casos&#39;</span><span class="p">]]</span>
+    <span class="n">alterna</span><span class="p">[</span><span class="s1">&#39;Casos&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">alterna</span><span class="p">[</span><span class="s1">&#39;Casos&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+    <span class="n">alterna</span><span class="o">=</span><span class="n">alterna</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+    <span class="n">alterna</span><span class="p">[</span><span class="s1">&#39;Casos&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">alterna</span><span class="p">[</span><span class="s1">&#39;Casos&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+    <span class="n">alterna</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">alterna</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;Ubigeo&quot;</span><span class="p">])[</span><span class="s2">&quot;Casos&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+    <span class="n">alterna</span><span class="p">[</span><span class="s1">&#39;Ubigeo&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">alterna</span><span class="o">.</span><span class="n">index</span>
+    <span class="n">alterna</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">]</span>
+    <span class="nb">locals</span><span class="p">()[</span><span class="sa">f</span><span class="s1">&#39;Dengue_</span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">alterna</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#The &#39;districts&#39; dataframe is joined with &#39;Dengue_2021&#39;</span>
+<span class="n">distritos_merge</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">distritos</span><span class="p">,</span> <span class="n">Dengue_2021</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Ubigeo&#39;</span><span class="p">])</span>
+<span class="n">distritos_merge</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>CCDD</th>
+      <th>IDPROV</th>
+      <th>Ubigeo</th>
+      <th>geometry</th>
+      <th>Casos</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>06</td>
+      <td>0605</td>
+      <td>60504</td>
+      <td>POLYGON ((-78.91578 -7.32085, -78.91370 -7.322...</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>06</td>
+      <td>0611</td>
+      <td>61105</td>
+      <td>POLYGON ((-79.01679 -6.96945, -79.01581 -6.969...</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>06</td>
+      <td>0611</td>
+      <td>61109</td>
+      <td>POLYGON ((-79.21691 -6.85171, -79.21576 -6.851...</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>06</td>
+      <td>0611</td>
+      <td>61110</td>
+      <td>POLYGON ((-79.08233 -7.00544, -79.08041 -7.005...</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>06</td>
+      <td>0612</td>
+      <td>61203</td>
+      <td>POLYGON ((-78.87623 -7.09747, -78.87471 -7.098...</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1869</th>
+      <td>04</td>
+      <td>0404</td>
+      <td>40404</td>
+      <td>POLYGON ((-71.95148 -14.83836, -71.95157 -14.8...</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1870</th>
+      <td>04</td>
+      <td>0404</td>
+      <td>40405</td>
+      <td>POLYGON ((-72.37490 -15.24990, -72.37494 -15.2...</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1871</th>
+      <td>04</td>
+      <td>0404</td>
+      <td>40406</td>
+      <td>POLYGON ((-71.96976 -15.13597, -71.96952 -15.1...</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1872</th>
+      <td>04</td>
+      <td>0404</td>
+      <td>40407</td>
+      <td>POLYGON ((-72.31258 -15.81426, -72.31211 -15.8...</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1873</th>
+      <td>12</td>
+      <td>1206</td>
+      <td>120604</td>
+      <td>POLYGON ((-73.98589 -11.93382, -73.98628 -11.9...</td>
+      <td>105.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>1874 rows × 5 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#the number of cases by district is graphed</span>
+<span class="n">distritos_merge</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s1">&#39;Casos&#39;</span><span class="p">,</span> 
+                     <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Reds&#39;</span><span class="p">,</span> 
+                     <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span> 
+                     <span class="n">legend</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> 
+               <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> 
+                     <span class="n">missing_kwds</span><span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;#72a0c1&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: &gt;
+</pre></div>
+</div>
+<img alt="_images/92bafada68892a280e20976d61c18a8a5548aacc72f3cf502d7abf9da83b12c1.png" src="_images/92bafada68892a280e20976d61c18a8a5548aacc72f3cf502d7abf9da83b12c1.png" />
+</div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Use geopandas to plot the number of cases in 2021by the province using a continuous legend. Do not forget to indicate the color of NA values. Use this shapefile. For this task, you will have to aggregate shapefiles at the province level.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#the number of cases by province is graphed, the dissolve method is used to group by province</span>
+<span class="n">prov_shp</span> <span class="o">=</span> <span class="n">distritos_merge</span><span class="o">.</span><span class="n">dissolve</span><span class="p">(</span> <span class="n">by</span> <span class="o">=</span> <span class="s1">&#39;IDPROV&#39;</span> <span class="p">)</span>
+<span class="n">prov_shp</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span> <span class="n">column</span><span class="o">=</span><span class="s1">&#39;Casos&#39;</span><span class="p">,</span> 
+                     <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Reds&#39;</span><span class="p">,</span> 
+                     <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span> 
+                     <span class="n">legend</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> 
+               <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> 
+                     <span class="n">missing_kwds</span><span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;#72a0c1&quot;</span><span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: &gt;
+</pre></div>
+</div>
+<img alt="_images/d7d12ac42f1a757c860c2aecaeba9ad870481fdec5207f3653966ed8ddce776f.png" src="_images/d7d12ac42f1a757c860c2aecaeba9ad870481fdec5207f3653966ed8ddce776f.png" />
+</div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>Use geopandas to plot the number of cases by the department for all the years using subplots. Every subplot for each year. Do not forget to indicate the color of NA values. Use this shapefile. For this task, you will have to aggregate shapefiles at the department level.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#the number of cases by department is graphed</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">year</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">year_list</span><span class="p">):</span>
+
+    <span class="n">distritos_merge</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">distritos</span><span class="p">,</span> <span class="nb">locals</span><span class="p">()[</span><span class="sa">f</span><span class="s1">&#39;Dengue_</span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">],</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Ubigeo&#39;</span><span class="p">])</span>
+
+    <span class="n">dpto_shp</span> <span class="o">=</span> <span class="n">distritos_merge</span><span class="o">.</span><span class="n">dissolve</span><span class="p">(</span> <span class="n">by</span> <span class="o">=</span> <span class="s1">&#39;CCDD&#39;</span> <span class="p">)</span>
+
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="n">dpto_shp</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s1">&#39;Casos&#39;</span><span class="p">,</span>
+                   <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Reds&#39;</span><span class="p">,</span>
+                   <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span>
+                   <span class="n">legend</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span>
+                   <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span>
+                   <span class="n">missing_kwds</span><span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;#72a0c1&quot;</span><span class="p">),</span>
+                   <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">year</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_axis_off</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/1ac470d999ab1b3a8b939c3b15ba40797102cb5db8560bfdc780b1213ef4e536.png" src="_images/1ac470d999ab1b3a8b939c3b15ba40797102cb5db8560bfdc780b1213ef4e536.png" />
+</div>
+</div>
+<ol class="arabic simple" start="6">
+<li><p>Use geopandas to plot the number of cases by the department for all 2021 quarters using subplots. Every subplot for each quarter. Use a categorical legend with 5 bins. Do not forget to indicate the color of NA values. Use this shapefile. For this task, you will have to aggregate shapefiles at the department level. Hint: Use Semana variable to group by quarters.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Dengue_semanal</span> <span class="o">=</span> <span class="n">Dengue_peru</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,[</span><span class="s2">&quot;Año&quot;</span><span class="p">,</span> <span class="s2">&quot;Semana&quot;</span><span class="p">,</span> <span class="s2">&quot;Casos&quot;</span><span class="p">,</span> <span class="s2">&quot;Ubigeo&quot;</span><span class="p">]]</span>
+
+<span class="n">Dengue_semanal</span><span class="p">[</span><span class="s2">&quot;Trimestre&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">index</span><span class="p">,</span><span class="n">row</span> <span class="ow">in</span> <span class="n">Dengue_semanal</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">Dengue_semanal</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index</span><span class="p">,</span><span class="s2">&quot;Semana&quot;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">13</span><span class="p">:</span>
+        <span class="n">Dengue_semanal</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index</span><span class="p">,</span><span class="s2">&quot;Trimestre&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">elif</span> <span class="n">Dengue_semanal</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index</span><span class="p">,</span><span class="s2">&quot;Semana&quot;</span><span class="p">]</span> <span class="o">&lt;=</span><span class="mi">26</span><span class="p">:</span>
+        <span class="n">Dengue_semanal</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index</span><span class="p">,</span><span class="s2">&quot;Trimestre&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="k">elif</span> <span class="n">Dengue_semanal</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index</span><span class="p">,</span><span class="s2">&quot;Semana&quot;</span><span class="p">]</span> <span class="o">&lt;=</span><span class="mi">39</span><span class="p">:</span>
+        <span class="n">Dengue_semanal</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index</span><span class="p">,</span><span class="s2">&quot;Trimestre&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">Dengue_semanal</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index</span><span class="p">,</span><span class="s2">&quot;Trimestre&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">4</span>
+
+<span class="k">for</span> <span class="n">trim</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">):</span>
+
+    <span class="n">alterna</span> <span class="o">=</span> <span class="n">Dengue_semanal</span><span class="p">[</span><span class="n">Dengue_semanal</span><span class="p">[</span><span class="s2">&quot;Trimestre&quot;</span><span class="p">]</span><span class="o">==</span><span class="n">trim</span><span class="p">]</span>
+
+    <span class="n">distritos_merge</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">distritos</span><span class="p">,</span> <span class="n">alterna</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Ubigeo&#39;</span><span class="p">])</span>
+
+    <span class="n">dpto_shp</span> <span class="o">=</span> <span class="n">distritos_merge</span><span class="o">.</span><span class="n">dissolve</span><span class="p">(</span> <span class="n">by</span> <span class="o">=</span> <span class="s1">&#39;CCDD&#39;</span> <span class="p">)</span>
+
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">trim</span><span class="p">)</span>
+
+    <span class="n">dpto_shp</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s1">&#39;Casos&#39;</span><span class="p">,</span>
+                  <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Reds&#39;</span><span class="p">,</span>
+                  <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span>
+                  <span class="n">legend</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span>
+                  <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span>
+                  <span class="n">missing_kwds</span><span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;#72a0c1&quot;</span><span class="p">),</span>
+                  <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;2021-T</span><span class="si">{</span><span class="n">trim</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_axis_off</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/40f26db5777762bc3491c5d766d054656b63c4f3c32f8cb1360fae04d9c305fb.png" src="_images/40f26db5777762bc3491c5d766d054656b63c4f3c32f8cb1360fae04d9c305fb.png" />
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Tutorial.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Shapefile</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Folium.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">FOLIUM:</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Cristian Serrano
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

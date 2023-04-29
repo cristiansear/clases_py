@@ -1,0 +1,1585 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>1 Assignment 3 &#8212; Clases de Python</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'group_1_ass_3_2022';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="4. If and Loops" href="Lecture_4.html" />
+    <link rel="prev" title="1 Assignment" href="group_8_ass_2_2022.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Clases de Pyhton de la Diplomatura de Ciencia de Datos
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="Lecture_2.html">Introduction to Python: Tuples, Lists, Dictionaries, Arrays</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="group_8_ass_1_2022.html">1 Assignment</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Lecture_3.html">3. <a id="intro">Pandas</a></a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="group_8_ass_2_2022.html">1 Assignment</a></li>
+
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">1 Assignment 3</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Lecture_4.html">4. If and Loops</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="group_1_ass_4_2022.html">Assigment 4</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture_5.html">5. Functions and Class</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Lecture_6.html">Inheritance, Private Variables, Fixed attributes, Costumize Exceptions with Python</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="lecture_7R.html">7. Web Scraping</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Lecture_8.html">8. API</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Visualitazion.html">1. Quantities:</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Geopandas1.html">¿Geopandas?</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Folium.html">FOLIUM:</a></li>
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Causal_Infenrece.html">1 Causal Inference</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="NLP_Tutorial.html">NLP</a></li>
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fgroup_1_ass_3_2022.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/group_1_ass_3_2022.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>1 Assignment 3</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="assignment-3">
+<h1>1 Assignment 3<a class="headerlink" href="#assignment-3" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">pickle</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">urllib.request</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple">
+<li><p>Import the <code class="docutils literal notranslate"><span class="pre">REC0111.sav</span></code>, <code class="docutils literal notranslate"><span class="pre">RE223132.sav</span></code> and <code class="docutils literal notranslate"><span class="pre">RE516171.sav</span></code> files and their variables and values labels from this path <code class="docutils literal notranslate"><span class="pre">&quot;../../_data/endes/2019&quot;</span></code>. The name of imported files should be named as <code class="docutils literal notranslate"><span class="pre">rec_1</span></code>, <code class="docutils literal notranslate"><span class="pre">rec_2</span></code> and <code class="docutils literal notranslate"><span class="pre">rec_3</span></code> for files <code class="docutils literal notranslate"><span class="pre">REC0111.sav</span></code>, <code class="docutils literal notranslate"><span class="pre">RE223132.sav</span></code> and <code class="docutils literal notranslate"><span class="pre">RE516171.sav</span></code> respectively. The name of the variable and value labels should be <code class="docutils literal notranslate"><span class="pre">var_labels1</span></code> and <code class="docutils literal notranslate"><span class="pre">value_labels1</span></code> for <code class="docutils literal notranslate"><span class="pre">rec1</span></code>, <code class="docutils literal notranslate"><span class="pre">var_labels2</span></code> and <code class="docutils literal notranslate"><span class="pre">value_labels2</span></code> for <code class="docutils literal notranslate"><span class="pre">rec2</span></code>, and <code class="docutils literal notranslate"><span class="pre">var_labels3</span></code> and <code class="docutils literal notranslate"><span class="pre">value_labels3</span></code> for <code class="docutils literal notranslate"><span class="pre">rec3</span></code>. <strong>Hint: See the section 3.3.4 of <a class="reference external" href="https://github.com/alexanderquispe/Diplomado_PUCP/blob/main/Lecture_3/Lecture_3.ipynb">the lecture 3</a></strong></p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Way 1</span>
+<span class="c1"># Import spss files from the relative path, and name each one</span>
+<span class="c1"># rec_1 = pd.read_spss( &quot;../../_data/endes/2019/REC0111.sav&quot;)</span>
+<span class="c1"># rec_2 = pd.read_spss( &quot;../../_data/endes/2019/RE223132.sav&quot;)</span>
+<span class="c1"># rec_3 = pd.read_spss( &quot;../../_data/endes/2019/RE516171.sav&quot;)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Way 2</span>
+
+<span class="kn">import</span> <span class="nn">savReaderWriter</span> <span class="k">as</span> <span class="nn">sav</span>
+
+<span class="c1"># List the names of the spss files from the path </span>
+<span class="n">file_list</span>  <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;../../_data/endes/2019/</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;REC0111.sav&quot;</span><span class="p">,</span> <span class="s2">&quot;RE223132.sav&quot;</span><span class="p">,</span> <span class="s2">&quot;RE516171.sav&quot;</span><span class="p">]]</span>
+
+<span class="c1"># Create lists with the names of objects that will contain files and their variable and values labels</span>
+<span class="n">name_files</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;rec_</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">)]</span>
+<span class="n">name_var_labels</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;var_labels</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">)]</span>
+<span class="n">name_val_labels</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;value_labels</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">)]</span>
+
+<span class="c1"># Apply &quot;for&quot; to read files and their labels of every element in file_list, </span>
+<span class="c1"># saving them in various objects based on the most recent objects created</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">file</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">file_list</span><span class="p">):</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_spss</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+    <span class="k">with</span> <span class="n">sav</span><span class="o">.</span><span class="n">SavHeaderReader</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">ioUtf8</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">header</span><span class="p">:</span>
+        <span class="n">metadata</span> <span class="o">=</span> <span class="n">header</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+    <span class="nb">globals</span><span class="p">()[</span><span class="n">name_files</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">=</span> <span class="n">df</span>    
+    <span class="nb">globals</span><span class="p">()[</span><span class="n">name_var_labels</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">=</span> <span class="n">metadata</span><span class="o">.</span><span class="n">varLabels</span>
+    <span class="nb">globals</span><span class="p">()[</span><span class="n">name_val_labels</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">=</span> <span class="n">metadata</span><span class="o">.</span><span class="n">valueLabels</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">PyreadstatError</span><span class="g g-Whitespace">                           </span>Traceback (most recent call last)
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span>\<span class="n">ipykernel_13976</span>\<span class="mf">923185229.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="c1"># saving them in various objects based on the most recent objects created</span>
+<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">file</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">file_list</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">16</span>     <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_spss</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span>     <span class="k">with</span> <span class="n">sav</span><span class="o">.</span><span class="n">SavHeaderReader</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">ioUtf8</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">header</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">18</span>         <span class="n">metadata</span> <span class="o">=</span> <span class="n">header</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+
+<span class="nn">C:\Anaconda\lib\site-packages\pandas\io\spss.py</span> in <span class="ni">read_spss</span><span class="nt">(path, usecols, convert_categoricals)</span>
+<span class="g g-Whitespace">     </span><span class="mi">44</span>             <span class="n">usecols</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">usecols</span><span class="p">)</span>  <span class="c1"># pyreadstat requires a list</span>
+<span class="g g-Whitespace">     </span><span class="mi">45</span> 
+<span class="ne">---&gt; </span><span class="mi">46</span>     <span class="n">df</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">pyreadstat</span><span class="o">.</span><span class="n">read_sav</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">47</span>         <span class="n">stringify_path</span><span class="p">(</span><span class="n">path</span><span class="p">),</span> <span class="n">usecols</span><span class="o">=</span><span class="n">usecols</span><span class="p">,</span> <span class="n">apply_value_formats</span><span class="o">=</span><span class="n">convert_categoricals</span>
+<span class="g g-Whitespace">     </span><span class="mi">48</span>     <span class="p">)</span>
+
+<span class="nn">pyreadstat\pyreadstat.pyx</span> in <span class="ni">pyreadstat.pyreadstat.read_sav</span><span class="nt">()</span>
+
+<span class="nn">pyreadstat\_readstat_parser.pyx</span> in <span class="ni">pyreadstat._readstat_parser.run_conversion</span><span class="nt">()</span>
+
+<span class="ne">PyreadstatError</span>: File ../../_data/endes/2019/REC0111.sav does not exist!
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Select the following columns for each data set:
+|Data|Columns|
+|—|—|
+|rec1| CASEID, V000, V001, V002, V003, V004, V007, V008, V009, V010, V011, V012, V024, V102, V120, V121, V122, V123, V124, V125, V127, V133 |
+|rec2| CASEID, V201, V218, V301, V302, V323, V323A, V325A, V326, V327, V337, V359, V360, V361, V362, V363, V364, V367, V372, V372A, V375A, V376, V376A, V379, V380 |
+|rec3| CASEID, V501, V502, V503, V504, V505, V506, V507, V508, V509, V510, V511, V512, V513, V525, V613, V714, V715 |</p></li>
+</ol>
+<p>Additioanlly, you should update the variables and value labels objects. They must have information only for the selected columns. The new dataframes should be name as <code class="docutils literal notranslate"><span class="pre">rec1_1</span></code>, <code class="docutils literal notranslate"><span class="pre">rec2_1</span></code>, and <code class="docutils literal notranslate"><span class="pre">rec3_1</span></code>. The new varible labels objects should be named as <code class="docutils literal notranslate"><span class="pre">new_var_labels1</span></code>, <code class="docutils literal notranslate"><span class="pre">new_var_labels2</span></code>, and <code class="docutils literal notranslate"><span class="pre">new_var_labels3</span></code>. The new value labels objects should be named as <code class="docutils literal notranslate"><span class="pre">new_value_labels1</span></code>, <code class="docutils literal notranslate"><span class="pre">new_value_labels2</span></code>, and <code class="docutils literal notranslate"><span class="pre">new_value_labels3</span></code> <strong>Hint: Use the <code class="docutils literal notranslate"><span class="pre">loc</span></code> and column names to filter. Update the dictionary.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Make a dictionary of the columns in each data set that should be chosen</span>
+<span class="n">var_filter</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;rec1&quot;</span><span class="p">:[</span><span class="s1">&#39;CASEID&#39;</span><span class="p">,</span> <span class="s1">&#39;V000&#39;</span><span class="p">,</span> <span class="s1">&#39;V001&#39;</span><span class="p">,</span> <span class="s1">&#39;V002&#39;</span><span class="p">,</span> <span class="s1">&#39;V003&#39;</span><span class="p">,</span> <span class="s1">&#39;V004&#39;</span><span class="p">,</span> <span class="s1">&#39;V007&#39;</span><span class="p">,</span> <span class="s1">&#39;V008&#39;</span><span class="p">,</span> <span class="s1">&#39;V009&#39;</span><span class="p">,</span> <span class="s1">&#39;V010&#39;</span><span class="p">,</span> <span class="s1">&#39;V011&#39;</span><span class="p">,</span> <span class="s1">&#39;V012&#39;</span><span class="p">,</span> <span class="s1">&#39;V024&#39;</span><span class="p">,</span> <span class="s1">&#39;V102&#39;</span><span class="p">,</span> <span class="s1">&#39;V120&#39;</span><span class="p">,</span> <span class="s1">&#39;V121&#39;</span><span class="p">,</span> <span class="s1">&#39;V122&#39;</span><span class="p">,</span> <span class="s1">&#39;V123&#39;</span><span class="p">,</span> <span class="s1">&#39;V124&#39;</span><span class="p">,</span> <span class="s1">&#39;V125&#39;</span><span class="p">,</span> <span class="s1">&#39;V127&#39;</span><span class="p">,</span> <span class="s1">&#39;V133&#39;</span><span class="p">],</span>
+    <span class="s2">&quot;rec2&quot;</span><span class="p">:[</span><span class="s1">&#39;CASEID&#39;</span><span class="p">,</span> <span class="s1">&#39;V201&#39;</span><span class="p">,</span> <span class="s1">&#39;V218&#39;</span><span class="p">,</span> <span class="s1">&#39;V301&#39;</span><span class="p">,</span> <span class="s1">&#39;V302&#39;</span><span class="p">,</span> <span class="s1">&#39;V323&#39;</span><span class="p">,</span> <span class="s1">&#39;V323A&#39;</span><span class="p">,</span> <span class="s1">&#39;V325A&#39;</span><span class="p">,</span> <span class="s1">&#39;V326&#39;</span><span class="p">,</span> <span class="s1">&#39;V327&#39;</span><span class="p">,</span> <span class="s1">&#39;V337&#39;</span><span class="p">,</span> <span class="s1">&#39;V359&#39;</span><span class="p">,</span> <span class="s1">&#39;V360&#39;</span><span class="p">,</span> <span class="s1">&#39;V361&#39;</span><span class="p">,</span> <span class="s1">&#39;V362&#39;</span><span class="p">,</span> <span class="s1">&#39;V363&#39;</span><span class="p">,</span> <span class="s1">&#39;V364&#39;</span><span class="p">,</span> <span class="s1">&#39;V367&#39;</span><span class="p">,</span> <span class="s1">&#39;V372&#39;</span><span class="p">,</span> <span class="s1">&#39;V372A&#39;</span><span class="p">,</span> <span class="s1">&#39;V375A&#39;</span><span class="p">,</span> <span class="s1">&#39;V376&#39;</span><span class="p">,</span> <span class="s1">&#39;V376A&#39;</span><span class="p">,</span> <span class="s1">&#39;V379&#39;</span><span class="p">,</span> <span class="s1">&#39;V380&#39;</span><span class="p">],</span>
+    <span class="s2">&quot;rec3&quot;</span><span class="p">:[</span><span class="s1">&#39;CASEID&#39;</span><span class="p">,</span> <span class="s1">&#39;V501&#39;</span><span class="p">,</span> <span class="s1">&#39;V502&#39;</span><span class="p">,</span> <span class="s1">&#39;V503&#39;</span><span class="p">,</span> <span class="s1">&#39;V504&#39;</span><span class="p">,</span> <span class="s1">&#39;V505&#39;</span><span class="p">,</span> <span class="s1">&#39;V506&#39;</span><span class="p">,</span> <span class="s1">&#39;V507&#39;</span><span class="p">,</span> <span class="s1">&#39;V508&#39;</span><span class="p">,</span> <span class="s1">&#39;V509&#39;</span><span class="p">,</span> <span class="s1">&#39;V510&#39;</span><span class="p">,</span> <span class="s1">&#39;V511&#39;</span><span class="p">,</span> <span class="s1">&#39;V512&#39;</span><span class="p">,</span> <span class="s1">&#39;V513&#39;</span><span class="p">,</span> <span class="s1">&#39;V525&#39;</span><span class="p">,</span> <span class="s1">&#39;V613&#39;</span><span class="p">,</span> <span class="s1">&#39;V714&#39;</span><span class="p">,</span> <span class="s1">&#39;V715&#39;</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="c1"># Update objects with the new dictionary and name them according the instructions</span>
+<span class="c1"># In dataframes, use &quot;loc&quot; to select columns </span>
+<span class="n">rec1_1</span> <span class="o">=</span> <span class="n">rec_1</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">var_filter</span><span class="p">[</span><span class="s2">&quot;rec1&quot;</span><span class="p">]]</span>
+<span class="n">rec2_1</span> <span class="o">=</span> <span class="n">rec_2</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">var_filter</span><span class="p">[</span><span class="s2">&quot;rec2&quot;</span><span class="p">]]</span>
+<span class="n">rec3_1</span> <span class="o">=</span> <span class="n">rec_3</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">var_filter</span><span class="p">[</span><span class="s2">&quot;rec3&quot;</span><span class="p">]]</span>
+
+<span class="c1"># In dictionaries, use &quot;for&quot; to select values by key </span>
+<span class="n">new_var_labels1</span> <span class="o">=</span> <span class="p">{</span><span class="n">key</span><span class="p">:</span> <span class="n">var_labels1</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">var_filter</span><span class="p">[</span><span class="s2">&quot;rec1&quot;</span><span class="p">]}</span>
+<span class="n">new_var_labels2</span> <span class="o">=</span> <span class="p">{</span><span class="n">key</span><span class="p">:</span> <span class="n">var_labels2</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">var_filter</span><span class="p">[</span><span class="s2">&quot;rec2&quot;</span><span class="p">]}</span>
+<span class="n">new_var_labels3</span> <span class="o">=</span> <span class="p">{</span><span class="n">key</span><span class="p">:</span> <span class="n">var_labels3</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">var_filter</span><span class="p">[</span><span class="s2">&quot;rec3&quot;</span><span class="p">]}</span>
+
+<span class="c1"># In dictionaries of value labels, indicate that the key is in the list of columns selected</span>
+<span class="n">new_value_labels1</span> <span class="o">=</span> <span class="p">{</span><span class="n">key</span><span class="p">:</span> <span class="n">value_labels1</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">var_filter</span><span class="p">[</span><span class="s2">&quot;rec1&quot;</span><span class="p">]</span> <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">value_labels1</span><span class="p">}</span>
+<span class="n">new_value_labels2</span> <span class="o">=</span> <span class="p">{</span><span class="n">key</span><span class="p">:</span> <span class="n">value_labels2</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">var_filter</span><span class="p">[</span><span class="s2">&quot;rec2&quot;</span><span class="p">]</span> <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">value_labels2</span><span class="p">}</span>
+<span class="n">new_value_labels3</span> <span class="o">=</span> <span class="p">{</span><span class="n">key</span><span class="p">:</span> <span class="n">value_labels3</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">var_filter</span><span class="p">[</span><span class="s2">&quot;rec3&quot;</span><span class="p">]</span> <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">value_labels3</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Generate a new column for <code class="docutils literal notranslate"><span class="pre">rec1_1</span></code> named as <code class="docutils literal notranslate"><span class="pre">year</span></code>. It should be equal to <code class="docutils literal notranslate"><span class="pre">2019</span></code>. Also, you must update this new variable for the <code class="docutils literal notranslate"><span class="pre">var_labels</span></code> dictionary. Generate a new key for <code class="docutils literal notranslate"><span class="pre">new_var_labels1</span></code> and the value for this key should be <strong>“Year of the survey”</strong> <strong>Hint: Use <code class="docutils literal notranslate"><span class="pre">loc</span></code> and <code class="docutils literal notranslate"><span class="pre">update</span></code> method.</strong></p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Generate a new column named &quot;year&quot; with value 2019</span>
+<span class="n">rec1_1</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;year&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2019</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Generate a new key on &quot;new_var_labels1&quot; with value &quot;Year of the survey&quot;</span>
+<span class="n">new_var_labels1</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;year&quot;</span><span class="p">:</span> <span class="s2">&quot;Year of the survey&quot;</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Merge <code class="docutils literal notranslate"><span class="pre">rec1_1</span></code>, <code class="docutils literal notranslate"><span class="pre">rec2_1</span></code>, and <code class="docutils literal notranslate"><span class="pre">rec3_1</span></code> using <strong>CASEID</strong>. Name this new object as <code class="docutils literal notranslate"><span class="pre">endes_2019</span></code>. <strong>Hint: Use <a class="reference external" href="https://stackoverflow.com/questions/53645882/pandas-merging-101">this link</a></strong></p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Merge rec1_1 and rec2_1 using the variable &quot;CASEID&quot;, keeping all rows of both dataframe</span>
+<span class="n">rec_1_rec_2</span> <span class="o">=</span> <span class="n">rec1_1</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span> <span class="n">rec2_1</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;CASEID&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;outer&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Merge rec_1_rec_2 and rec3_1 using the variable &quot;CASEID&quot;, keeping all rows of both dataframe. The new dataframe is</span>
+<span class="c1"># named as &quot;endes_2019&quot;</span>
+<span class="n">endes_2019</span> <span class="o">=</span> <span class="n">rec_1_rec_2</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span> <span class="n">rec3_1</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;CASEID&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;outer&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>Unify all the <code class="docutils literal notranslate"><span class="pre">new_var_labels</span></code> in one object and <code class="docutils literal notranslate"><span class="pre">new_value_labels</span></code> in another one object. Name these two objects as <code class="docutils literal notranslate"><span class="pre">var_labels</span></code> and <code class="docutils literal notranslate"><span class="pre">value_labels</span></code>. Use them to generate new attributes for <code class="docutils literal notranslate"><span class="pre">endes_2019</span></code>. These attributes should be named as <code class="docutils literal notranslate"><span class="pre">var_labels</span></code> and <code class="docutils literal notranslate"><span class="pre">value_labels</span></code>. <strong>Hint: Use <code class="docutils literal notranslate"><span class="pre">update</span></code> method.</strong></p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># create an empty dictionary called var_labels and creates an empty dictionary called value_labels</span>
+<span class="n">var_labels</span>   <span class="o">=</span> <span class="p">{}</span>
+<span class="n">value_labels</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="c1"># update() is used to add the contents </span>
+<span class="n">var_labels</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">new_var_labels1</span><span class="p">)</span>
+<span class="n">var_labels</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">new_var_labels2</span><span class="p">)</span>
+<span class="n">var_labels</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">new_var_labels3</span><span class="p">)</span>
+<span class="n">value_labels</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">new_value_labels1</span><span class="p">)</span>
+<span class="n">value_labels</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">new_value_labels2</span><span class="p">)</span>
+<span class="n">value_labels</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">new_value_labels3</span><span class="p">)</span>
+<span class="c1">#generate new attributes for endes_2019 using the var_labels and value_labels objects</span>
+<span class="n">endes_2019</span><span class="o">.</span><span class="n">var_labels</span>   <span class="o">=</span> <span class="n">var_labels</span>
+<span class="n">endes_2019</span><span class="o">.</span><span class="n">value_labels</span> <span class="o">=</span> <span class="n">value_labels</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="6">
+<li><p>Get the min, max, sd, n_obs, n_missing for the following columns <strong>total children ever born (V201)</strong>, <strong>Ideal number of children (V613)</strong>, <strong>Husbands education-single yrs (V715)</strong>, and <strong>Age at first marriage (V511)</strong>. We want a dataframe with the following columns <strong>Variables, Min, Max, Mean, N_obs, N_missing</strong> and sort by the number of missing rows. <strong>Hint: Use <code class="docutils literal notranslate"><span class="pre">describe</span></code> and <code class="docutils literal notranslate"><span class="pre">pivot</span></code> methods</strong></p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># We convert category variables V613 and V715 to float, imputing 0 for errors</span>
+<span class="n">endes_2019</span><span class="p">[</span><span class="s2">&quot;V613&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">endes_2019</span><span class="p">[</span><span class="s2">&quot;V613&quot;</span><span class="p">],</span> <span class="n">errors</span><span class="o">=</span><span class="s1">&#39;coerce&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">endes_2019</span><span class="p">[</span><span class="s2">&quot;V715&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">endes_2019</span><span class="p">[</span><span class="s2">&quot;V715&quot;</span><span class="p">],</span> <span class="n">errors</span><span class="o">=</span><span class="s1">&#39;coerce&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># Indicate columns of interest</span>
+<span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;V201&quot;</span><span class="p">,</span> <span class="s2">&quot;V613&quot;</span><span class="p">,</span> <span class="s2">&quot;V715&quot;</span><span class="p">,</span> <span class="s2">&quot;V511&quot;</span><span class="p">]</span>
+
+<span class="c1"># Sumarize statistics for the selected columns</span>
+<span class="n">stats</span> <span class="o">=</span> <span class="n">endes_2019</span><span class="p">[</span><span class="n">cols</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">(</span><span class="n">include</span> <span class="o">=</span> <span class="s1">&#39;all&#39;</span><span class="p">)</span>
+
+<span class="c1"># Use the pivot to reshape the output </span>
+<span class="n">pivot_stats</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">loc</span>
+
+<span class="c1"># Select only statistic specified in the instructions</span>
+<span class="n">pivot_stats</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,[</span><span class="s2">&quot;min&quot;</span><span class="p">,</span> <span class="s2">&quot;max&quot;</span><span class="p">,</span> <span class="s2">&quot;mean&quot;</span><span class="p">,</span> <span class="s2">&quot;count&quot;</span><span class="p">]]</span>
+
+<span class="c1"># Rename the index column</span>
+<span class="n">pivot_stats</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Variables&#39;</span>
+
+<span class="c1"># Rename other columns</span>
+<span class="n">pivot_stats</span> <span class="o">=</span> <span class="n">pivot_stats</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;min&#39;</span><span class="p">:</span> <span class="s1">&#39;Min&#39;</span><span class="p">,</span> <span class="s1">&#39;max&#39;</span><span class="p">:</span> <span class="s1">&#39;Max&#39;</span><span class="p">,</span> <span class="s2">&quot;mean&quot;</span><span class="p">:</span> <span class="s2">&quot;Mean&quot;</span><span class="p">,</span> <span class="s2">&quot;count&quot;</span> <span class="p">:</span> <span class="s2">&quot;N_obs&quot;</span><span class="p">})</span>
+
+<span class="c1"># Add column with n_missing</span>
+<span class="n">pivot_stats</span><span class="p">[</span><span class="s1">&#39;n_missing&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">endes_2019</span><span class="p">[</span><span class="n">cols</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+<span class="c1"># Add column with n_obs</span>
+<span class="n">pivot_stats</span><span class="p">[</span><span class="s1">&#39;N_obs&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">endes_2019</span><span class="p">[</span><span class="n">cols</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+
+<span class="c1"># Sort the dataframe by n_missing</span>
+<span class="n">pivot_stats</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;n_missing&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Print the resulting DataFrame</span>
+<span class="n">pivot_stats</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Min</th>
+      <th>Max</th>
+      <th>Mean</th>
+      <th>N_obs</th>
+      <th>n_missing</th>
+    </tr>
+    <tr>
+      <th>Variables</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>V511</th>
+      <td>10.0</td>
+      <td>48.0</td>
+      <td>20.463738</td>
+      <td>25881</td>
+      <td>12454</td>
+    </tr>
+    <tr>
+      <th>V201</th>
+      <td>0.0</td>
+      <td>13.0</td>
+      <td>1.781946</td>
+      <td>36922</td>
+      <td>1413</td>
+    </tr>
+    <tr>
+      <th>V613</th>
+      <td>0.0</td>
+      <td>20.0</td>
+      <td>2.005843</td>
+      <td>38335</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>V715</th>
+      <td>0.0</td>
+      <td>17.0</td>
+      <td>7.196113</td>
+      <td>38335</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<ol class="arabic simple" start="7">
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">endes_2019</span></code> data to generate a new object named <code class="docutils literal notranslate"><span class="pre">mean_key_vars</span></code> to find the mean of <strong>total children ever born (V201)</strong>, <strong>Ideal number of children (V613)</strong>, <strong>Husbands education-single yrs (V715)</strong>, and <strong>Age at first marriage (V511)</strong> by year and department <strong>(V024)</strong>. Name these columns as <strong>mean_total_children, mean_ideal_children, mean_hb_yr_educ and mean_first_marriage</strong>, respectively. <strong>Hint: Use groupby and <a class="reference external" href="https://stackoverflow.com/questions/40901770/is-there-a-simple-way-to-change-a-column-of-yes-no-to-1-0-in-a-pandas-dataframe">this link</a>.</strong></p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#We creat mean_key_vars using groupby and mean, then we rename the columns</span>
+<span class="n">mean_key_vars</span> <span class="o">=</span> <span class="n">endes_2019</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;V024&#39;</span><span class="p">])[[</span><span class="s2">&quot;V201&quot;</span><span class="p">,</span> <span class="s2">&quot;V613&quot;</span><span class="p">,</span> <span class="s2">&quot;V715&quot;</span><span class="p">,</span> <span class="s2">&quot;V511&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">mean_key_vars</span> <span class="o">=</span> <span class="n">mean_key_vars</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;V201&quot;</span><span class="p">:</span> <span class="s2">&quot;mean_total_children&quot;</span><span class="p">,</span> <span class="s2">&quot;V613&quot;</span><span class="p">:</span> <span class="s2">&quot;mean_ideal_children&quot;</span><span class="p">,</span> <span class="s2">&quot;V715&quot;</span><span class="p">:</span> <span class="s2">&quot;mean_hb_yr_educ&quot;</span><span class="p">,</span> <span class="s2">&quot;V511&quot;</span><span class="p">:</span> <span class="s2">&quot;mean_first_marriage&quot;</span><span class="p">})</span>
+<span class="n">mean_key_vars</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mean_total_children</th>
+      <th>mean_ideal_children</th>
+      <th>mean_hb_yr_educ</th>
+      <th>mean_first_marriage</th>
+    </tr>
+    <tr>
+      <th>V024</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Huanuco</th>
+      <td>1.989754</td>
+      <td>2.120134</td>
+      <td>5.916779</td>
+      <td>19.818632</td>
+    </tr>
+    <tr>
+      <th>Ica</th>
+      <td>1.671034</td>
+      <td>2.101615</td>
+      <td>7.790713</td>
+      <td>20.747208</td>
+    </tr>
+    <tr>
+      <th>Junin</th>
+      <td>1.836656</td>
+      <td>1.973323</td>
+      <td>7.781250</td>
+      <td>20.683761</td>
+    </tr>
+    <tr>
+      <th>La Libertad</th>
+      <td>1.704082</td>
+      <td>2.019485</td>
+      <td>6.363953</td>
+      <td>20.774678</td>
+    </tr>
+    <tr>
+      <th>Lambayeque</th>
+      <td>1.673928</td>
+      <td>2.080287</td>
+      <td>7.355091</td>
+      <td>20.953831</td>
+    </tr>
+    <tr>
+      <th>Lima</th>
+      <td>1.476121</td>
+      <td>1.860333</td>
+      <td>7.082324</td>
+      <td>21.946329</td>
+    </tr>
+    <tr>
+      <th>Loreto</th>
+      <td>2.157568</td>
+      <td>2.092671</td>
+      <td>6.662023</td>
+      <td>18.448529</td>
+    </tr>
+    <tr>
+      <th>Madre de Dios</th>
+      <td>1.972514</td>
+      <td>1.997613</td>
+      <td>7.844073</td>
+      <td>19.467449</td>
+    </tr>
+    <tr>
+      <th>Moquegua</th>
+      <td>1.626724</td>
+      <td>1.749380</td>
+      <td>8.940447</td>
+      <td>21.640046</td>
+    </tr>
+    <tr>
+      <th>Pasco</th>
+      <td>1.854436</td>
+      <td>2.177352</td>
+      <td>7.027477</td>
+      <td>20.395379</td>
+    </tr>
+    <tr>
+      <th>Piura</th>
+      <td>1.812752</td>
+      <td>2.281148</td>
+      <td>6.649054</td>
+      <td>20.451737</td>
+    </tr>
+    <tr>
+      <th>Puno</th>
+      <td>1.794307</td>
+      <td>1.804878</td>
+      <td>7.527552</td>
+      <td>20.398964</td>
+    </tr>
+    <tr>
+      <th>San Martin</th>
+      <td>1.903340</td>
+      <td>2.238732</td>
+      <td>7.080282</td>
+      <td>18.953155</td>
+    </tr>
+    <tr>
+      <th>Tacna</th>
+      <td>1.436502</td>
+      <td>1.816974</td>
+      <td>7.921033</td>
+      <td>22.065095</td>
+    </tr>
+    <tr>
+      <th>Tumbes</th>
+      <td>1.756925</td>
+      <td>2.205321</td>
+      <td>7.963165</td>
+      <td>19.409821</td>
+    </tr>
+    <tr>
+      <th>Ucayali</th>
+      <td>2.012258</td>
+      <td>2.085256</td>
+      <td>7.558333</td>
+      <td>18.985481</td>
+    </tr>
+    <tr>
+      <th>Amazonas</th>
+      <td>1.980892</td>
+      <td>2.098406</td>
+      <td>6.771310</td>
+      <td>19.266152</td>
+    </tr>
+    <tr>
+      <th>Ancash</th>
+      <td>1.771065</td>
+      <td>2.069625</td>
+      <td>6.954093</td>
+      <td>20.591581</td>
+    </tr>
+    <tr>
+      <th>Apurimac</th>
+      <td>2.003463</td>
+      <td>1.920513</td>
+      <td>7.439316</td>
+      <td>20.064982</td>
+    </tr>
+    <tr>
+      <th>Arequipa</th>
+      <td>1.539910</td>
+      <td>1.874822</td>
+      <td>7.985775</td>
+      <td>22.304394</td>
+    </tr>
+    <tr>
+      <th>Ayacucho</th>
+      <td>1.848787</td>
+      <td>1.968948</td>
+      <td>7.079040</td>
+      <td>20.340228</td>
+    </tr>
+    <tr>
+      <th>Cajamarca</th>
+      <td>1.931559</td>
+      <td>2.205204</td>
+      <td>5.982900</td>
+      <td>19.610695</td>
+    </tr>
+    <tr>
+      <th>Callao</th>
+      <td>1.567164</td>
+      <td>1.870263</td>
+      <td>7.244059</td>
+      <td>21.517241</td>
+    </tr>
+    <tr>
+      <th>Cusco</th>
+      <td>1.894415</td>
+      <td>1.815966</td>
+      <td>7.380672</td>
+      <td>20.283154</td>
+    </tr>
+    <tr>
+      <th>Huancavelica</th>
+      <td>2.083969</td>
+      <td>1.950833</td>
+      <td>6.339167</td>
+      <td>19.780769</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<ol class="arabic simple" start="8">
+<li><p>Reshape <code class="docutils literal notranslate"><span class="pre">mean_key_vars</span></code> from wide to long. We want a dataframe with three columns <strong>dpto, variables, values</strong>. Name this object as <code class="docutils literal notranslate"><span class="pre">reshape_mean_key_vars</span></code>. <strong>Hint: Use melt method</strong>.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#We add V024 to mean_key_vars before making the reshape using melt method</span>
+<span class="n">mean_key_vars</span><span class="p">[</span><span class="s1">&#39;V024&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">endes_2019</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;V024&#39;</span><span class="p">])[</span><span class="s1">&#39;V024&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
+<span class="n">reshape_mean_key_vars</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span><span class="n">mean_key_vars</span><span class="p">,</span> <span class="n">id_vars</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;V024&quot;</span><span class="p">],</span> <span class="n">value_vars</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;mean_total_children&quot;</span><span class="p">,</span> <span class="s2">&quot;mean_ideal_children&quot;</span><span class="p">,</span> <span class="s2">&quot;mean_hb_yr_educ&quot;</span><span class="p">,</span> <span class="s2">&quot;mean_first_marriage&quot;</span><span class="p">])</span>
+<span class="n">reshape_mean_key_vars</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>V024</th>
+      <th>variable</th>
+      <th>value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Huanuco</td>
+      <td>mean_total_children</td>
+      <td>1.989754</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Ica</td>
+      <td>mean_total_children</td>
+      <td>1.671034</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Junin</td>
+      <td>mean_total_children</td>
+      <td>1.836656</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>La Libertad</td>
+      <td>mean_total_children</td>
+      <td>1.704082</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Lambayeque</td>
+      <td>mean_total_children</td>
+      <td>1.673928</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>95</th>
+      <td>Ayacucho</td>
+      <td>mean_first_marriage</td>
+      <td>20.340228</td>
+    </tr>
+    <tr>
+      <th>96</th>
+      <td>Cajamarca</td>
+      <td>mean_first_marriage</td>
+      <td>19.610695</td>
+    </tr>
+    <tr>
+      <th>97</th>
+      <td>Callao</td>
+      <td>mean_first_marriage</td>
+      <td>21.517241</td>
+    </tr>
+    <tr>
+      <th>98</th>
+      <td>Cusco</td>
+      <td>mean_first_marriage</td>
+      <td>20.283154</td>
+    </tr>
+    <tr>
+      <th>99</th>
+      <td>Huancavelica</td>
+      <td>mean_first_marriage</td>
+      <td>19.780769</td>
+    </tr>
+  </tbody>
+</table>
+<p>100 rows × 3 columns</p>
+</div></div></div>
+</div>
+<ol class="arabic simple" start="9">
+<li><p>Replicate your answers for questions 7 and 8, but in one line of code. Make it the most simple as possible. <strong>NO HINT</strong></p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use the agg function to calculate two statistics (mean and first) at the same time. Then replicate process of questions 7 &amp; 8 </span>
+<span class="n">endes_2019</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;V024&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s1">&#39;V201&#39;</span><span class="p">:</span> <span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;V613&#39;</span><span class="p">:</span> <span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;V715&#39;</span><span class="p">:</span> <span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;V511&#39;</span><span class="p">:</span> <span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;V024&#39;</span><span class="p">:</span> <span class="s1">&#39;first&#39;</span><span class="p">})</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;V201&#39;</span><span class="p">:</span> <span class="s1">&#39;mean_total_children&#39;</span><span class="p">,</span> <span class="s1">&#39;V613&#39;</span><span class="p">:</span> <span class="s1">&#39;mean_ideal_children&#39;</span><span class="p">,</span> <span class="s1">&#39;V715&#39;</span><span class="p">:</span> <span class="s1">&#39;mean_hb_yr_educ&#39;</span><span class="p">,</span> <span class="s1">&#39;V511&#39;</span><span class="p">:</span> <span class="s1">&#39;mean_first_marriage&#39;</span><span class="p">})</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span><span class="n">id_vars</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;V024&quot;</span><span class="p">],</span> <span class="n">value_vars</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;mean_total_children&quot;</span><span class="p">,</span> <span class="s2">&quot;mean_ideal_children&quot;</span><span class="p">,</span> <span class="s2">&quot;mean_hb_yr_educ&quot;</span><span class="p">,</span> <span class="s2">&quot;mean_first_marriage&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>V024</th>
+      <th>variable</th>
+      <th>value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Huanuco</td>
+      <td>mean_total_children</td>
+      <td>1.989754</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Ica</td>
+      <td>mean_total_children</td>
+      <td>1.671034</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Junin</td>
+      <td>mean_total_children</td>
+      <td>1.836656</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>La Libertad</td>
+      <td>mean_total_children</td>
+      <td>1.704082</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Lambayeque</td>
+      <td>mean_total_children</td>
+      <td>1.673928</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>95</th>
+      <td>Ayacucho</td>
+      <td>mean_first_marriage</td>
+      <td>20.340228</td>
+    </tr>
+    <tr>
+      <th>96</th>
+      <td>Cajamarca</td>
+      <td>mean_first_marriage</td>
+      <td>19.610695</td>
+    </tr>
+    <tr>
+      <th>97</th>
+      <td>Callao</td>
+      <td>mean_first_marriage</td>
+      <td>21.517241</td>
+    </tr>
+    <tr>
+      <th>98</th>
+      <td>Cusco</td>
+      <td>mean_first_marriage</td>
+      <td>20.283154</td>
+    </tr>
+    <tr>
+      <th>99</th>
+      <td>Huancavelica</td>
+      <td>mean_first_marriage</td>
+      <td>19.780769</td>
+    </tr>
+  </tbody>
+</table>
+<p>100 rows × 3 columns</p>
+</div></div></div>
+</div>
+<ol class="arabic simple" start="10">
+<li><p>Merge <code class="docutils literal notranslate"><span class="pre">reshape_mean_key_vars</span></code> with <code class="docutils literal notranslate"><span class="pre">endes_2019</span></code>. Name this object <code class="docutils literal notranslate"><span class="pre">final_result</span></code>. <strong>Hint: Use merge.</strong></p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Merge the reshaped dataframe with the original dataframe, using a left join and specifying a many-to-many validation</span>
+<span class="n">final_result</span> <span class="o">=</span> <span class="n">reshape_mean_key_vars</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">endes_2019</span><span class="p">,</span> <span class="n">on</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;V024&#39;</span><span class="p">],</span> <span class="n">how</span> <span class="o">=</span> <span class="s2">&quot;left&quot;</span><span class="p">,</span> <span class="n">validate</span> <span class="o">=</span> <span class="s2">&quot;m:m&quot;</span> <span class="p">)</span>
+<span class="n">final_result</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>V024</th>
+      <th>variable</th>
+      <th>value</th>
+      <th>CASEID</th>
+      <th>V000</th>
+      <th>V001</th>
+      <th>V002</th>
+      <th>V003</th>
+      <th>V004</th>
+      <th>V007</th>
+      <th>...</th>
+      <th>V508</th>
+      <th>V509</th>
+      <th>V510</th>
+      <th>V511</th>
+      <th>V512</th>
+      <th>V513</th>
+      <th>V525</th>
+      <th>V613</th>
+      <th>V714</th>
+      <th>V715</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Huanuco</td>
+      <td>mean_total_children</td>
+      <td>1.989754</td>
+      <td>052003101  4</td>
+      <td>PE6</td>
+      <td>520.0</td>
+      <td>31.0</td>
+      <td>4.0</td>
+      <td>520.0</td>
+      <td>2019.0</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Nunca casada</td>
+      <td>17.0</td>
+      <td>3.0</td>
+      <td>No</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Huanuco</td>
+      <td>mean_total_children</td>
+      <td>1.989754</td>
+      <td>052003102  4</td>
+      <td>PE6</td>
+      <td>520.0</td>
+      <td>31.0</td>
+      <td>4.0</td>
+      <td>520.0</td>
+      <td>2019.0</td>
+      <td>...</td>
+      <td>2005.0</td>
+      <td>1264.0</td>
+      <td>Tiene mes y año</td>
+      <td>21.0</td>
+      <td>14.0</td>
+      <td>De 10 a 14 años</td>
+      <td>20.0</td>
+      <td>2.0</td>
+      <td>Sí</td>
+      <td>14.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Huanuco</td>
+      <td>mean_total_children</td>
+      <td>1.989754</td>
+      <td>052006101  2</td>
+      <td>PE6</td>
+      <td>520.0</td>
+      <td>61.0</td>
+      <td>2.0</td>
+      <td>520.0</td>
+      <td>2019.0</td>
+      <td>...</td>
+      <td>1998.0</td>
+      <td>1177.0</td>
+      <td>Tiene mes y año</td>
+      <td>27.0</td>
+      <td>21.0</td>
+      <td>De 20 a 24 años</td>
+      <td>27.0</td>
+      <td>3.0</td>
+      <td>Sí</td>
+      <td>13.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Huanuco</td>
+      <td>mean_total_children</td>
+      <td>1.989754</td>
+      <td>052007201  2</td>
+      <td>PE6</td>
+      <td>520.0</td>
+      <td>72.0</td>
+      <td>2.0</td>
+      <td>520.0</td>
+      <td>2019.0</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Huanuco</td>
+      <td>mean_total_children</td>
+      <td>1.989754</td>
+      <td>052008201  1</td>
+      <td>PE6</td>
+      <td>520.0</td>
+      <td>82.0</td>
+      <td>1.0</td>
+      <td>520.0</td>
+      <td>2019.0</td>
+      <td>...</td>
+      <td>2017.0</td>
+      <td>1411.0</td>
+      <td>Tiene mes y año</td>
+      <td>31.0</td>
+      <td>1.0</td>
+      <td>De 0 a 4 años</td>
+      <td>19.0</td>
+      <td>2.0</td>
+      <td>Sí</td>
+      <td>16.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>153335</th>
+      <td>Huancavelica</td>
+      <td>mean_first_marriage</td>
+      <td>19.780769</td>
+      <td>213507901  2</td>
+      <td>PE6</td>
+      <td>2135.0</td>
+      <td>79.0</td>
+      <td>2.0</td>
+      <td>2135.0</td>
+      <td>2019.0</td>
+      <td>...</td>
+      <td>1992.0</td>
+      <td>1112.0</td>
+      <td>Tiene mes y año</td>
+      <td>18.0</td>
+      <td>27.0</td>
+      <td>De 25 a 29 años</td>
+      <td>17.0</td>
+      <td>3.0</td>
+      <td>Sí</td>
+      <td>4.0</td>
+    </tr>
+    <tr>
+      <th>153336</th>
+      <td>Huancavelica</td>
+      <td>mean_first_marriage</td>
+      <td>19.780769</td>
+      <td>213507901  3</td>
+      <td>PE6</td>
+      <td>2135.0</td>
+      <td>79.0</td>
+      <td>3.0</td>
+      <td>2135.0</td>
+      <td>2019.0</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Nunca casada</td>
+      <td>Nunca tuvo relaciones sexuales</td>
+      <td>1.0</td>
+      <td>Sí</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>153337</th>
+      <td>Huancavelica</td>
+      <td>mean_first_marriage</td>
+      <td>19.780769</td>
+      <td>213507901  4</td>
+      <td>PE6</td>
+      <td>2135.0</td>
+      <td>79.0</td>
+      <td>4.0</td>
+      <td>2135.0</td>
+      <td>2019.0</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Nunca casada</td>
+      <td>14.0</td>
+      <td>2.0</td>
+      <td>No</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>153338</th>
+      <td>Huancavelica</td>
+      <td>mean_first_marriage</td>
+      <td>19.780769</td>
+      <td>213507901  5</td>
+      <td>PE6</td>
+      <td>2135.0</td>
+      <td>79.0</td>
+      <td>5.0</td>
+      <td>2135.0</td>
+      <td>2019.0</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>153339</th>
+      <td>Huancavelica</td>
+      <td>mean_first_marriage</td>
+      <td>19.780769</td>
+      <td>213508001  2</td>
+      <td>PE6</td>
+      <td>2135.0</td>
+      <td>80.0</td>
+      <td>2.0</td>
+      <td>2135.0</td>
+      <td>2019.0</td>
+      <td>...</td>
+      <td>2000.0</td>
+      <td>1209.0</td>
+      <td>Tiene mes y año</td>
+      <td>14.0</td>
+      <td>19.0</td>
+      <td>De 15 a 19 años</td>
+      <td>14.0</td>
+      <td>3.0</td>
+      <td>Sí</td>
+      <td>4.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>153340 rows × 66 columns</p>
+</div></div></div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="group_8_ass_2_2022.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">1 Assignment</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Lecture_4.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">4. If and Loops</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Cristian Serrano
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,1481 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Total children by cohort &#8212; Clases de Python</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorial_1';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="&lt;no title&gt;" href="tutorial_data_generation.html" />
+    <link rel="prev" title="1. Quantities:" href="Visualitazion.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Clases de Pyhton de la Diplomatura de Ciencia de Datos
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="Lecture_2.html">Introduction to Python: Tuples, Lists, Dictionaries, Arrays</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="group_8_ass_1_2022.html">1 Assignment</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Lecture_3.html">3. <a id="intro">Pandas</a></a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="group_8_ass_2_2022.html">1 Assignment</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="group_1_ass_3_2022.html">1 Assignment 3</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Lecture_4.html">4. If and Loops</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="group_1_ass_4_2022.html">Assigment 4</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture_5.html">5. Functions and Class</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Lecture_6.html">Inheritance, Private Variables, Fixed attributes, Costumize Exceptions with Python</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="lecture_7R.html">7. Web Scraping</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Lecture_8.html">8. API</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Visualitazion.html">1. Quantities:</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Geopandas1.html">¿Geopandas?</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Folium.html">FOLIUM:</a></li>
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Causal_Infenrece.html">1 Causal Inference</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="NLP_Tutorial.html">NLP</a></li>
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Ftutorial_1.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/tutorial_1.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Total children by cohort</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Total children by cohort</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#first-sex-relationship">First sex relationship</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#total-children-ever-born-by-cohort-and-wife-and-husband-education">Total children ever born by cohort and wife and husband education</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">pickle</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">savReaderWriter</span> <span class="k">as</span> <span class="nn">sav</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
+<span class="kn">from</span> <span class="nn">IPython.core.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">HTML</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Legend</span>
+<span class="kn">import</span> <span class="nn">matplotlib.patches</span> <span class="k">as</span> <span class="nn">mpatches</span>
+<span class="kn">import</span> <span class="nn">matplotlib.lines</span> <span class="k">as</span> <span class="nn">mlines</span>
+<span class="kn">import</span> <span class="nn">unidecode</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">16</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Importing data</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span> <span class="sa">r</span><span class="s1">&#39;../_data/data_endes.pickle&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span>\<span class="n">ipykernel_17396</span>\<span class="mf">441731810.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Importing data</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="k">with</span> <span class="nb">open</span><span class="p">(</span> <span class="sa">r</span><span class="s1">&#39;../_data/data_endes.pickle&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="n">df</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span> <span class="p">)</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;../_data/data_endes.pickle&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Check Unique ID</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">CASEID</span> <span class="o">+</span> <span class="n">df</span><span class="o">.</span><span class="n">year</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span> <span class="nb">str</span> <span class="p">))</span><span class="o">.</span><span class="n">is_unique</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>From CMC to datetime. Info about datetime use <a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime.strptime">this link</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+
+<span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span> <span class="sa">f</span><span class="s1">&#39;09-02-2019&#39;</span><span class="p">,</span> <span class="s1">&#39;%m-</span><span class="si">%d</span><span class="s1">-%Y&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2019, 9, 2, 0, 0)
+</pre></div>
+</div>
+</div>
+</div>
+<p>See <a class="reference external" href="https://demographicestimation.iussp.org/content/dhs-century-month-codes">this article</a> to convert CMC to datetime</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">cmc_date</span><span class="p">(</span> <span class="n">cmc</span> <span class="p">):</span>
+    <span class="n">year</span> <span class="o">=</span> <span class="mi">1900</span> <span class="o">+</span> <span class="nb">int</span><span class="p">(</span> <span class="p">(</span> <span class="n">cmc</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">)</span> <span class="o">/</span> <span class="mi">12</span> <span class="p">)</span>
+    <span class="n">month</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span> <span class="n">cmc</span> <span class="o">-</span> <span class="mi">12</span><span class="o">*</span><span class="p">(</span> <span class="n">year</span> <span class="o">-</span> <span class="mi">1900</span> <span class="p">)</span> <span class="p">)</span>
+    <span class="n">datetime_object</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">month</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;%m/%Y&#39;</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">datetime_object</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span> <span class="s1">&#39;inerview_date&#39;</span> <span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">V008</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">cmc_date</span><span class="p">(</span> <span class="n">x</span> <span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span> <span class="s1">&#39;inerview_month&#39;</span> <span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span> <span class="s1">&#39;inerview_date&#39;</span> <span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span> <span class="s2">&quot;%b&quot;</span> <span class="p">)</span>
+<span class="n">df</span><span class="p">[</span> <span class="s1">&#39;inerview_month1&#39;</span> <span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span> <span class="s1">&#39;inerview_date&#39;</span> <span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">month</span>
+<span class="n">df</span><span class="p">[</span> <span class="s1">&#39;inerview_year&#39;</span> <span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span> <span class="s1">&#39;inerview_date&#39;</span> <span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">year</span>
+<span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span> <span class="s1">&#39;inerview_month1&#39;</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Settin</span>
+
+<span class="n">fig1</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">catplot</span><span class="p">(</span> <span class="n">data</span> <span class="o">=</span> <span class="n">df</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;inerview_month&#39;</span><span class="p">,</span> <span class="n">kind</span> <span class="o">=</span> <span class="s1">&#39;count&#39;</span><span class="p">,</span>
+            <span class="n">hue</span> <span class="o">=</span> <span class="s1">&#39;inerview_year&#39;</span><span class="p">,</span> 
+            <span class="n">palette</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">(</span><span class="s2">&quot;mako_r&quot;</span><span class="p">,</span> <span class="mi">5</span> <span class="p">),</span> 
+            <span class="n">legend</span> <span class="o">=</span> <span class="kc">False</span> <span class="p">)</span>
+
+
+<span class="n">fig1</span><span class="o">.</span><span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">8</span> <span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span> <span class="s2">&quot;Number of Interviews&quot;</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span> <span class="s2">&quot;Month&quot;</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span> <span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="n">bbox_to_anchor</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.15</span><span class="p">,</span> <span class="mi">1</span> <span class="p">),</span> <span class="n">loc</span> <span class="o">=</span> <span class="mi">0</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x283d646a730&gt;
+</pre></div>
+</div>
+<img alt="_images/c9e6785d08f5ba8ad184a69d6b0a0a9e746c918b56acc4d9926d818e235f4b92.png" src="_images/c9e6785d08f5ba8ad184a69d6b0a0a9e746c918b56acc4d9926d818e235f4b92.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Settin</span>
+<span class="n">fig1</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">catplot</span><span class="p">(</span> <span class="n">data</span> <span class="o">=</span> <span class="n">df</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;inerview_month&#39;</span><span class="p">,</span> <span class="n">kind</span> <span class="o">=</span> <span class="s1">&#39;count&#39;</span><span class="p">,</span>
+            <span class="n">col</span> <span class="o">=</span> <span class="s1">&#39;inerview_year&#39;</span><span class="p">,</span> <span class="n">col_wrap</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span>
+            <span class="n">legend</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>  <span class="n">color</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">)</span> <span class="p">)</span>
+
+<span class="c1"># Fix figure size</span>
+<span class="n">fig1</span><span class="o">.</span><span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">14</span> <span class="p">)</span>
+
+<span class="c1"># Fix title </span>
+<span class="c1"># add space between plots and title</span>
+<span class="n">fig1</span><span class="o">.</span><span class="n">fig</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">top</span><span class="o">=</span><span class="mf">0.9</span><span class="p">)</span>
+<span class="n">fig1</span><span class="o">.</span><span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span> <span class="s2">&quot;Number of Interview by Month and Year&quot;</span><span class="p">,</span> 
+                <span class="n">size</span> <span class="o">=</span> <span class="mi">18</span>  <span class="p">)</span>
+
+<span class="c1"># Add vertical space between plots</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span> <span class="n">hspace</span> <span class="o">=</span> <span class="mf">0.2</span> <span class="p">)</span>
+
+<span class="c1"># Set axis labels</span>
+<span class="n">fig1</span><span class="o">.</span><span class="n">set_axis_labels</span><span class="p">(</span> <span class="s2">&quot;Month&quot;</span><span class="p">,</span> <span class="s2">&quot;Number of Interviews&quot;</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">15</span> <span class="p">)</span>
+
+<span class="c1"># Change title for each subplot</span>
+<span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="n">fig1</span><span class="o">.</span><span class="n">axes_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+    <span class="n">fig1</span><span class="o">.</span><span class="n">axes_dict</span><span class="p">[</span> <span class="n">year</span> <span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span> <span class="sa">f</span><span class="s1">&#39;Interview Year - </span><span class="si">{</span> <span class="n">year</span> <span class="si">}</span><span class="s1">&#39;</span> <span class="p">)</span>
+    
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/3d9a14ab9c8095d4384af527928c309b3e67d752d712e2473b5476f166253e5e.png" src="_images/3d9a14ab9c8095d4384af527928c309b3e67d752d712e2473b5476f166253e5e.png" />
+</div>
+</div>
+<p>Distribution of Age</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig2</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">displot</span><span class="p">(</span> <span class="n">data</span> <span class="o">=</span> <span class="n">df</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;V012&#39;</span><span class="p">,</span> <span class="n">hue</span> <span class="o">=</span> <span class="s1">&#39;year&#39;</span><span class="p">,</span> 
+            <span class="n">palette</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">(</span><span class="s2">&quot;mako_r&quot;</span><span class="p">,</span> <span class="mi">5</span> <span class="p">),</span> 
+           <span class="n">kind</span> <span class="o">=</span> <span class="s2">&quot;kde&quot;</span> <span class="p">)</span>
+
+
+<span class="c1"># Make title</span>
+<span class="n">fig2</span><span class="o">.</span><span class="n">fig</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">top</span><span class="o">=</span><span class="mf">0.9</span><span class="p">)</span>
+<span class="n">fig2</span><span class="o">.</span><span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span> <span class="s2">&quot;Distribution of Interviewed Age by Surveys Year&quot;</span><span class="p">,</span> 
+                <span class="n">size</span> <span class="o">=</span> <span class="mi">14</span> <span class="p">)</span>
+
+<span class="c1"># Change legend title</span>
+<span class="n">fig2</span><span class="o">.</span><span class="n">_legend</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span> <span class="s2">&quot;Year&quot;</span> <span class="p">)</span>
+
+<span class="c1"># Set axis labels</span>
+<span class="n">fig2</span><span class="o">.</span><span class="n">set_axis_labels</span><span class="p">(</span> <span class="s2">&quot;Age&quot;</span><span class="p">,</span> <span class="s2">&quot;Density&quot;</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">15</span> <span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/f504471bd585682cc2cd801d67cf4b7ce2564137694a155e3194ff9548e8eed7.png" src="_images/f504471bd585682cc2cd801d67cf4b7ce2564137694a155e3194ff9548e8eed7.png" />
+</div>
+</div>
+<p>Distribution Total children ever born by place of residence</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">V102</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;Urbano&#39;, &#39;Rural&#39;, nan, &#39;Urbana&#39;, &#39;Urban&#39;], dtype=object)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span> <span class="s1">&#39;urban&#39;</span> <span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">V102</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">df</span><span class="p">[</span> <span class="s1">&#39;urban&#39;</span> <span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span> <span class="s1">&#39;Urbana&#39;</span><span class="p">,</span> <span class="s1">&#39;Urbano&#39;</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span> <span class="p">)</span>
+<span class="n">df</span><span class="p">[</span> <span class="s1">&#39;urban&#39;</span> <span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span> <span class="s1">&#39;Urban&#39;</span><span class="p">,</span> <span class="s1">&#39;Urbano&#39;</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;var_labels&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;2015&#39;: {&#39;CASEID&#39;: &#39;Case Identification&#39;,
+  &#39;V000&#39;: &#39;Country code and phase&#39;,
+  &#39;V001&#39;: &#39;Cluster number&#39;,
+  &#39;V002&#39;: &#39;Household number&#39;,
+  &#39;V003&#39;: &quot;Respondent&#39;s line number&quot;,
+  &#39;V004&#39;: &#39;Ultimate area unit&#39;,
+  &#39;V008&#39;: &#39;Date of interview (CMC)&#39;,
+  &#39;V009&#39;: &quot;Respondent&#39;s month of birth&quot;,
+  &#39;V010&#39;: &quot;Respondent&#39;s year of birth&quot;,
+  &#39;V011&#39;: &#39;Date of birth (CMC)&#39;,
+  &#39;V012&#39;: &#39;Current age - respondent&#39;,
+  &#39;V024&#39;: &#39;Region&#39;,
+  &#39;V102&#39;: &#39;Type of place of residence&#39;,
+  &#39;V120&#39;: &#39;Has radio&#39;,
+  &#39;V121&#39;: &#39;Has television&#39;,
+  &#39;V122&#39;: &#39;Has refrigerator&#39;,
+  &#39;V123&#39;: &#39;Has bicycle&#39;,
+  &#39;V124&#39;: &#39;Has motorcycle/scooter&#39;,
+  &#39;V125&#39;: &#39;Has car/truck&#39;,
+  &#39;V127&#39;: &#39;Main floor material&#39;,
+  &#39;V133&#39;: &#39;Education in single years&#39;,
+  &#39;year&#39;: &#39;Year of the survey&#39;,
+  &#39;V201&#39;: &#39;Total children ever born&#39;,
+  &#39;V218&#39;: &#39;Number of living children&#39;,
+  &#39;V301&#39;: &#39;Knowledge of any method&#39;,
+  &#39;V302&#39;: &#39;Ever use of any method&#39;,
+  &#39;V323&#39;: &#39;Brand of pill used&#39;,
+  &#39;V323A&#39;: &#39;Brand of condom used&#39;,
+  &#39;V325A&#39;: &#39;Cost of current method&#39;,
+  &#39;V326&#39;: &#39;Last source for current users&#39;,
+  &#39;V327&#39;: &#39;Last source for users by type&#39;,
+  &#39;V337&#39;: &#39;Months of use of current method&#39;,
+  &#39;V359&#39;: &#39;Last method disc. last 5 years&#39;,
+  &#39;V360&#39;: &#39;Reason of last discontinuation&#39;,
+  &#39;V361&#39;: &#39;Pattern of use&#39;,
+  &#39;V362&#39;: &#39;Intention to use&#39;,
+  &#39;V363&#39;: &#39;Preferred future method&#39;,
+  &#39;V364&#39;: &#39;Contraceptive use &amp; intention&#39;,
+  &#39;V367&#39;: &#39;Wanted last child&#39;,
+  &#39;V372&#39;: &#39;Shown pill package&#39;,
+  &#39;V372A&#39;: &#39;Shown condom package&#39;,
+  &#39;V375A&#39;: &#39;Main reason not using a method&#39;,
+  &#39;V376&#39;: &#39;Main reason not to use a meth.&#39;,
+  &#39;V376A&#39;: &#39;Would ever use method if marr.&#39;,
+  &#39;V379&#39;: &#39;Source known for any method&#39;,
+  &#39;V380&#39;: &#39;Source known for any method&#39;,
+  &#39;V501&#39;: &#39;Current marital status&#39;,
+  &#39;V502&#39;: &#39;Currently/formerly/never marr.&#39;,
+  &#39;V503&#39;: &#39;Number of unions&#39;,
+  &#39;V504&#39;: &#39;Husband lives in house&#39;,
+  &#39;V505&#39;: &#39;Number of other wives&#39;,
+  &#39;V506&#39;: &#39;Wife rank number&#39;,
+  &#39;V507&#39;: &#39;Month of first marriage&#39;,
+  &#39;V508&#39;: &#39;Year of first marriage&#39;,
+  &#39;V509&#39;: &#39;Date of first marriage (CMC)&#39;,
+  &#39;V510&#39;: &#39;Completeness of date inform.&#39;,
+  &#39;V511&#39;: &#39;Age at first marriage&#39;,
+  &#39;V512&#39;: &#39;Years since first marriage&#39;,
+  &#39;V513&#39;: &#39;Marital duration (grouped)&#39;,
+  &#39;V525&#39;: &#39;Age at first intercourse&#39;,
+  &#39;V613&#39;: &#39;Ideal number of children&#39;,
+  &#39;V714&#39;: &#39;Respondent currently working&#39;,
+  &#39;V715&#39;: &#39;Husbands education-single yrs&#39;},
+ &#39;2016&#39;: {&#39;CASEID&#39;: &#39;Case Identification&#39;,
+  &#39;V000&#39;: &#39;Country code and phase&#39;,
+  &#39;V001&#39;: &#39;Cluster number&#39;,
+  &#39;V002&#39;: &#39;Household number&#39;,
+  &#39;V003&#39;: &quot;Respondent&#39;s line number&quot;,
+  &#39;V004&#39;: &#39;Ultimate area unit&#39;,
+  &#39;V008&#39;: &#39;Date of interview (CMC)&#39;,
+  &#39;V009&#39;: &quot;Respondent&#39;s month of birth&quot;,
+  &#39;V010&#39;: &quot;Respondent&#39;s year of birth&quot;,
+  &#39;V011&#39;: &#39;Date of birth (CMC)&#39;,
+  &#39;V012&#39;: &#39;Current age - respondent&#39;,
+  &#39;V024&#39;: &#39;Region&#39;,
+  &#39;V102&#39;: &#39;Type of place of residence&#39;,
+  &#39;V120&#39;: &#39;Has radio&#39;,
+  &#39;V121&#39;: &#39;Has television&#39;,
+  &#39;V122&#39;: &#39;Has refrigerator&#39;,
+  &#39;V123&#39;: &#39;Has bicycle&#39;,
+  &#39;V124&#39;: &#39;Has motorcycle/scooter&#39;,
+  &#39;V125&#39;: &#39;Has car/truck&#39;,
+  &#39;V127&#39;: &#39;Main floor material&#39;,
+  &#39;V133&#39;: &#39;Education in single years&#39;,
+  &#39;year&#39;: &#39;Year of the survey&#39;,
+  &#39;V201&#39;: &#39;Total children ever born&#39;,
+  &#39;V218&#39;: &#39;Number of living children&#39;,
+  &#39;V301&#39;: &#39;Knowledge of any method&#39;,
+  &#39;V302&#39;: &#39;Ever use of any method&#39;,
+  &#39;V323&#39;: &#39;Brand of pill used&#39;,
+  &#39;V323A&#39;: &#39;Brand of condom used&#39;,
+  &#39;V325A&#39;: &#39;Cost of current method&#39;,
+  &#39;V326&#39;: &#39;Last source for current users&#39;,
+  &#39;V327&#39;: &#39;Last source for users by type&#39;,
+  &#39;V337&#39;: &#39;Months of use of current method&#39;,
+  &#39;V359&#39;: &#39;Last method disc. last 5 years&#39;,
+  &#39;V360&#39;: &#39;Reason of last discontinuation&#39;,
+  &#39;V361&#39;: &#39;Pattern of use&#39;,
+  &#39;V362&#39;: &#39;Intention to use&#39;,
+  &#39;V363&#39;: &#39;Preferred future method&#39;,
+  &#39;V364&#39;: &#39;Contraceptive use &amp; intention&#39;,
+  &#39;V367&#39;: &#39;Wanted last child&#39;,
+  &#39;V372&#39;: &#39;Shown pill package&#39;,
+  &#39;V372A&#39;: &#39;Shown condom package&#39;,
+  &#39;V375A&#39;: &#39;Main reason not using a method&#39;,
+  &#39;V376&#39;: &#39;Main reason not to use a meth.&#39;,
+  &#39;V376A&#39;: &#39;Would ever use method if marr.&#39;,
+  &#39;V379&#39;: &#39;Source known for any method&#39;,
+  &#39;V380&#39;: &#39;Source known for any method&#39;,
+  &#39;V501&#39;: &#39;Current marital status&#39;,
+  &#39;V502&#39;: &#39;Currently/formerly/never marr.&#39;,
+  &#39;V503&#39;: &#39;Number of unions&#39;,
+  &#39;V504&#39;: &#39;Husband lives in house&#39;,
+  &#39;V505&#39;: &#39;Number of other wives&#39;,
+  &#39;V506&#39;: &#39;Wife rank number&#39;,
+  &#39;V507&#39;: &#39;Month of first marriage&#39;,
+  &#39;V508&#39;: &#39;Year of first marriage&#39;,
+  &#39;V509&#39;: &#39;Date of first marriage (CMC)&#39;,
+  &#39;V510&#39;: &#39;Completeness of date inform.&#39;,
+  &#39;V511&#39;: &#39;Age at first marriage&#39;,
+  &#39;V512&#39;: &#39;Years since first marriage&#39;,
+  &#39;V513&#39;: &#39;Marital duration (grouped)&#39;,
+  &#39;V525&#39;: &#39;Age at first intercourse&#39;,
+  &#39;V613&#39;: &#39;Ideal number of children&#39;,
+  &#39;V714&#39;: &#39;Respondent currently working&#39;,
+  &#39;V715&#39;: &#39;Husbands education-single yrs&#39;},
+ &#39;2017&#39;: {&#39;CASEID&#39;: &#39;Case Identification&#39;,
+  &#39;V000&#39;: &#39;Country code and phase&#39;,
+  &#39;V001&#39;: &#39;Cluster number&#39;,
+  &#39;V002&#39;: &#39;Household number&#39;,
+  &#39;V003&#39;: &quot;Respondent&#39;s line number&quot;,
+  &#39;V004&#39;: &#39;Ultimate area unit&#39;,
+  &#39;V008&#39;: &#39;Date of interview (CMC)&#39;,
+  &#39;V009&#39;: &quot;Respondent&#39;s month of birth&quot;,
+  &#39;V010&#39;: &quot;Respondent&#39;s year of birth&quot;,
+  &#39;V011&#39;: &#39;Date of birth (CMC)&#39;,
+  &#39;V012&#39;: &#39;Current age - respondent&#39;,
+  &#39;V024&#39;: &#39;Region&#39;,
+  &#39;V102&#39;: &#39;Type of place of residence&#39;,
+  &#39;V120&#39;: &#39;Has radio&#39;,
+  &#39;V121&#39;: &#39;Has television&#39;,
+  &#39;V122&#39;: &#39;Has refrigerator&#39;,
+  &#39;V123&#39;: &#39;Has bicycle&#39;,
+  &#39;V124&#39;: &#39;Has motorcycle/scooter&#39;,
+  &#39;V125&#39;: &#39;Has car/truck&#39;,
+  &#39;V127&#39;: &#39;Main floor material&#39;,
+  &#39;V133&#39;: &#39;Education in single years&#39;,
+  &#39;year&#39;: &#39;Year of the survey&#39;,
+  &#39;V201&#39;: &#39;Total children ever born&#39;,
+  &#39;V218&#39;: &#39;Number of living children&#39;,
+  &#39;V301&#39;: &#39;Knowledge of any method&#39;,
+  &#39;V302&#39;: &#39;Ever use of any method&#39;,
+  &#39;V323&#39;: &#39;Brand of pill used&#39;,
+  &#39;V323A&#39;: &#39;Brand of condom used&#39;,
+  &#39;V325A&#39;: &#39;Cost of current method&#39;,
+  &#39;V326&#39;: &#39;Last source for current users&#39;,
+  &#39;V327&#39;: &#39;Last source for users by type&#39;,
+  &#39;V337&#39;: &#39;Months of use of current method&#39;,
+  &#39;V359&#39;: &#39;Last method disc. last 5 years&#39;,
+  &#39;V360&#39;: &#39;Reason of last discontinuation&#39;,
+  &#39;V361&#39;: &#39;Pattern of use&#39;,
+  &#39;V362&#39;: &#39;Intention to use&#39;,
+  &#39;V363&#39;: &#39;Preferred future method&#39;,
+  &#39;V364&#39;: &#39;Contraceptive use &amp; intention&#39;,
+  &#39;V367&#39;: &#39;Wanted last child&#39;,
+  &#39;V372&#39;: &#39;Shown pill package&#39;,
+  &#39;V372A&#39;: &#39;Shown condom package&#39;,
+  &#39;V375A&#39;: &#39;Main reason not using a method&#39;,
+  &#39;V376&#39;: &#39;Main reason not to use a meth.&#39;,
+  &#39;V376A&#39;: &#39;Would ever use method if marr.&#39;,
+  &#39;V379&#39;: &#39;Source known for any method&#39;,
+  &#39;V380&#39;: &#39;Source known for any method&#39;,
+  &#39;V501&#39;: &#39;Current marital status&#39;,
+  &#39;V502&#39;: &#39;Currently/formerly/never marr.&#39;,
+  &#39;V503&#39;: &#39;Number of unions&#39;,
+  &#39;V504&#39;: &#39;Husband lives in house&#39;,
+  &#39;V505&#39;: &#39;Number of other wives&#39;,
+  &#39;V506&#39;: &#39;Wife rank number&#39;,
+  &#39;V507&#39;: &#39;Month of first marriage&#39;,
+  &#39;V508&#39;: &#39;Year of first marriage&#39;,
+  &#39;V509&#39;: &#39;Date of first marriage (CMC)&#39;,
+  &#39;V510&#39;: &#39;Completeness of date inform.&#39;,
+  &#39;V511&#39;: &#39;Age at first marriage&#39;,
+  &#39;V512&#39;: &#39;Years since first marriage&#39;,
+  &#39;V513&#39;: &#39;Marital duration (grouped)&#39;,
+  &#39;V525&#39;: &#39;Age at first intercourse&#39;,
+  &#39;V613&#39;: &#39;Ideal number of children&#39;,
+  &#39;V714&#39;: &#39;Respondent currently working&#39;,
+  &#39;V715&#39;: &#39;Husbands education-single yrs&#39;},
+ &#39;2018&#39;: {&#39;CASEID&#39;: &#39;Identificación Cuestionario Individual&#39;,
+  &#39;V000&#39;: &#39;Código del país&#39;,
+  &#39;V001&#39;: &#39;Número de conglomerado&#39;,
+  &#39;V002&#39;: &#39;Número de hogar&#39;,
+  &#39;V003&#39;: &#39;Número de línea de entrevistada&#39;,
+  &#39;V004&#39;: &#39;Ultima unidad de área&#39;,
+  &#39;V008&#39;: &#39;Fecha de entrevista (CMC)&#39;,
+  &#39;V009&#39;: &#39;Mes de nacimiento de la entrevistada&#39;,
+  &#39;V010&#39;: &#39;Año de nacimiento de la entrevistada&#39;,
+  &#39;V011&#39;: &#39;Fecha de nacimiento (CMC)&#39;,
+  &#39;V012&#39;: &#39;Edad actual - entrevistada&#39;,
+  &#39;V024&#39;: &#39;Región&#39;,
+  &#39;V102&#39;: &#39;Tipo de lugar de residencia&#39;,
+  &#39;V120&#39;: &#39;Tiene radio&#39;,
+  &#39;V121&#39;: &#39;Tiene televisión&#39;,
+  &#39;V122&#39;: &#39;Tiene refrigerador&#39;,
+  &#39;V123&#39;: &#39;Tiene bicicleta&#39;,
+  &#39;V124&#39;: &#39;Tiene motocicleta / scooter&#39;,
+  &#39;V125&#39;: &#39;Tiene carro o camión&#39;,
+  &#39;V127&#39;: &#39;Material principal del piso&#39;,
+  &#39;V133&#39;: &#39;Educación en años simples&#39;,
+  &#39;year&#39;: &#39;Year of the survey&#39;,
+  &#39;V201&#39;: &#39;Total de niños que alguna vez nacieron&#39;,
+  &#39;V218&#39;: &#39;Número de niños con vida&#39;,
+  &#39;V301&#39;: &#39;Conocimiento de algún método&#39;,
+  &#39;V302&#39;: &#39;Alguna vez usó algún método&#39;,
+  &#39;V323&#39;: &#39;Marca de píldora&#39;,
+  &#39;V323A&#39;: &#39;Marca de condón usado&#39;,
+  &#39;V325A&#39;: &#39;Costo del método actual&#39;,
+  &#39;V326&#39;: &#39;Ultima fuente para usuarios actuales&#39;,
+  &#39;V327&#39;: &#39;Ultima fuente para usuarios por tipo&#39;,
+  &#39;V337&#39;: &#39;Mes de uso del método actual&#39;,
+  &#39;V359&#39;: &#39;Ultimo método suspendido en los últimos 5 años&#39;,
+  &#39;V360&#39;: &#39;Motivo de la última suspensión&#39;,
+  &#39;V361&#39;: &#39;Patrón de uso&#39;,
+  &#39;V362&#39;: &#39;Intención de uso&#39;,
+  &#39;V363&#39;: &#39;Método preferido para el futuro&#39;,
+  &#39;V364&#39;: &#39;Uso e intención de anticoncepción&#39;,
+  &#39;V367&#39;: &#39;Quería último hijo&#39;,
+  &#39;V372&#39;: &#39;Empaque píldora visto&#39;,
+  &#39;V372A&#39;: &#39;Empaque de condón visto&#39;,
+  &#39;V375A&#39;: &#39;Razón principal por la que no usa método&#39;,
+  &#39;V376&#39;: &#39;Razón principal por la que no usaría método&#39;,
+  &#39;V376A&#39;: &#39;Usaría método si se casa&#39;,
+  &#39;V379&#39;: &#39;Fuente conocida para cualquier método&#39;,
+  &#39;V380&#39;: &#39;Fuente conocida para cualquier método&#39;,
+  &#39;V501&#39;: &#39;Estado conyugal actual&#39;,
+  &#39;V502&#39;: &#39;Actualmente/anteriormente/nunca casada&#39;,
+  &#39;V503&#39;: &#39;Número de uniones&#39;,
+  &#39;V504&#39;: &#39;Esposo vive en casa&#39;,
+  &#39;V505&#39;: &#39;Número de otras esposas&#39;,
+  &#39;V506&#39;: &#39;Número de clasificación de esposa&#39;,
+  &#39;V507&#39;: &#39;Mes de primer matrimonio&#39;,
+  &#39;V508&#39;: &#39;Año de primer matrimonio&#39;,
+  &#39;V509&#39;: &#39;Fecha de primer matrimonio (CMC)&#39;,
+  &#39;V510&#39;: &#39;Fecha de información completa&#39;,
+  &#39;V511&#39;: &#39;Edad en el primer matrimonio&#39;,
+  &#39;V512&#39;: &#39;Años desde el primer matrimonio&#39;,
+  &#39;V513&#39;: &#39;Duración de matrimonio (grupos)&#39;,
+  &#39;V525&#39;: &#39;Edad en la primera relación sexual&#39;,
+  &#39;V613&#39;: &#39;Número ideal de hijos&#39;,
+  &#39;V714&#39;: &#39;Entrevistada actualmente trabaja&#39;,
+  &#39;V715&#39;: &#39;Años simples de educación del esposo&#39;},
+ &#39;2019&#39;: {&#39;CASEID&#39;: &#39;Identificación Cuestionario Individual&#39;,
+  &#39;V000&#39;: &#39;Código y fase del país&#39;,
+  &#39;V001&#39;: &#39;Conglomerado&#39;,
+  &#39;V002&#39;: &#39;Número de vivienda&#39;,
+  &#39;V003&#39;: &#39;Número de línea de entrevistada&#39;,
+  &#39;V004&#39;: &#39;Unidad de área final&#39;,
+  &#39;V008&#39;: &#39;Fecha de la entrevista, Codificación centenaria de meses (CMC)&#39;,
+  &#39;V009&#39;: &#39;Mes de nacimiento de la entrevistada&#39;,
+  &#39;V010&#39;: &#39;Año de nacimiento de la entrevistada&#39;,
+  &#39;V011&#39;: &#39;Fecha de nacimiento, Codificación centenaria de meses (CMC)&#39;,
+  &#39;V012&#39;: &#39;Edad actual - entrevistada&#39;,
+  &#39;V024&#39;: &#39;Región&#39;,
+  &#39;V102&#39;: &#39;Tipo de lugar de residencia&#39;,
+  &#39;V120&#39;: &#39;En su hogar tiene: radio&#39;,
+  &#39;V121&#39;: &#39;En su hogar tiene: televisión&#39;,
+  &#39;V122&#39;: &#39;En su hogar tiene: refrigerador&#39;,
+  &#39;V123&#39;: &#39;En su hogar tiene: bicicleta&#39;,
+  &#39;V124&#39;: &#39;En su hogar tiene: motocicleta/motocar&#39;,
+  &#39;V125&#39;: &#39;En su hogar tiene: coche/camión&#39;,
+  &#39;V127&#39;: &#39;Material predominante del piso de la vivienda&#39;,
+  &#39;V133&#39;: &#39;Educación en años simples&#39;,
+  &#39;year&#39;: &#39;Year of the survey&#39;,
+  &#39;V201&#39;: &#39;Total de niños nacidos&#39;,
+  &#39;V218&#39;: &#39;Número de niños vivos&#39;,
+  &#39;V301&#39;: &#39;Conocimiento de cualquier método&#39;,
+  &#39;V302&#39;: &#39;Alguna vez usó cualquier método&#39;,
+  &#39;V323&#39;: &#39;Marca de la píldora usada&#39;,
+  &#39;V323A&#39;: &#39;Marca del preservativo utilizado&#39;,
+  &#39;V325A&#39;: &#39;Costo del método actual&#39;,
+  &#39;V326&#39;: &#39;Fuente para obtener el actual método anticonceptivo&#39;,
+  &#39;V327&#39;: &#39;Fuente para obtener el actual método anticonceptivo (Grupos)&#39;,
+  &#39;V337&#39;: &#39;Meses de uso del método actual&#39;,
+  &#39;V359&#39;: &#39;Última discontinuidad del método los últimos 5 años&#39;,
+  &#39;V360&#39;: &#39;Motivo de la última discontinuidad&#39;,
+  &#39;V361&#39;: &#39;Patrón de uso&#39;,
+  &#39;V362&#39;: &#39;Intención de uso&#39;,
+  &#39;V363&#39;: &#39;Método futuro preferido&#39;,
+  &#39;V364&#39;: &#39;Uso e intención de anticonceptivos&#39;,
+  &#39;V367&#39;: &#39;Quería quedar embarazada:&#39;,
+  &#39;V372&#39;: &#39;Se muestra el paquete de pastillas&#39;,
+  &#39;V372A&#39;: &#39;Se muestra el paquete de Condónes&#39;,
+  &#39;V375A&#39;: &#39;La razón principal para no utilizar un método&#39;,
+  &#39;V376&#39;: &#39;La razón principal por la que no piensa usar ningún método en el futuro&#39;,
+  &#39;V376A&#39;: &#39;Alguna vez usaría algún método&#39;,
+  &#39;V379&#39;: &#39;Fuente conocida por cualquier método&#39;,
+  &#39;V380&#39;: &#39;Fuente conocida por cualquier método (Grupos)&#39;,
+  &#39;V501&#39;: &#39;Estado civil actual&#39;,
+  &#39;V502&#39;: &#39;Actualmente, antes o nunca sacada&#39;,
+  &#39;V503&#39;: &#39;Usted ha estado casada o conviviendo solo una vez, más de una vez&#39;,
+  &#39;V504&#39;: &#39;Su esposo/compañer vive en el hogar o vive en otro lugar&#39;,
+  &#39;V505&#39;: &#39;Número de otras esposas&#39;,
+  &#39;V506&#39;: &#39;Número de rango de la esposa&#39;,
+  &#39;V507&#39;: &#39;Mes - Primer matrimonio&#39;,
+  &#39;V508&#39;: &#39;Año - Primer matrimonio&#39;,
+  &#39;V509&#39;: &#39;Fecha del primer matrimonio (CMC)&#39;,
+  &#39;V510&#39;: &#39;Integridad de la información para la fecha de inicio del primer matrimonio o unión&#39;,
+  &#39;V511&#39;: &#39;Edad al primer matrimonio&#39;,
+  &#39;V512&#39;: &#39;Años desde el primer matrimonio&#39;,
+  &#39;V513&#39;: &#39;Duración del matrimonio (agrupado)&#39;,
+  &#39;V525&#39;: &#39;Edad en la primera relación sexual&#39;,
+  &#39;V613&#39;: &#39;Número ideal de niños&#39;,
+  &#39;V714&#39;: &#39;Actualmente se encuentra trabajando&#39;,
+  &#39;V715&#39;: &#39;Educación en años individuales del esposo/compañero&#39;}}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot ploints</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">9</span> <span class="p">)</span> <span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">stripplot</span><span class="p">(</span> <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;V201&quot;</span><span class="p">,</span> <span class="n">hue</span> <span class="o">=</span> <span class="s2">&quot;year&quot;</span><span class="p">,</span> 
+                <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;urban&quot;</span><span class="p">,</span> 
+                <span class="n">data</span> <span class="o">=</span> <span class="n">df</span><span class="p">,</span> <span class="n">jitter</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+                <span class="n">palette</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">(</span><span class="s2">&quot;rocket&quot;</span><span class="p">,</span> <span class="mi">5</span> <span class="p">)[::</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> 
+                <span class="n">dodge</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> 
+                <span class="n">linewidth</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">edgecolor</span> <span class="o">=</span> <span class="s1">&#39;white&#39;</span> <span class="p">)</span>
+
+<span class="c1"># Plot boxplot</span>
+<span class="n">yx</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span> <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;V201&quot;</span><span class="p">,</span> <span class="n">hue</span> <span class="o">=</span> <span class="s2">&quot;year&quot;</span><span class="p">,</span> 
+                <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;urban&quot;</span><span class="p">,</span> 
+                <span class="n">data</span> <span class="o">=</span> <span class="n">df</span><span class="p">,</span> 
+                <span class="n">palette</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">(</span><span class="s2">&quot;rocket&quot;</span><span class="p">,</span> <span class="mi">5</span> <span class="p">)[::</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> 
+                <span class="n">fliersize</span> <span class="o">=</span> <span class="mi">0</span> <span class="p">)</span>
+
+<span class="c1"># Number of labels</span>
+<span class="n">yr</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">year</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span><span class="o">.</span><span class="n">size</span>
+
+<span class="c1"># Get legend labels and handles</span>
+<span class="n">handles</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="n">yx</span><span class="o">.</span><span class="n">get_legend_handles_labels</span><span class="p">()</span>
+
+<span class="c1"># When creating the legend, only use the first 5 elements</span>
+<span class="c1"># to effectively remove the last.</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">handles</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">yr</span><span class="p">],</span> <span class="n">labels</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">yr</span><span class="p">],</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">1.05</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> 
+           <span class="n">loc</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">borderaxespad</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;Year&quot;</span> <span class="p">)</span>
+
+<span class="c1"># x label</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span> <span class="s2">&quot;Type of place of residence&quot;</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span> <span class="s2">&quot;Total children ever born&quot;</span> <span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Total children ever born&#39;)
+</pre></div>
+</div>
+<img alt="_images/d3937d8e6cbe853663183d8cdd57657b0f6c59b5669669a6e75d807871c3f240.png" src="_images/d3937d8e6cbe853663183d8cdd57657b0f6c59b5669669a6e75d807871c3f240.png" />
+</div>
+</div>
+<section id="total-children-by-cohort">
+<h1>Total children by cohort<a class="headerlink" href="#total-children-by-cohort" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span> <span class="n">data</span> <span class="o">=</span> <span class="n">df</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;V010&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span> <span class="s2">&quot;Respondent&#39;s year of birth&quot;</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &quot;Respondent&#39;s year of birth&quot;)
+</pre></div>
+</div>
+<img alt="_images/a0bcf87708eb14f622885828b4c353543ae05fe94dad3dd102c0b7802109aee4.png" src="_images/a0bcf87708eb14f622885828b4c353543ae05fe94dad3dd102c0b7802109aee4.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span> <span class="n">data</span> <span class="o">=</span> <span class="n">df</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s1">&#39;V010&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span> <span class="s2">&quot;Respondent&#39;s year of birth&quot;</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &quot;Respondent&#39;s year of birth&quot;)
+</pre></div>
+</div>
+<img alt="_images/c393e1e0b0ecb8a7999990c7158c60bf68a8c9336f670902abe271093b9e58bd.png" src="_images/c393e1e0b0ecb8a7999990c7158c60bf68a8c9336f670902abe271093b9e58bd.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">gen_cohot</span><span class="p">(</span> <span class="n">series</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">5</span> <span class="p">):</span>
+    
+    <span class="n">min1</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span> <span class="p">(</span> <span class="p">(</span> <span class="n">series</span><span class="o">.</span><span class="n">min</span><span class="p">()</span> <span class="p">)</span> <span class="o">/</span> <span class="n">size</span><span class="p">)</span> <span class="p">)</span> <span class="o">*</span> <span class="n">size</span>
+    <span class="n">max1</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span> <span class="p">(</span> <span class="n">series</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="p">)</span> <span class="o">/</span> <span class="n">size</span><span class="p">)</span> <span class="p">)</span> <span class="o">*</span> <span class="n">size</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span> <span class="n">min1</span><span class="p">,</span> <span class="n">max1</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">,</span> <span class="mi">5</span> <span class="p">)</span>
+    <span class="n">labels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span> <span class="p">(</span> <span class="n">result</span><span class="p">[</span> <span class="mi">1</span><span class="p">:</span> <span class="p">]</span> <span class="o">+</span> <span class="n">result</span><span class="p">[</span> <span class="p">:</span><span class="o">-</span><span class="mi">1</span> <span class="p">]</span> <span class="p">)</span> <span class="o">/</span> <span class="mi">2</span> <span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span> <span class="nb">int</span> <span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">result</span><span class="p">,</span> <span class="n">labels</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gen_cohot</span><span class="p">(</span> <span class="n">df</span><span class="o">.</span><span class="n">V010</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">10</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([1960, 1965, 1970, 1975, 1980, 1985, 1990, 1995, 2000, 2005, 2010]),
+ array([1963, 1968, 1973, 1978, 1983, 1988, 1993, 1998, 2003, 2008]))
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cohorts</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="n">gen_cohot</span><span class="p">(</span> <span class="n">df</span><span class="o">.</span><span class="n">V010</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span> <span class="s1">&#39;birth_cohort&#39;</span> <span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">cut</span><span class="p">(</span> <span class="n">df</span><span class="o">.</span><span class="n">V010</span><span class="p">,</span> <span class="n">bins</span>  <span class="o">=</span> <span class="n">cohorts</span><span class="p">,</span> 
+                              <span class="n">include_lowest</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="n">labels</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot ploints</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">9</span> <span class="p">)</span> <span class="p">)</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">pointplot</span><span class="p">(</span> <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;birth_cohort&quot;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;V201&quot;</span><span class="p">,</span> 
+               <span class="n">data</span> <span class="o">=</span> <span class="n">df</span><span class="p">,</span> <span class="n">ci</span> <span class="o">=</span> <span class="s1">&#39;sd&#39;</span><span class="p">)</span>
+
+<span class="c1"># x label</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span> <span class="s2">&quot;Cohort&quot;</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span> <span class="s2">&quot;Total children ever born&quot;</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Total children ever born&#39;)
+</pre></div>
+</div>
+<img alt="_images/84b3f29952205ebdbd7e732fc56be440cc87408aafd709fc8e7ac85d20cc5d68.png" src="_images/84b3f29952205ebdbd7e732fc56be440cc87408aafd709fc8e7ac85d20cc5d68.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot ploints</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">9</span> <span class="p">)</span> <span class="p">)</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">pointplot</span><span class="p">(</span> <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;birth_cohort&quot;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;V201&quot;</span><span class="p">,</span> 
+               <span class="n">data</span> <span class="o">=</span> <span class="n">df</span><span class="p">,</span> <span class="n">ci</span> <span class="o">=</span> <span class="s1">&#39;sd&#39;</span><span class="p">,</span> <span class="n">hue</span> <span class="o">=</span> <span class="s1">&#39;urban&#39;</span><span class="p">,</span> 
+             <span class="n">dodge</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">,</span> 
+              <span class="n">linestyles</span> <span class="o">=</span> <span class="p">[</span> <span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="s2">&quot;--&quot;</span> <span class="p">]</span> <span class="p">)</span>
+
+<span class="c1"># x label</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span> <span class="s2">&quot;Cohort&quot;</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span> <span class="s2">&quot;Total children ever born&quot;</span> <span class="p">)</span>
+
+<span class="c1"># Change legend title</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span> <span class="n">title</span> <span class="o">=</span>  <span class="s2">&quot;Type of place</span><span class="se">\n</span><span class="s2"> of residence&quot;</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x283881bb7c0&gt;
+</pre></div>
+</div>
+<img alt="_images/9f5d50481db105bfbcbb98394718056334dbac0cf7d503df011debdc7f8da6b7.png" src="_images/9f5d50481db105bfbcbb98394718056334dbac0cf7d503df011debdc7f8da6b7.png" />
+</div>
+</div>
+</section>
+<section id="first-sex-relationship">
+<h1>First sex relationship<a class="headerlink" href="#first-sex-relationship" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">V525</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;Nunca tuvo relaciones sexuales&#39;, 20.0, 21.0, 17.0, 19.0, 18.0,
+       nan, 16.0, 13.0, 25.0, 14.0, 22.0, 15.0, 12.0, 27.0, 24.0, 28.0,
+       23.0, 26.0, 42.0, &#39;En la primera union&#39;, 29.0, 32.0, 35.0, 36.0,
+       31.0, 30.0, 37.0, 33.0, 11.0, 41.0, 34.0,
+       &#39;No ha tenido relación sexual&#39;, 38.0, &#39;En la primera unión&#39;, 40.0,
+       &#39;Not had intercourse&#39;, &#39;At first union&#39;, 43.0, 39.0, 10.0, 8.0,
+       7.0, 45.0, 44.0, 46.0, 47.0, 48.0], dtype=object)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span> <span class="s1">&#39;first_sex&#39;</span> <span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">V525</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">first_sex</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span> <span class="s1">&#39;Not had intercourse&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span> <span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">first_sex</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span> <span class="s1">&#39;No ha tenido relación sexual&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span> <span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">first_sex</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span> <span class="s1">&#39;Nunca tuvo relaciones sexuales&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span> <span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">first_sex</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span> <span class="s1">&#39;En la primera unión&#39;</span><span class="p">,</span> <span class="s1">&#39;At first union&#39;</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span> <span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">first_sex</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span> <span class="s1">&#39;En la primera union&#39;</span><span class="p">,</span> <span class="s1">&#39;At first union&#39;</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Filter values in variables</span>
+
+<span class="n">filter1</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">first_sex</span> <span class="o">==</span> <span class="s1">&#39;At first union&#39;</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span> <span class="n">filter1</span> <span class="p">,</span> <span class="s1">&#39;first_sex&#39;</span> <span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span> <span class="n">filter1</span> <span class="p">,</span> <span class="s1">&#39;V511&#39;</span> <span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">first_sex</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">first_sex</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span> <span class="nb">float</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">first_sex</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>155173     NaN
+151671     NaN
+151670    20.0
+151669    21.0
+151668     NaN
+          ... 
+133529    14.0
+133528     NaN
+133527    17.0
+133533    17.0
+182867    15.0
+Name: first_sex, Length: 182868, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Celaning region variable</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">displot</span><span class="p">(</span> <span class="n">data</span> <span class="o">=</span> <span class="n">df</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;first_sex&#39;</span><span class="p">,</span> 
+            <span class="n">kind</span> <span class="o">=</span> <span class="s1">&#39;kde&#39;</span><span class="p">,</span> <span class="n">col</span> <span class="o">=</span> <span class="s1">&#39;V024&#39;</span><span class="p">,</span> 
+            <span class="n">col_wrap</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> 
+            <span class="n">facet_kws</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;sharex&#39;</span> <span class="p">:</span> <span class="kc">False</span><span class="p">,</span> 
+                        <span class="s1">&#39;sharey&#39;</span> <span class="p">:</span> <span class="kc">False</span> <span class="p">},</span> 
+            <span class="n">hue</span> <span class="o">=</span> <span class="s1">&#39;urban&#39;</span>
+           <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x283820675e0&gt;
+</pre></div>
+</div>
+<img alt="_images/1e8a34862c9ee6e1e6454641c97152197bb8056d9b9d533628f943c167d3abf3.png" src="_images/1e8a34862c9ee6e1e6454641c97152197bb8056d9b9d533628f943c167d3abf3.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span> <span class="s1">&#39;dpto&#39;</span> <span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">V024</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">dpto</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">dpto</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">lstrip</span><span class="p">()</span> \
+            <span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span> <span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="s2">&quot;_&quot;</span> <span class="p">)</span> \
+            <span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> \
+            <span class="o">.</span><span class="n">apply</span><span class="p">(</span> <span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span>  <span class="n">unidecode</span><span class="o">.</span><span class="n">unidecode</span><span class="p">(</span> <span class="n">x</span> <span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">displot</span><span class="p">(</span> <span class="n">data</span> <span class="o">=</span> <span class="n">df</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;first_sex&#39;</span><span class="p">,</span> 
+            <span class="n">kind</span> <span class="o">=</span> <span class="s1">&#39;kde&#39;</span><span class="p">,</span> <span class="n">col</span> <span class="o">=</span> <span class="s1">&#39;dpto&#39;</span><span class="p">,</span> 
+            <span class="n">col_wrap</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> 
+            <span class="n">facet_kws</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;sharex&#39;</span> <span class="p">:</span> <span class="kc">False</span><span class="p">,</span> 
+                        <span class="s1">&#39;sharey&#39;</span> <span class="p">:</span> <span class="kc">False</span> <span class="p">},</span> 
+            <span class="n">hue</span> <span class="o">=</span> <span class="s1">&#39;urban&#39;</span>
+           <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x2838815c580&gt;
+</pre></div>
+</div>
+<img alt="_images/c25aa471be9e83adb5e2c9cd8bdef07f8cde8ada7ca5fa802d84b8a6fe50b214.png" src="_images/c25aa471be9e83adb5e2c9cd8bdef07f8cde8ada7ca5fa802d84b8a6fe50b214.png" />
+</div>
+</div>
+</section>
+<section id="total-children-ever-born-by-cohort-and-wife-and-husband-education">
+<h1>Total children ever born by cohort and wife and husband education<a class="headerlink" href="#total-children-ever-born-by-cohort-and-wife-and-husband-education" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span> <span class="s1">&#39;h_educ_yr&#39;</span> <span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">V715</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">h_educ_yr</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span> <span class="s1">&#39;No sabe&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span> <span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">h_educ_yr</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span> <span class="s2">&quot;Don&#39;t know&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span> <span class="p">(</span> <span class="n">df</span><span class="o">.</span><span class="n">V133</span> <span class="o">&lt;=</span> <span class="mi">12</span> <span class="p">),</span> <span class="s1">&#39;w_educ&#39;</span> <span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Low&#39;</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span> <span class="p">(</span> <span class="n">df</span><span class="o">.</span><span class="n">V133</span> <span class="o">&gt;</span> <span class="mi">12</span><span class="p">),</span> <span class="s1">&#39;w_educ&#39;</span> <span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;High&#39;</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span> <span class="p">(</span> <span class="n">df</span><span class="o">.</span><span class="n">h_educ_yr</span> <span class="o">&lt;=</span> <span class="mi">12</span> <span class="p">),</span> <span class="s1">&#39;h_educ_str&#39;</span> <span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Low&#39;</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span> <span class="p">(</span> <span class="n">df</span><span class="o">.</span><span class="n">h_educ_yr</span> <span class="o">&gt;</span> <span class="mi">12</span><span class="p">),</span> <span class="s1">&#39;h_educ_str&#39;</span> <span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;High&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot ploints</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">9</span> <span class="p">)</span> <span class="p">)</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">pointplot</span><span class="p">(</span> <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;birth_cohort&quot;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;V201&quot;</span><span class="p">,</span> 
+               <span class="n">data</span> <span class="o">=</span> <span class="n">df</span><span class="p">,</span> <span class="n">ci</span> <span class="o">=</span> <span class="s1">&#39;sd&#39;</span><span class="p">,</span> <span class="n">hue</span> <span class="o">=</span> <span class="s1">&#39;w_educ&#39;</span><span class="p">,</span> 
+             <span class="n">dodge</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">,</span> 
+              <span class="n">linestyles</span> <span class="o">=</span> <span class="p">[</span> <span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="s2">&quot;--&quot;</span> <span class="p">]</span> <span class="p">)</span>
+
+<span class="c1"># x label</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span> <span class="s2">&quot;Cohort&quot;</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span> <span class="s2">&quot;Total children ever born&quot;</span> <span class="p">)</span>
+
+<span class="c1"># Change legend title</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span> <span class="n">title</span> <span class="o">=</span>  <span class="s2">&quot;Wife Education&quot;</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x283964c5340&gt;
+</pre></div>
+</div>
+<img alt="_images/70118e3a527ec3f6d0e2b622ff8d1e8ff76dd688ebcbf434bfdfe5e661812023.png" src="_images/70118e3a527ec3f6d0e2b622ff8d1e8ff76dd688ebcbf434bfdfe5e661812023.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot ploints</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">9</span> <span class="p">)</span> <span class="p">)</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">pointplot</span><span class="p">(</span> <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;birth_cohort&quot;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;V201&quot;</span><span class="p">,</span> 
+               <span class="n">data</span> <span class="o">=</span> <span class="n">df</span><span class="p">,</span> <span class="n">ci</span> <span class="o">=</span> <span class="s1">&#39;sd&#39;</span><span class="p">,</span> <span class="n">hue</span> <span class="o">=</span> <span class="s1">&#39;h_educ_str&#39;</span><span class="p">,</span> 
+             <span class="n">dodge</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">,</span> 
+              <span class="n">linestyles</span> <span class="o">=</span> <span class="p">[</span> <span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="s2">&quot;--&quot;</span> <span class="p">]</span> <span class="p">)</span>
+
+<span class="c1"># x label</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span> <span class="s2">&quot;Cohort&quot;</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span> <span class="s2">&quot;Total children ever born&quot;</span> <span class="p">)</span>
+
+<span class="c1"># Change legend title</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span> <span class="n">title</span> <span class="o">=</span>  <span class="s2">&quot;Husband Education&quot;</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x283a17383a0&gt;
+</pre></div>
+</div>
+<img alt="_images/b2abdf5df70db42040f31e1c8f3a07c2b5933d87fe59873c5cfdd53c35c10ed9.png" src="_images/b2abdf5df70db42040f31e1c8f3a07c2b5933d87fe59873c5cfdd53c35c10ed9.png" />
+</div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Visualitazion.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">1. Quantities:</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="tutorial_data_generation.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">&lt;no title&gt;</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Total children by cohort</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#first-sex-relationship">First sex relationship</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#total-children-ever-born-by-cohort-and-wife-and-husband-education">Total children ever born by cohort and wife and husband education</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Cristian Serrano
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

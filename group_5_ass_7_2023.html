@@ -1,0 +1,885 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Assigment 7 &#8212; Clases de Python</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'group_5_ass_7_2023';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="1. Quantities:" href="Visualitazion.html" />
+    <link rel="prev" title="8.2 Twitter API" href="Tutorial_Twitter.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Clases de Pyhton de la Diplomatura de Ciencia de Datos
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="Lecture_2.html">Introduction to Python: Tuples, Lists, Dictionaries, Arrays</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="group_8_ass_1_2022.html">1 Assignment</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Lecture_3.html">3. <a id="intro">Pandas</a></a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="group_8_ass_2_2022.html">1 Assignment</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="group_1_ass_3_2022.html">1 Assignment 3</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Lecture_4.html">4. If and Loops</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="group_1_ass_4_2022.html">Assigment 4</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture_5.html">5. Functions and Class</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Lecture_6.html">Inheritance, Private Variables, Fixed attributes, Costumize Exceptions with Python</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="lecture_7R.html">7. Web Scraping</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Lecture_8.html">8. API</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Visualitazion.html">1. Quantities:</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Geopandas1.html">¿Geopandas?</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Folium.html">FOLIUM:</a></li>
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Causal_Infenrece.html">1 Causal Inference</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="NLP_Tutorial.html">NLP</a></li>
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fgroup_5_ass_7_2023.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/group_5_ass_7_2023.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Assigment 7</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Assigment 7</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-the-dataframe-with-bbva-offices-in-lima">1. Generating the DataFrame with BBVA offices in Lima</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#geocoding-bbva-offices-in-lima">2. Geocoding BBVA offices in Lima</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#obtaining-the-driving-time-from-our-directions-to-bbva-offices">3. Obtaining the driving time from our directions to BBVA offices</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-the-report-of-the-nearest-and-furthest-from-every-team-member">4. Generating the report of the Nearest and Furthest from every team member</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="assigment-7">
+<h1>Assigment 7<a class="headerlink" href="#assigment-7" title="Permalink to this heading">#</a></h1>
+<p>This assigment will be graded if everything works well. I will run the script as once and everything should be done without errors and mistakes. I should be able to run your scripts in my computer and get all the results. <strong>USE RELATIVE PATHS</strong>. An error or exception or anything that breaks the code will means NO GRADE (0). Additionally, you are not able to modify any file handly. It also means NO GRADE (0). Comment everything you think will help others read your script. We expect 0 errors using GitHub. Everything will be graded!</p>
+<p><strong>ASK EVERYTHING! WE ARE HERE TO HELP YOU!</strong></p>
+<p><strong>GET YOUR GOOGLE API AND TOKEN. YOU WILL NEED THEM TO DO THIS TASK.</strong></p>
+<ol class="arabic simple">
+<li><p>Import Data from <a class="reference external" href="https://www.bbva.pe/content/dam/public-web/peru/documents/personas/canales-de-atencion/oficinas/Oficinas-BBVA-abiertas-23.10.20.pdf">this url</a>. This dataset is in PDF format. You have to convert to PandasDataFrame and keep only the BBVA offices in LIMA.</p></li>
+<li><p>Use GoogleMaps API and geocode all the BBVA offices. For those offices that Google API gets no information, use internet and get the latitude and longitude handly and add them to dataset.</p></li>
+<li><p>Use Google API to find the driving time (best guess) from all the group members’ address and all the LIMA BBVA offices.</p></li>
+<li><p>Finally, you have to give a report which offices are the most closest and furthest to every group member’s address.</p></li>
+</ol>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="generating-the-dataframe-with-bbva-offices-in-lima">
+<h1>1. Generating the DataFrame with BBVA offices in Lima<a class="headerlink" href="#generating-the-dataframe-with-bbva-offices-in-lima" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Installing tabula packages to extract info from PDF files</span>
+<span class="o">!</span>pip install tabula
+<span class="o">!</span>pip install tabula-py
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: tabula in c:\anaconda\lib\site-packages (1.0.5)
+Requirement already satisfied: numpy in c:\anaconda\lib\site-packages (from tabula) (1.21.5)
+Requirement already satisfied: setuptools in c:\anaconda\lib\site-packages (from tabula) (63.4.1)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: tabula-py in c:\anaconda\lib\site-packages (2.7.0)
+Requirement already satisfied: distro in c:\anaconda\lib\site-packages (from tabula-py) (1.8.0)
+Requirement already satisfied: numpy in c:\anaconda\lib\site-packages (from tabula-py) (1.21.5)
+Requirement already satisfied: pandas&gt;=0.25.3 in c:\anaconda\lib\site-packages (from tabula-py) (1.4.4)
+Requirement already satisfied: pytz&gt;=2020.1 in c:\anaconda\lib\site-packages (from pandas&gt;=0.25.3-&gt;tabula-py) (2022.1)
+Requirement already satisfied: python-dateutil&gt;=2.8.1 in c:\anaconda\lib\site-packages (from pandas&gt;=0.25.3-&gt;tabula-py) (2.8.2)
+Requirement already satisfied: six&gt;=1.5 in c:\anaconda\lib\site-packages (from python-dateutil&gt;=2.8.1-&gt;pandas&gt;=0.25.3-&gt;tabula-py) (1.16.0)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">tabula</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">time</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#URL</span>
+<span class="n">url</span><span class="o">=</span><span class="s2">&quot;https://www.bbva.pe/content/dam/public-web/peru/documents/personas/canales-de-atencion/oficinas/Oficinas-BBVA-abiertas-23.10.20.pdf&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This code import all pages from the url</span>
+<span class="n">BBVA</span> <span class="o">=</span> <span class="n">tabula</span><span class="o">.</span><span class="n">read_pdf</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">pages</span><span class="o">=</span><span class="s2">&quot;all&quot;</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;ISO-8859-1&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Got stderr: abr 29, 2023 6:54:15 PM org.apache.pdfbox.pdmodel.font.PDSimpleFont toUnicode
+ADVERTENCIA: No Unicode mapping for f_i (31) in font SAGBJE+BentonSansBBVA-Bold
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Now we generate a unique DataFrame with the BBVA office address</span>
+<span class="k">for</span> <span class="n">page</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">BBVA</span><span class="p">)):</span>
+    <span class="n">n_var</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">BBVA</span><span class="p">[</span><span class="n">page</span><span class="p">]</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">page</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">BBVA</span><span class="p">[</span><span class="n">page</span><span class="p">]</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">BBVA</span><span class="p">[</span><span class="n">page</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">column_names</span> <span class="o">=</span> <span class="n">BBVA</span><span class="p">[</span><span class="n">page</span><span class="p">]</span><span class="o">.</span><span class="n">columns</span>
+        <span class="n">BBVA</span><span class="p">[</span><span class="n">page</span><span class="p">]</span> <span class="o">=</span> <span class="n">BBVA</span><span class="p">[</span><span class="n">page</span><span class="p">]</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">BBVA</span><span class="p">[</span><span class="n">page</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="n">bbva_offices</span> <span class="o">=</span> <span class="n">BBVA</span><span class="p">[</span><span class="n">page</span><span class="p">]</span>
+        <span class="n">bbva_offices</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+    <span class="k">elif</span> <span class="n">n_var</span> <span class="o">==</span> <span class="mi">6</span><span class="p">:</span>
+        <span class="n">BBVA</span><span class="p">[</span><span class="n">page</span><span class="p">]</span> <span class="o">=</span> <span class="n">BBVA</span><span class="p">[</span><span class="n">page</span><span class="p">]</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;Unnamed: 0&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">row</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">BBVA</span><span class="p">[</span><span class="n">page</span><span class="p">]</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+        <span class="n">BBVA</span><span class="p">[</span><span class="n">page</span><span class="p">]</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">BBVA</span><span class="p">[</span><span class="n">page</span><span class="p">])]</span> <span class="o">=</span> <span class="n">row</span>
+        <span class="n">BBVA</span><span class="p">[</span><span class="n">page</span><span class="p">]</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">column_names</span>
+        <span class="n">last_row</span> <span class="o">=</span> <span class="n">BBVA</span><span class="p">[</span><span class="n">page</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">BBVA</span><span class="p">[</span><span class="n">page</span><span class="p">]</span> <span class="o">=</span> <span class="n">BBVA</span><span class="p">[</span><span class="n">page</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">BBVA</span><span class="p">[</span><span class="n">page</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">last_row</span><span class="o">.</span><span class="n">to_frame</span><span class="p">()</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">BBVA</span><span class="p">[</span><span class="n">page</span><span class="p">]],</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">bbva_offices</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">BBVA</span><span class="p">[</span><span class="n">page</span><span class="p">],</span> <span class="n">bbva_offices</span><span class="p">])</span>
+        <span class="n">bbva_offices</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">row</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">BBVA</span><span class="p">[</span><span class="n">page</span><span class="p">]</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+        <span class="n">BBVA</span><span class="p">[</span><span class="n">page</span><span class="p">]</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">BBVA</span><span class="p">[</span><span class="n">page</span><span class="p">])]</span> <span class="o">=</span> <span class="n">row</span>
+        <span class="n">BBVA</span><span class="p">[</span><span class="n">page</span><span class="p">]</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">column_names</span>
+        <span class="n">last_row</span> <span class="o">=</span> <span class="n">BBVA</span><span class="p">[</span><span class="n">page</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">BBVA</span><span class="p">[</span><span class="n">page</span><span class="p">]</span> <span class="o">=</span> <span class="n">BBVA</span><span class="p">[</span><span class="n">page</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">BBVA</span><span class="p">[</span><span class="n">page</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">last_row</span><span class="o">.</span><span class="n">to_frame</span><span class="p">()</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">BBVA</span><span class="p">[</span><span class="n">page</span><span class="p">]],</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">bbva_offices</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">BBVA</span><span class="p">[</span><span class="n">page</span><span class="p">],</span> <span class="n">bbva_offices</span><span class="p">])</span>
+        <span class="n">bbva_offices</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span>\<span class="n">ipykernel_8092</span>\<span class="mf">3488879711.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">     </span><span class="mi">21</span>         <span class="n">row</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">BBVA</span><span class="p">[</span><span class="n">page</span><span class="p">]</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">22</span>         <span class="n">BBVA</span><span class="p">[</span><span class="n">page</span><span class="p">]</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">BBVA</span><span class="p">[</span><span class="n">page</span><span class="p">])]</span> <span class="o">=</span> <span class="n">row</span>
+<span class="ne">---&gt; </span><span class="mi">23</span>         <span class="n">BBVA</span><span class="p">[</span><span class="n">page</span><span class="p">]</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">column_names</span>
+<span class="g g-Whitespace">     </span><span class="mi">24</span>         <span class="n">last_row</span> <span class="o">=</span> <span class="n">BBVA</span><span class="p">[</span><span class="n">page</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="g g-Whitespace">     </span><span class="mi">25</span>         <span class="n">BBVA</span><span class="p">[</span><span class="n">page</span><span class="p">]</span> <span class="o">=</span> <span class="n">BBVA</span><span class="p">[</span><span class="n">page</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="nn">C:\Anaconda\lib\site-packages\pandas\core\generic.py</span> in <span class="ni">__setattr__</span><span class="nt">(self, name, value)</span>
+<span class="g g-Whitespace">   </span><span class="mi">5586</span>         <span class="k">try</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">5587</span>             <span class="nb">object</span><span class="o">.</span><span class="fm">__getattribute__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">5588</span>             <span class="k">return</span> <span class="nb">object</span><span class="o">.</span><span class="fm">__setattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">5589</span>         <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">5590</span>             <span class="k">pass</span>
+
+<span class="nn">C:\Anaconda\lib\site-packages\pandas\_libs\properties.pyx</span> in <span class="ni">pandas._libs.properties.AxisProperty.__set__</span><span class="nt">()</span>
+
+<span class="nn">C:\Anaconda\lib\site-packages\pandas\core\generic.py</span> in <span class="ni">_set_axis</span><span class="nt">(self, axis, labels)</span>
+<span class="g g-Whitespace">    </span><span class="mi">767</span>     <span class="k">def</span> <span class="nf">_set_axis</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">axis</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">labels</span><span class="p">:</span> <span class="n">Index</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">768</span>         <span class="n">labels</span> <span class="o">=</span> <span class="n">ensure_index</span><span class="p">(</span><span class="n">labels</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">769</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_mgr</span><span class="o">.</span><span class="n">set_axis</span><span class="p">(</span><span class="n">axis</span><span class="p">,</span> <span class="n">labels</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">770</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_clear_item_cache</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">771</span> 
+
+<span class="nn">C:\Anaconda\lib\site-packages\pandas\core\internals\managers.py</span> in <span class="ni">set_axis</span><span class="nt">(self, axis, new_labels)</span>
+<span class="g g-Whitespace">    </span><span class="mi">212</span>     <span class="k">def</span> <span class="nf">set_axis</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">axis</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">new_labels</span><span class="p">:</span> <span class="n">Index</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">213</span>         <span class="c1"># Caller is responsible for ensuring we have an Index object.</span>
+<span class="ne">--&gt; </span><span class="mi">214</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_validate_set_axis</span><span class="p">(</span><span class="n">axis</span><span class="p">,</span> <span class="n">new_labels</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">215</span>         <span class="bp">self</span><span class="o">.</span><span class="n">axes</span><span class="p">[</span><span class="n">axis</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_labels</span>
+<span class="g g-Whitespace">    </span><span class="mi">216</span> 
+
+<span class="nn">C:\Anaconda\lib\site-packages\pandas\core\internals\base.py</span> in <span class="ni">_validate_set_axis</span><span class="nt">(self, axis, new_labels)</span>
+<span class="g g-Whitespace">     </span><span class="mi">67</span> 
+<span class="g g-Whitespace">     </span><span class="mi">68</span>         <span class="k">elif</span> <span class="n">new_len</span> <span class="o">!=</span> <span class="n">old_len</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">69</span>             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">70</span>                 <span class="sa">f</span><span class="s2">&quot;Length mismatch: Expected axis has </span><span class="si">{</span><span class="n">old_len</span><span class="si">}</span><span class="s2"> elements, new &quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">71</span>                 <span class="sa">f</span><span class="s2">&quot;values have </span><span class="si">{</span><span class="n">new_len</span><span class="si">}</span><span class="s2"> elements&quot;</span>
+
+<span class="ne">ValueError</span>: Length mismatch: Expected axis has 3 elements, new values have 6 elements
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Now we</span>
+<span class="n">lima</span> <span class="o">=</span> <span class="n">bbva_offices</span><span class="p">[</span><span class="s1">&#39;DEPARTAMENTO&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;LIMA&quot;</span>
+<span class="n">bbva_lima</span> <span class="o">=</span> <span class="n">bbva_offices</span><span class="p">[</span><span class="n">lima</span><span class="p">]</span>
+<span class="n">bbva_lima</span> <span class="o">=</span> <span class="n">bbva_lima</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">bbva_lima</span> <span class="o">=</span> <span class="n">bbva_lima</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span> <span class="p">,</span> <span class="mi">1</span><span class="p">:]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="geocoding-bbva-offices-in-lima">
+<h1>2. Geocoding BBVA offices in Lima<a class="headerlink" href="#geocoding-bbva-offices-in-lima" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#using the Google Maps API to geocode the addresses of the BBVA offices in Lima and obtain their latitude and longitude coordinates</span>
+<span class="n">bbva_lima</span><span class="p">[</span><span class="s1">&#39;address&#39;</span><span class="p">]</span><span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">dtype</span><span class="o">=</span><span class="nb">str</span><span class="p">)</span>
+<span class="n">bbva_lima</span><span class="p">[</span><span class="s1">&#39;lat&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+<span class="n">bbva_lima</span><span class="p">[</span><span class="s1">&#39;lng&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">bbva_lima</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">words2</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;OFICINA&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+        <span class="n">bbva_lima</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index</span><span class="p">,</span> <span class="s2">&quot;address&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;+&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">words2</span><span class="p">)</span>
+        <span class="n">req</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span> <span class="sa">f</span><span class="s2">&quot;https://maps.googleapis.com/maps/api/geocode/json?address=bbva+&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">bbva_lima</span><span class="p">[</span><span class="s1">&#39;address&#39;</span><span class="p">][</span><span class="n">index</span><span class="p">])</span> <span class="o">+</span> <span class="s2">&quot;&amp;key=AIzaSyCVAPc6awCenVXZqI9qt8smVKpZcSvfjXU&amp;language=es&amp;region=pe&quot;</span><span class="p">)</span>
+        <span class="n">data_json</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+        <span class="n">bbva_lima</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index</span><span class="p">,</span> <span class="s1">&#39;lat&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data_json</span><span class="p">[</span> <span class="s1">&#39;results&#39;</span> <span class="p">][</span> <span class="mi">0</span> <span class="p">][</span> <span class="s1">&#39;geometry&#39;</span> <span class="p">][</span> <span class="s1">&#39;location&#39;</span> <span class="p">][</span> <span class="s1">&#39;lat&#39;</span> <span class="p">]</span>
+        <span class="n">bbva_lima</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index</span><span class="p">,</span> <span class="s1">&#39;lng&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data_json</span><span class="p">[</span> <span class="s1">&#39;results&#39;</span> <span class="p">][</span> <span class="mi">0</span> <span class="p">][</span> <span class="s1">&#39;geometry&#39;</span> <span class="p">][</span> <span class="s1">&#39;location&#39;</span> <span class="p">][</span> <span class="s1">&#39;lng&#39;</span> <span class="p">]</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">bbva_lima</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index</span><span class="p">,</span> <span class="s1">&#39;lng&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mi">78</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">bbva_lima</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index</span><span class="p">,</span> <span class="s1">&#39;lng&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">76</span><span class="p">):</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">words</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;DIRECCION&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+                <span class="n">bbva_lima</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index</span> <span class="p">,</span> <span class="s2">&quot;address&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;+&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
+                <span class="n">req</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span> <span class="sa">f</span><span class="s2">&quot;https://maps.googleapis.com/maps/api/geocode/json?address=&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">bbva_lima</span><span class="p">[</span><span class="s1">&#39;address&#39;</span><span class="p">][</span><span class="n">index</span><span class="p">])</span> <span class="o">+</span> <span class="s2">&quot;&amp;key=AIzaSyCVAPc6awCenVXZqI9qt8smVKpZcSvfjXU&amp;language=es&amp;region=pe&quot;</span><span class="p">)</span>
+                <span class="n">data_json</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+                <span class="n">bbva_lima</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index</span><span class="p">,</span> <span class="s1">&#39;lat&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data_json</span><span class="p">[</span> <span class="s1">&#39;results&#39;</span> <span class="p">][</span> <span class="mi">0</span> <span class="p">][</span> <span class="s1">&#39;geometry&#39;</span> <span class="p">][</span> <span class="s1">&#39;location&#39;</span> <span class="p">][</span> <span class="s1">&#39;lat&#39;</span> <span class="p">]</span>
+                <span class="n">bbva_lima</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index</span><span class="p">,</span> <span class="s1">&#39;lng&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data_json</span><span class="p">[</span> <span class="s1">&#39;results&#39;</span> <span class="p">][</span> <span class="mi">0</span> <span class="p">][</span> <span class="s1">&#39;geometry&#39;</span> <span class="p">][</span> <span class="s1">&#39;location&#39;</span> <span class="p">][</span> <span class="s1">&#39;lng&#39;</span> <span class="p">]</span>
+                <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+            <span class="k">except</span><span class="p">:</span>
+                <span class="k">continue</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">words</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;DIRECCION&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+            <span class="n">bbva_lima</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index</span> <span class="p">,</span> <span class="s2">&quot;address&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;+&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
+            <span class="n">req</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span> <span class="sa">f</span><span class="s2">&quot;https://maps.googleapis.com/maps/api/geocode/json?address=&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">bbva_lima</span><span class="p">[</span><span class="s1">&#39;address&#39;</span><span class="p">][</span><span class="n">index</span><span class="p">])</span> <span class="o">+</span> <span class="s2">&quot;&amp;key=AIzaSyCVAPc6awCenVXZqI9qt8smVKpZcSvfjXU&amp;language=es&amp;region=pe&quot;</span><span class="p">)</span>
+            <span class="n">data_json</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+            <span class="n">bbva_lima</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index</span><span class="p">,</span> <span class="s1">&#39;lat&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data_json</span><span class="p">[</span> <span class="s1">&#39;results&#39;</span> <span class="p">][</span> <span class="mi">0</span> <span class="p">][</span> <span class="s1">&#39;geometry&#39;</span> <span class="p">][</span> <span class="s1">&#39;location&#39;</span> <span class="p">][</span> <span class="s1">&#39;lat&#39;</span> <span class="p">]</span>
+            <span class="n">bbva_lima</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index</span><span class="p">,</span> <span class="s1">&#39;lng&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data_json</span><span class="p">[</span> <span class="s1">&#39;results&#39;</span> <span class="p">][</span> <span class="mi">0</span> <span class="p">][</span> <span class="s1">&#39;geometry&#39;</span> <span class="p">][</span> <span class="s1">&#39;location&#39;</span> <span class="p">][</span> <span class="s1">&#39;lng&#39;</span> <span class="p">]</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="k">continue</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">off_wo_latlng</span> <span class="o">=</span> <span class="n">bbva_lima</span><span class="p">[</span><span class="s1">&#39;lat&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span>
+<span class="n">bbva_lima_wo_latlng</span> <span class="o">=</span> <span class="n">bbva_lima</span><span class="p">[</span><span class="n">off_wo_latlng</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Founding the latitude and longitude of the offices that the API didn&#39;t find</span>
+<span class="n">bbva_lima</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span> <span class="mi">21</span> <span class="p">,</span> <span class="s1">&#39;lat&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mf">10.75232475459097</span>
+<span class="n">bbva_lima</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span> <span class="mi">21</span> <span class="p">,</span> <span class="s1">&#39;lng&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mf">77.75984306637167</span>
+<span class="n">bbva_lima</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span> <span class="mi">27</span> <span class="p">,</span> <span class="s1">&#39;lat&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mf">12.06298227221029</span>
+<span class="n">bbva_lima</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span> <span class="mi">27</span> <span class="p">,</span> <span class="s1">&#39;lng&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mf">77.09255744700735</span>
+<span class="n">bbva_lima</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span> <span class="mi">146</span> <span class="p">,</span> <span class="s1">&#39;lat&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mf">12.078969969608282</span>
+<span class="n">bbva_lima</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span> <span class="mi">146</span> <span class="p">,</span> <span class="s1">&#39;lng&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mf">77.08829495764192</span>
+
+<span class="c1"># We now manually replace some values that are far from lima in the map even though we indicate Perú region in Geocoding API</span>
+<span class="n">bbva_lima</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span> <span class="mi">8</span> <span class="p">,</span> <span class="s1">&#39;lat&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mf">11.940618457793999</span>
+<span class="n">bbva_lima</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span> <span class="mi">8</span> <span class="p">,</span> <span class="s1">&#39;lng&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mf">77.05008960282801</span>
+<span class="n">bbva_lima</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span> <span class="mi">93</span> <span class="p">,</span> <span class="s1">&#39;lat&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mf">12.030243385669541</span>
+<span class="n">bbva_lima</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span> <span class="mi">93</span> <span class="p">,</span> <span class="s1">&#39;lng&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mf">76.94455186740072</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="obtaining-the-driving-time-from-our-directions-to-bbva-offices">
+<h1>3. Obtaining the driving time from our directions to BBVA offices<a class="headerlink" href="#obtaining-the-driving-time-from-our-directions-to-bbva-offices" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#We create a dataframe with the addresses of the members of the group</span>
+<span class="n">directions</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;name&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="s1">&#39;César&#39;</span><span class="p">,</span> <span class="s1">&#39;Rodrigo&#39;</span><span class="p">,</span> <span class="s1">&#39;Cristian&#39;</span><span class="p">,</span> <span class="s1">&#39;Juan Diego&#39;</span><span class="p">]</span> <span class="p">,</span> <span class="s1">&#39;lat&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="o">-</span><span class="mf">12.082162742284492</span> <span class="p">,</span> <span class="o">-</span><span class="mf">12.081409910208135</span> <span class="p">,</span><span class="o">-</span><span class="mf">12.101128243144581</span> <span class="p">,</span><span class="o">-</span><span class="mf">12.070055013965627</span> <span class="p">]</span> <span class="p">,</span> <span class="s1">&#39;lng&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="o">-</span><span class="mf">77.05227168919453</span> <span class="p">,</span> <span class="o">-</span><span class="mf">77.06180127811237</span> <span class="p">,</span> <span class="o">-</span><span class="mf">76.9959475935164</span><span class="p">,</span> <span class="o">-</span><span class="mf">77.16167806606931</span><span class="p">]</span> <span class="p">}</span>
+
+<span class="n">df_directions</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">directions</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Iterates over each row of the df_directions DataFrame. </span>
+<span class="c1">#The latitude and longitude coordinates of the origin of the current row are extracted using the loc() function</span>
+<span class="c1">#An &#39;origin&#39; variable is created as a text string containing the origin coordinates</span>
+<span class="c1">#A new column is created in the &#39;bbva_lima&#39; DataFrame to store the travel times between the current origin and each of the destinations in the DataFrame.</span>
+<span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df_directions</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="n">lat1</span> <span class="o">=</span> <span class="n">df_directions</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index</span><span class="p">,</span><span class="s1">&#39;lat&#39;</span><span class="p">]</span>
+    <span class="n">lng1</span> <span class="o">=</span> <span class="n">df_directions</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index</span><span class="p">,</span><span class="s1">&#39;lng&#39;</span><span class="p">]</span>
+    <span class="n">origin</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">lat1</span><span class="si">}</span><span class="s1">,</span><span class="si">{</span><span class="n">lng1</span><span class="si">}</span><span class="s1">&#39;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">origin</span><span class="p">)</span>
+    <span class="n">bbva_lima</span><span class="p">[</span><span class="sa">f</span><span class="s1">&#39;dir_</span><span class="si">{</span><span class="n">index</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+
+<span class="c1">#iterate over each row of the &#39;bbva_lima&#39; DataFrame.</span>
+<span class="c1">#&#39;destination&#39; variable is created containing the destination coordinates</span>
+<span class="c1">#The travel time is extracted and stored in a new column in the &#39;bbva_lima&#39; DataFrame</span>
+    <span class="k">for</span> <span class="n">index2</span><span class="p">,</span> <span class="n">row2</span> <span class="ow">in</span> <span class="n">bbva_lima</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+        <span class="n">lat2</span> <span class="o">=</span> <span class="n">bbva_lima</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index2</span><span class="p">,</span><span class="s1">&#39;lat&#39;</span><span class="p">]</span>
+        <span class="n">lng2</span> <span class="o">=</span> <span class="n">bbva_lima</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index2</span><span class="p">,</span><span class="s1">&#39;lng&#39;</span><span class="p">]</span>
+        <span class="n">destination</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">lat2</span><span class="si">}</span><span class="s1">,</span><span class="si">{</span><span class="n">lng2</span><span class="si">}</span><span class="s1">&#39;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">req2</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span> <span class="sa">f</span><span class="s2">&quot;https://maps.googleapis.com/maps/api/directions/json?origin=</span><span class="si">{</span><span class="n">origin</span><span class="si">}</span><span class="s2">&amp;destination=</span><span class="si">{</span><span class="n">destination</span><span class="si">}</span><span class="s2">&amp;departure_time=now&amp;traffic_model=best_guess&amp;mode=driving&amp;region=pe&amp;key=AIzaSyCVAPc6awCenVXZqI9qt8smVKpZcSvfjXU&quot;</span><span class="p">)</span>
+            <span class="n">data_json</span> <span class="o">=</span> <span class="n">req2</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+            <span class="n">bbva_lima</span><span class="p">[</span><span class="sa">f</span><span class="s1">&#39;dir_</span><span class="si">{</span><span class="n">index</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">][</span><span class="n">index2</span><span class="p">]</span> <span class="o">=</span> <span class="n">data_json</span><span class="p">[</span><span class="s1">&#39;routes&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;legs&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;duration&#39;</span><span class="p">][</span><span class="s1">&#39;value&#39;</span><span class="p">]</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="k">continue</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="generating-the-report-of-the-nearest-and-furthest-from-every-team-member">
+<h1>4. Generating the report of the Nearest and Furthest from every team member<a class="headerlink" href="#generating-the-report-of-the-nearest-and-furthest-from-every-team-member" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#calculates the nearest and furthest BBVA office for each person in the df_directions dataframe</span>
+<span class="c1">#Selecting the columns of interest from the &#39;bbva_lima&#39; dataframe, transposing the dataframe and resetting the index</span>
+<span class="c1">#Selecting only the &#39;min&#39; and &#39;max&#39; columns</span>
+<span class="n">tabla_final</span> <span class="o">=</span> <span class="n">bbva_lima</span><span class="o">.</span><span class="n">loc</span><span class="p">[:</span> <span class="p">,</span> <span class="p">[</span><span class="s1">&#39;dir_0&#39;</span> <span class="p">,</span> <span class="s1">&#39;dir_1&#39;</span><span class="p">,</span> <span class="s1">&#39;dir_2&#39;</span> <span class="p">,</span> <span class="s1">&#39;dir_3&#39;</span> <span class="p">]]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+<span class="n">tabla_final</span> <span class="o">=</span> <span class="n">tabla_final</span><span class="o">.</span><span class="n">T</span>
+<span class="n">tabla_final</span> <span class="o">=</span> <span class="n">tabla_final</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">tabla_final</span> <span class="o">=</span> <span class="n">tabla_final</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span> <span class="p">:</span> <span class="p">,</span> <span class="p">[</span> <span class="s1">&#39;min&#39;</span> <span class="p">,</span> <span class="s1">&#39;max&#39;</span><span class="p">]]</span>
+
+<span class="c1">#Adding the &#39;name&#39; column to the &#39;tabla_final&#39; dataframe</span>
+<span class="n">tabla_final</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;César&#39;</span><span class="p">,</span> <span class="s1">&#39;Rodrigo&#39;</span><span class="p">,</span> <span class="s1">&#39;Cristian&#39;</span><span class="p">,</span> <span class="s1">&#39;Juan Diego&#39;</span><span class="p">]</span>
+
+<span class="c1">#Merging the &#39;df_directions&#39; and &#39;tabla_final&#39; dataframes on the &#39;name&#39; column, keeping only rows that match</span>
+<span class="n">tabla_final</span> <span class="o">=</span> <span class="n">df_directions</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">tabla_final</span><span class="p">,</span> <span class="n">on</span> <span class="o">=</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="p">,</span> <span class="n">how</span> <span class="o">=</span> <span class="s2">&quot;left&quot;</span><span class="p">,</span> <span class="n">validate</span> <span class="o">=</span> <span class="s2">&quot;1:1&quot;</span><span class="p">)</span>
+<span class="n">tabla_final</span><span class="p">[</span><span class="s1">&#39;Nearest Office&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">]</span>
+<span class="n">tabla_final</span><span class="p">[</span><span class="s1">&#39;Furthest Office&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">]</span>
+
+<span class="c1">#Looping through the rows of the &#39;df_directions&#39; dataframe</span>
+<span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df_directions</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="n">cond_min</span> <span class="o">=</span> <span class="n">bbva_lima</span><span class="p">[</span><span class="sa">f</span><span class="s1">&#39;dir_</span><span class="si">{</span><span class="n">index</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">tabla_final</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index</span> <span class="p">,</span> <span class="s1">&#39;min&#39;</span><span class="p">]</span>
+    <span class="n">alterna_min</span> <span class="o">=</span> <span class="n">bbva_lima</span><span class="p">[</span><span class="n">cond_min</span><span class="p">]</span>
+    <span class="n">tabla_final</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index</span><span class="p">,</span> <span class="s1">&#39;Nearest Office&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">alterna_min</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="n">cond_max</span> <span class="o">=</span> <span class="n">bbva_lima</span><span class="p">[</span><span class="sa">f</span><span class="s1">&#39;dir_</span><span class="si">{</span><span class="n">index</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">tabla_final</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index</span> <span class="p">,</span> <span class="s1">&#39;max&#39;</span><span class="p">]</span>
+    <span class="n">alterna_max</span> <span class="o">=</span> <span class="n">bbva_lima</span><span class="p">[</span><span class="n">cond_max</span><span class="p">]</span>
+    <span class="n">tabla_final</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index</span><span class="p">,</span> <span class="s1">&#39;Furthest Office&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">alterna_max</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1">## Printing the results</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">tabla_final</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">][</span><span class="n">index</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The Nearest Office from </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39;s house is </span><span class="si">{</span><span class="n">tabla_final</span><span class="p">[</span><span class="s1">&#39;Nearest Office&#39;</span><span class="p">][</span><span class="n">index</span><span class="p">]</span><span class="si">}</span><span class="s2"> Office&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The Furthest Office from </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39;s house is </span><span class="si">{</span><span class="n">tabla_final</span><span class="p">[</span><span class="s1">&#39;Furthest Office&#39;</span><span class="p">][</span><span class="n">index</span><span class="p">]</span><span class="si">}</span><span class="s2"> Office&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Tutorial_Twitter.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">8.2 Twitter API</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Visualitazion.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">1. Quantities:</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Assigment 7</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-the-dataframe-with-bbva-offices-in-lima">1. Generating the DataFrame with BBVA offices in Lima</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#geocoding-bbva-offices-in-lima">2. Geocoding BBVA offices in Lima</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#obtaining-the-driving-time-from-our-directions-to-bbva-offices">3. Obtaining the driving time from our directions to BBVA offices</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-the-report-of-the-nearest-and-furthest-from-every-team-member">4. Generating the report of the Nearest and Furthest from every team member</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Cristian Serrano
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,1097 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>&lt;no title&gt; &#8212; Clases de Python</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Tutorial_Geocoding';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="8.2 Twitter API" href="Tutorial_Twitter.html" />
+    <link rel="prev" title="8. API" href="Lecture_8.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Clases de Pyhton de la Diplomatura de Ciencia de Datos
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="Lecture_2.html">Introduction to Python: Tuples, Lists, Dictionaries, Arrays</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="group_8_ass_1_2022.html">1 Assignment</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Lecture_3.html">3. <a id="intro">Pandas</a></a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="group_8_ass_2_2022.html">1 Assignment</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="group_1_ass_3_2022.html">1 Assignment 3</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Lecture_4.html">4. If and Loops</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="group_1_ass_4_2022.html">Assigment 4</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture_5.html">5. Functions and Class</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Lecture_6.html">Inheritance, Private Variables, Fixed attributes, Costumize Exceptions with Python</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="lecture_7R.html">7. Web Scraping</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Lecture_8.html">8. API</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Visualitazion.html">1. Quantities:</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Geopandas1.html">¿Geopandas?</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Folium.html">FOLIUM:</a></li>
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Causal_Infenrece.html">1 Causal Inference</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="NLP_Tutorial.html">NLP</a></li>
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FTutorial_Geocoding.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Tutorial_Geocoding.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1><no title></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import the library</span>
+<span class="kn">import</span> <span class="nn">googlemaps</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">pprint</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">re</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">API_KEY</span> <span class="o">=</span> <span class="s1">&#39;AIzaSyAXb1CyMDuAKkbk25LPIo9_XGSMGioLhEU&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>  <span class="sa">r</span><span class="s2">&quot;../_data/peru_excel_clean.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span>\<span class="n">ipykernel_348</span>\<span class="mf">3692079213.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>  <span class="sa">r</span><span class="s2">&quot;../_data/peru_excel_clean.csv&quot;</span><span class="p">)</span>
+
+<span class="nn">C:\Anaconda\lib\site-packages\pandas\util\_decorators.py</span> in <span class="ni">wrapper</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">309</span>                     <span class="n">stacklevel</span><span class="o">=</span><span class="n">stacklevel</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">310</span>                 <span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">311</span>             <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">312</span> 
+<span class="g g-Whitespace">    </span><span class="mi">313</span>         <span class="k">return</span> <span class="n">wrapper</span>
+
+<span class="nn">C:\Anaconda\lib\site-packages\pandas\io\parsers\readers.py</span> in <span class="ni">read_csv</span><span class="nt">(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, squeeze, prefix, mangle_dupe_cols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, encoding_errors, dialect, error_bad_lines, warn_bad_lines, on_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options)</span>
+<span class="g g-Whitespace">    </span><span class="mi">676</span>     <span class="n">kwds</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwds_defaults</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">677</span> 
+<span class="ne">--&gt; </span><span class="mi">678</span>     <span class="k">return</span> <span class="n">_read</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">679</span> 
+<span class="g g-Whitespace">    </span><span class="mi">680</span> 
+
+<span class="nn">C:\Anaconda\lib\site-packages\pandas\io\parsers\readers.py</span> in <span class="ni">_read</span><span class="nt">(filepath_or_buffer, kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">573</span> 
+<span class="g g-Whitespace">    </span><span class="mi">574</span>     <span class="c1"># Create the parser.</span>
+<span class="ne">--&gt; </span><span class="mi">575</span>     <span class="n">parser</span> <span class="o">=</span> <span class="n">TextFileReader</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">576</span> 
+<span class="g g-Whitespace">    </span><span class="mi">577</span>     <span class="k">if</span> <span class="n">chunksize</span> <span class="ow">or</span> <span class="n">iterator</span><span class="p">:</span>
+
+<span class="nn">C:\Anaconda\lib\site-packages\pandas\io\parsers\readers.py</span> in <span class="ni">__init__</span><span class="nt">(self, f, engine, **kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">930</span> 
+<span class="g g-Whitespace">    </span><span class="mi">931</span>         <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="p">:</span> <span class="n">IOHandles</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="ne">--&gt; </span><span class="mi">932</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_engine</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">933</span> 
+<span class="g g-Whitespace">    </span><span class="mi">934</span>     <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<span class="nn">C:\Anaconda\lib\site-packages\pandas\io\parsers\readers.py</span> in <span class="ni">_make_engine</span><span class="nt">(self, f, engine)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1214</span>             <span class="c1"># &quot;Union[str, PathLike[str], ReadCsvBuffer[bytes], ReadCsvBuffer[str]]&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1215</span>             <span class="c1"># , &quot;str&quot;, &quot;bool&quot;, &quot;Any&quot;, &quot;Any&quot;, &quot;Any&quot;, &quot;Any&quot;, &quot;Any&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1216</span>             <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="o">=</span> <span class="n">get_handle</span><span class="p">(</span>  <span class="c1"># type: ignore[call-overload]</span>
+<span class="g g-Whitespace">   </span><span class="mi">1217</span>                 <span class="n">f</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1218</span>                 <span class="n">mode</span><span class="p">,</span>
+
+<span class="nn">C:\Anaconda\lib\site-packages\pandas\io\common.py</span> in <span class="ni">get_handle</span><span class="nt">(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)</span>
+<span class="g g-Whitespace">    </span><span class="mi">784</span>         <span class="k">if</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">encoding</span> <span class="ow">and</span> <span class="s2">&quot;b&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">785</span>             <span class="c1"># Encoding</span>
+<span class="ne">--&gt; </span><span class="mi">786</span>             <span class="n">handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">787</span>                 <span class="n">handle</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">788</span>                 <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">,</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;../_data/peru_excel_clean.csv&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span> <span class="n">data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span> <span class="p">:,</span> <span class="mi">3</span> <span class="p">]</span><span class="o">.</span><span class="n">notnull</span><span class="p">()</span> <span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Departamento</th>
+      <th>Provincia</th>
+      <th>Distrito</th>
+      <th>Dirección</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>AMAZONAS</td>
+      <td>AMAZONAS</td>
+      <td>CHACHAPOYAS</td>
+      <td>Jirón Triunfo Nº 903 1er piso</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>AMAZONAS</td>
+      <td>Rodriguez de Mendoza</td>
+      <td>San Nicolás</td>
+      <td>Jirón Victor Mori Nº 204 San Nicolás</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>AMAZONAS</td>
+      <td>BAGUA</td>
+      <td>BAGUA</td>
+      <td>Calle Junín S/N</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>AMAZONAS</td>
+      <td>BONGARA</td>
+      <td>JAZAN</td>
+      <td>Avenida marginal N° 100 Pedro Ruíz</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>AMAZONAS</td>
+      <td>UTCUBAMBA</td>
+      <td>BAGUA GRANDE</td>
+      <td>Jirón Simón Bolivar N° 545</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">join_columns</span><span class="p">(</span> <span class="n">row_series</span> <span class="p">):</span>
+    
+    
+    <span class="k">return</span> <span class="n">address</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_results</span><span class="p">(</span> <span class="n">result_api</span> <span class="p">):</span>
+    
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">lat</span> <span class="o">=</span> <span class="n">result_api</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;geometry&#39;</span><span class="p">][</span><span class="s1">&#39;location&#39;</span><span class="p">][</span><span class="s1">&#39;lat&#39;</span><span class="p">]</span>
+        <span class="n">lon</span> <span class="o">=</span> <span class="n">result_api</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;geometry&#39;</span><span class="p">][</span><span class="s1">&#39;location&#39;</span><span class="p">][</span><span class="s1">&#39;lng&#39;</span><span class="p">]</span>   
+    <span class="k">except</span><span class="p">:</span>
+        <span class="n">lat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+        <span class="n">lon</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+    
+    <span class="k">return</span> <span class="p">(</span> <span class="n">lat</span><span class="p">,</span> <span class="n">lon</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">geo_reniec</span><span class="p">(</span> <span class="n">row_series</span> <span class="p">):</span>
+    
+    <span class="n">address</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">row_series</span><span class="p">[</span><span class="s1">&#39;Departamento&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">row_series</span><span class="p">[</span><span class="s1">&#39;Provincia&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">row_series</span><span class="p">[</span><span class="s1">&#39;Distrito&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">row_series</span><span class="p">[</span><span class="s1">&#39;Dirección&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span>
+    
+    <span class="c1"># Set Geolocation</span>
+    <span class="n">gmaps</span> <span class="o">=</span> <span class="n">googlemaps</span><span class="o">.</span><span class="n">Client</span><span class="p">(</span> <span class="n">key</span> <span class="o">=</span> <span class="s1">&#39;AIzaSyD_4E6Hd-fYECy3mZ4asxN23JjIstvLdoE&#39;</span> <span class="p">)</span>
+    <span class="n">result_api</span> <span class="o">=</span> <span class="n">gmaps</span><span class="o">.</span><span class="n">geocode</span><span class="p">(</span> <span class="n">address</span> <span class="p">,</span> <span class="n">region</span> <span class="o">=</span> <span class="s1">&#39;PE&#39;</span> <span class="p">)</span>
+    
+    <span class="c1"># Information</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">lat</span> <span class="o">=</span> <span class="n">result_api</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;geometry&#39;</span><span class="p">][</span><span class="s1">&#39;location&#39;</span><span class="p">][</span><span class="s1">&#39;lat&#39;</span><span class="p">]</span>
+        <span class="n">lon</span> <span class="o">=</span> <span class="n">result_api</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;geometry&#39;</span><span class="p">][</span><span class="s1">&#39;location&#39;</span><span class="p">][</span><span class="s1">&#39;lng&#39;</span><span class="p">]</span>   
+    <span class="k">except</span><span class="p">:</span>
+        <span class="n">lat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+        <span class="n">lon</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+    
+    <span class="k">return</span> <span class="p">(</span> <span class="n">address</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">lon</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span> <span class="o">=</span> <span class="n">df1</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span> <span class="n">frac</span> <span class="o">=</span> <span class="mf">0.05</span> <span class="p">)</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span><span class="p">[</span><span class="s1">&#39;results&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df2</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">geo_reniec</span><span class="p">(</span> <span class="n">x</span> <span class="p">)</span>  <span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Departamento</th>
+      <th>Provincia</th>
+      <th>Distrito</th>
+      <th>Dirección</th>
+      <th>results</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2</th>
+      <td>AMAZONAS</td>
+      <td>BAGUA</td>
+      <td>BAGUA</td>
+      <td>Calle Junín S/N</td>
+      <td>(AMAZONAS, BAGUA, BAGUA, Calle Junín S/N, -5.6...</td>
+    </tr>
+    <tr>
+      <th>130</th>
+      <td>LA LIBERTAD</td>
+      <td>GRAN CHIMU</td>
+      <td>CASCAS</td>
+      <td>Ca. Progreso s/n cuadra 3</td>
+      <td>(LA LIBERTAD, GRAN CHIMU, CASCAS, Ca. Progreso...</td>
+    </tr>
+    <tr>
+      <th>65</th>
+      <td>CUSCO</td>
+      <td>LA CONVENCION</td>
+      <td>SANTA ANA</td>
+      <td>Av. Grau Nº 238 Quilcabamba</td>
+      <td>(CUSCO, LA CONVENCION, SANTA ANA, Av. Grau Nº ...</td>
+    </tr>
+    <tr>
+      <th>141</th>
+      <td>LIMA</td>
+      <td>LIMA</td>
+      <td>INDEPENDENCIA</td>
+      <td>Ca. Los Andes Nº 486 Urb. Industrial Panameric...</td>
+      <td>(LIMA, LIMA, INDEPENDENCIA, Ca. Los Andes Nº 4...</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>AYACUCHO</td>
+      <td>HUANTA</td>
+      <td>HUANTA</td>
+      <td>Jirón Ayacucho 313 Huanta</td>
+      <td>(AYACUCHO, HUANTA, HUANTA, Jirón Ayacucho 313 ...</td>
+    </tr>
+    <tr>
+      <th>133</th>
+      <td>LA LIBERTAD</td>
+      <td>TRUJILLO</td>
+      <td>VICTOR LARCO HERRERA</td>
+      <td>Av. Larco Nº 1096 Urb. Vista Alegre</td>
+      <td>(LA LIBERTAD, TRUJILLO, VICTOR LARCO HERRERA, ...</td>
+    </tr>
+    <tr>
+      <th>131</th>
+      <td>LA LIBERTAD</td>
+      <td>CHEPEN</td>
+      <td>CHEPEN</td>
+      <td>Calle San Pedro N° 610 Sector V</td>
+      <td>(LA LIBERTAD, CHEPEN, CHEPEN, Calle San Pedro ...</td>
+    </tr>
+    <tr>
+      <th>192</th>
+      <td>MADRE DE DIOS</td>
+      <td>TAMBOPATA</td>
+      <td>TAMBOPATA</td>
+      <td>Jr. Lambayeque 159</td>
+      <td>(MADRE DE DIOS, TAMBOPATA, TAMBOPATA, Jr. Lamb...</td>
+    </tr>
+    <tr>
+      <th>110</th>
+      <td>JUNIN</td>
+      <td>HUANCAYO</td>
+      <td>HUANCAYO</td>
+      <td>Jirón Julio Sumar 351 El Tambo</td>
+      <td>(JUNIN, HUANCAYO, HUANCAYO, Jirón Julio Sumar ...</td>
+    </tr>
+    <tr>
+      <th>70</th>
+      <td>CUSCO</td>
+      <td>QUISPICANCHI</td>
+      <td>URCOS</td>
+      <td>Jr. Huascar N° 181</td>
+      <td>(CUSCO, QUISPICANCHI, URCOS, Jr. Huascar N° 18...</td>
+    </tr>
+    <tr>
+      <th>72</th>
+      <td>CUSCO</td>
+      <td>ANTA</td>
+      <td>ANTA</td>
+      <td>JR. JAQUIJAHUANA S/N IZCUCHACA DIST. ANTA</td>
+      <td>(CUSCO, ANTA, ANTA, JR. JAQUIJAHUANA S/N IZCUC...</td>
+    </tr>
+    <tr>
+      <th>172</th>
+      <td>LIMA</td>
+      <td>HUAURA</td>
+      <td>HUACHO</td>
+      <td>Av. Grau N° 295</td>
+      <td>(LIMA, HUAURA, HUACHO, Av. Grau N° 295, -11.10...</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span> <span class="n">df2</span><span class="o">.</span><span class="n">results</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>  <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span><span class="p">[[</span><span class="s1">&#39;addres&#39;</span><span class="p">,</span> <span class="s1">&#39;lat&#39;</span><span class="p">,</span> <span class="s1">&#39;lng&#39;</span><span class="p">]]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span> <span class="n">df2</span><span class="o">.</span><span class="n">results</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span> <span class="p">,</span>  <span class="n">index</span> <span class="o">=</span> <span class="n">df2</span><span class="o">.</span><span class="n">index</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Departamento</th>
+      <th>Provincia</th>
+      <th>Distrito</th>
+      <th>Dirección</th>
+      <th>results</th>
+      <th>lat</th>
+      <th>lng</th>
+      <th>addres</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>215</th>
+      <td>PUNO</td>
+      <td>PUNO</td>
+      <td>PUNO</td>
+      <td>Jirón Arequipa Nº 1145 Puno</td>
+      <td>(PUNO, PUNO, PUNO, Jirón Arequipa Nº 1145 Puno...</td>
+      <td>-15.844400</td>
+      <td>-70.023201</td>
+      <td>PUNO, PUNO, PUNO, Jirón Arequipa Nº 1145 Puno</td>
+    </tr>
+    <tr>
+      <th>151</th>
+      <td>LIMA</td>
+      <td>LIMA</td>
+      <td>CIENEGUILLA</td>
+      <td>Av. San Martín Lt 15 Mz D Zona D Cpr Tambo Viejo</td>
+      <td>(LIMA, LIMA, CIENEGUILLA, Av. San Martín Lt 15...</td>
+      <td>-12.014774</td>
+      <td>-76.885043</td>
+      <td>LIMA, LIMA, CIENEGUILLA, Av. San Martín Lt 15 ...</td>
+    </tr>
+    <tr>
+      <th>58</th>
+      <td>CAJAMARCA</td>
+      <td>JAEN</td>
+      <td>PUCARA</td>
+      <td>Ca. Lindo 548</td>
+      <td>(CAJAMARCA, JAEN, PUCARA, Ca. Lindo 548, -6.04...</td>
+      <td>-6.040897</td>
+      <td>-79.129826</td>
+      <td>CAJAMARCA, JAEN, PUCARA, Ca. Lindo 548</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>AMAZONAS</td>
+      <td>AMAZONAS</td>
+      <td>CHACHAPOYAS</td>
+      <td>Jirón Triunfo Nº 903 1er piso</td>
+      <td>(AMAZONAS, AMAZONAS, CHACHAPOYAS, Jirón Triunf...</td>
+      <td>-6.230742</td>
+      <td>-77.871960</td>
+      <td>AMAZONAS, AMAZONAS, CHACHAPOYAS, Jirón Triunfo...</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>ANCASH</td>
+      <td>SANTA</td>
+      <td>SANTA</td>
+      <td>Jirón Ladislao Espinar No.401 y Esquina de Enr...</td>
+      <td>(ANCASH, SANTA, SANTA, Jirón Ladislao Espinar ...</td>
+      <td>-9.072811</td>
+      <td>-78.593487</td>
+      <td>ANCASH, SANTA, SANTA, Jirón Ladislao Espinar N...</td>
+    </tr>
+    <tr>
+      <th>64</th>
+      <td>CUSCO</td>
+      <td>CANCHIS</td>
+      <td>SICUANI</td>
+      <td>Av. Tupac Amaru 163 Sicuani</td>
+      <td>(CUSCO, CANCHIS, SICUANI, Av. Tupac Amaru 163 ...</td>
+      <td>-14.266855</td>
+      <td>-71.225515</td>
+      <td>CUSCO, CANCHIS, SICUANI, Av. Tupac Amaru 163 S...</td>
+    </tr>
+    <tr>
+      <th>123</th>
+      <td>LA LIBERTAD</td>
+      <td>VIRÚ</td>
+      <td>VIRÚ</td>
+      <td>Lt. 8 Mz A Urb. Las Palmeras</td>
+      <td>(LA LIBERTAD, VIRÚ, VIRÚ, Lt. 8 Mz A Urb. Las ...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>LA LIBERTAD, VIRÚ, VIRÚ, Lt. 8 Mz A Urb. Las P...</td>
+    </tr>
+    <tr>
+      <th>231</th>
+      <td>SAN MARTIN</td>
+      <td>MARISCAL CACERES</td>
+      <td>MARISCAL CACERES</td>
+      <td>Jr. Eduardo Peña Meza N° 772</td>
+      <td>(SAN MARTIN, MARISCAL CACERES, MARISCAL CACERE...</td>
+      <td>-7.181332</td>
+      <td>-76.728116</td>
+      <td>SAN MARTIN, MARISCAL CACERES, MARISCAL CACERES...</td>
+    </tr>
+    <tr>
+      <th>205</th>
+      <td>PIURA</td>
+      <td>SULLANA</td>
+      <td>SULLANA</td>
+      <td>Ca. Leoncio Prado Nº 517</td>
+      <td>(PIURA, SULLANA, SULLANA, Ca. Leoncio Prado Nº...</td>
+      <td>-4.895896</td>
+      <td>-80.692146</td>
+      <td>PIURA, SULLANA, SULLANA, Ca. Leoncio Prado Nº 517</td>
+    </tr>
+    <tr>
+      <th>73</th>
+      <td>CUSCO</td>
+      <td>URUBAMBA</td>
+      <td>URUBAMBA</td>
+      <td>Av. Conchatupa s/n</td>
+      <td>(CUSCO, URUBAMBA, URUBAMBA, Av. Conchatupa s/n...</td>
+      <td>-13.335622</td>
+      <td>-72.064430</td>
+      <td>CUSCO, URUBAMBA, URUBAMBA, Av. Conchatupa s/n</td>
+    </tr>
+    <tr>
+      <th>56</th>
+      <td>CAJAMARCA</td>
+      <td>CONTUMAZA</td>
+      <td>CONTUMAZA</td>
+      <td>Jr.  Miguel Grau Nº 212</td>
+      <td>(CAJAMARCA, CONTUMAZA, CONTUMAZA, Jr.  Miguel ...</td>
+      <td>-7.366643</td>
+      <td>-78.805111</td>
+      <td>CAJAMARCA, CONTUMAZA, CONTUMAZA, Jr.  Miguel G...</td>
+    </tr>
+    <tr>
+      <th>158</th>
+      <td>LIMA</td>
+      <td>LIMA</td>
+      <td>VILLA EL SALVADOR</td>
+      <td>Av. Arriba Perú Nº 640 Sector 2. Grupo 7</td>
+      <td>(LIMA, LIMA, VILLA EL SALVADOR, Av. Arriba Per...</td>
+      <td>-12.204490</td>
+      <td>-76.939520</td>
+      <td>LIMA, LIMA, VILLA EL SALVADOR, Av. Arriba Perú...</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Lecture_8.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">8. API</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Tutorial_Twitter.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">8.2 Twitter API</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Cristian Serrano
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

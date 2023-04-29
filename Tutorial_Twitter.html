@@ -1,0 +1,1347 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>8.2 Twitter API &#8212; Clases de Python</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Tutorial_Twitter';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Assigment 7" href="group_5_ass_7_2023.html" />
+    <link rel="prev" title="&lt;no title&gt;" href="Tutorial_Geocoding.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Clases de Pyhton de la Diplomatura de Ciencia de Datos
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="Lecture_2.html">Introduction to Python: Tuples, Lists, Dictionaries, Arrays</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="group_8_ass_1_2022.html">1 Assignment</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Lecture_3.html">3. <a id="intro">Pandas</a></a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="group_8_ass_2_2022.html">1 Assignment</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="group_1_ass_3_2022.html">1 Assignment 3</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Lecture_4.html">4. If and Loops</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="group_1_ass_4_2022.html">Assigment 4</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture_5.html">5. Functions and Class</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Lecture_6.html">Inheritance, Private Variables, Fixed attributes, Costumize Exceptions with Python</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="lecture_7R.html">7. Web Scraping</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Lecture_8.html">8. API</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Visualitazion.html">1. Quantities:</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Geopandas1.html">¿Geopandas?</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Folium.html">FOLIUM:</a></li>
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Causal_Infenrece.html">1 Causal Inference</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="NLP_Tutorial.html">NLP</a></li>
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FTutorial_Twitter.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Tutorial_Twitter.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>8.2 Twitter API</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-id-8-1-8-1-generate-twitter-api-key-a"><a id="8.1.">8.1. Generate Twitter API Key</a></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-id-8-2-8-2-tweepy-a"><a id="8.2.">8.2. Tweepy </a></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-id-8-3-8-3-request-tweet-a"><a id="8.3.">8.3. Request tweet </a></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-id-8-3-1-8-3-1-getting-id-of-username-jmwooldridge-a"><a id="8.3.1.">8.3.1. Getting ID of username - jmwooldridge </a></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-id-8-3-2-8-3-2-getting-tweets-timeline-jmwooldridge-a"><a id="8.3.2.">8.3.2. Getting Tweets Timeline - jmwooldridge </a></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-id-8-4-8-4-references-a"><a id="8.4.">8.4. References</a></a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="twitter-api">
+<h1>8.2 Twitter API<a class="headerlink" href="#twitter-api" title="Permalink to this heading">#</a></h1>
+<ul class="simple">
+<li><p><a href='#8.1.'>8.1. Generate Twitter API Key</a></p></li>
+<li><p><a href='#8.2.'>8.2. Tweepy </a></p>
+<ul>
+<li><p><a href='#8.2.1.'>8.2.1. Get tweets in a date range </a></p></li>
+</ul>
+</li>
+<li><p><a href='#8.3.'>8.3. Request tweet </a></p>
+<ul>
+<li><p><a href='#8.3.1.'>8.3.1. Getting ID of username - jmwooldridge</a></p></li>
+<li><p><a href='#8.3.2.'>Getting Tweets Timeline - jmwooldridge</a></p></li>
+</ul>
+</li>
+<li><p><a href='#8.4.'>8.4. References</a></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># For sending GET requests from the API</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="c1"># For saving access tokens and for file management when creating and adding to the dataset</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="c1"># For dealing with json responses we receive from the API</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="c1"># For displaying the data after</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="c1"># For saving the response data in CSV format</span>
+<span class="kn">import</span> <span class="nn">csv</span>
+<span class="c1"># For parsing the dates received from twitter in readable formats</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+<span class="kn">import</span> <span class="nn">dateutil.parser</span>
+<span class="kn">import</span> <span class="nn">unicodedata</span>
+<span class="c1">#To add wait time between requests</span>
+<span class="kn">import</span> <span class="nn">time</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="a-id-8-1-8-1-generate-twitter-api-key-a">
+<h2><a id='8.1.'>8.1. Generate Twitter API Key</a><a class="headerlink" href="#a-id-8-1-8-1-generate-twitter-api-key-a" title="Permalink to this heading">#</a></h2>
+<p>All you need to do is create a project and connect an App through the developer portal and we are set to go!</p>
+<ol class="arabic simple">
+<li><p>Go to the developer <a class="reference external" href="https://developer.twitter.com/en/portal/dashboard">portal dashboard</a>.</p></li>
+<li><p>Sign in with your developer account.</p></li>
+<li><p>Create a new project, give it a name, a use-case based on the goal you want to achieve, and a description.
+<img src="../_images/1_twitter.png" /></p></li>
+<li><p>Assuming this is your first time, choose ‘create a new App instead’ and give your App a name in order to create a new App.
+<img src="../_images/2_twitter.png" /></p></li>
+<li><p>If everything is successful, you should be able to see this page containing your keys and tokens, we will use one of these to access the API.
+<img src="../_images/3_twitter.png" /></p></li>
+</ol>
+<section id="a-id-8-2-8-2-tweepy-a">
+<h3><a id='8.2.'>8.2. Tweepy </a><a class="headerlink" href="#a-id-8-2-8-2-tweepy-a" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tweepy</span>
+<span class="n">consumer_key</span> <span class="o">=</span> <span class="s2">&quot;Rr3sWjlZW6bdDlL2pRf1pbtia&quot;</span>
+<span class="n">consumer_secret</span> <span class="o">=</span> <span class="s2">&quot;mxhZpvR8BX96Sd347oCcNRDDjpdwHVxItwWE28ahKpiuQgvRe4&quot;</span>
+<span class="n">auth</span> <span class="o">=</span> <span class="n">tweepy</span><span class="o">.</span><span class="n">OAuthHandler</span><span class="p">(</span> <span class="n">consumer_key</span><span class="p">,</span> <span class="n">consumer_secret</span> <span class="p">)</span>
+
+<span class="n">access_token</span> <span class="o">=</span> <span class="s2">&quot;1270850339223343105-DLleC3HxuR45fyVJOJHsQ5YEaXv8kO&quot;</span>
+<span class="n">access_token_secret</span> <span class="o">=</span> <span class="s2">&quot;lNJ1iQVmHJIw0QZHaC19svWk2GbCthmzhsk4jXaVStmcM&quot;</span>
+<span class="n">auth</span><span class="o">.</span><span class="n">set_access_token</span><span class="p">(</span> <span class="n">access_token</span><span class="p">,</span> <span class="n">access_token_secret</span> <span class="p">)</span>
+
+<span class="n">api</span> <span class="o">=</span> <span class="n">tweepy</span><span class="o">.</span><span class="n">API</span><span class="p">(</span><span class="n">auth</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span>\<span class="n">ipykernel_16096</span>\<span class="mf">1514169498.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">tweepy</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">consumer_key</span> <span class="o">=</span> <span class="s2">&quot;Rr3sWjlZW6bdDlL2pRf1pbtia&quot;</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">consumer_secret</span> <span class="o">=</span> <span class="s2">&quot;mxhZpvR8BX96Sd347oCcNRDDjpdwHVxItwWE28ahKpiuQgvRe4&quot;</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">auth</span> <span class="o">=</span> <span class="n">tweepy</span><span class="o">.</span><span class="n">OAuthHandler</span><span class="p">(</span> <span class="n">consumer_key</span><span class="p">,</span> <span class="n">consumer_secret</span> <span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> 
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;tweepy&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Get Timeline of user</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get Timeline</span>
+<span class="n">public_tweets</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">home_timeline</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">tweet</span> <span class="ow">in</span> <span class="n">public_tweets</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="n">tweet</span><span class="o">.</span><span class="n">text</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>I&#39;ve been liking the app Obsidian to jot down ideas/notes/etc. I find it&#39;s also becoming a useful informal lab note… https://t.co/M4UzhfpS6N
+Sorry ICML area chairs my head got eaten by a lion so I can&#39;t write my reviews https://t.co/U5csOThPec
+Wasn’t that your wrestling gimmick ⁦@DaveDuFourNBA⁩? https://t.co/oqYhV6jsi3
+US educational institutions are mostly asset management firms with amateur sports program attached to them. https://t.co/7h9Y90gmMj
+@Cris_J_M @MovilidadJDV El objeto de estudio de la sociología es la acción social. Las hay de 4 tipos: la acción ra… https://t.co/gg6oXOgplm
+RT @CincinnatiZoo: Happy World Hippo Day! 🦛 Here&#39;s a look at everyone&#39;s favorite bloat: Fiona, Fritz, Bibi &amp;amp; Tucker! https://t.co/STnqd5wkIM
+RT @larepublica_pe: 🚨 Gremio de universidades nacionales desconoce a Manuel Castillo como superintendente de la Sunedu
+
+Asociación de Unive…
+RT @BlancheMinerva: There&#39;s a lot of misinfo about this out there, so here&#39;s the definitive list of the largest open source LLMs in the wor…
+RT @Trajinante1987: #EnVivo | Inicia la caminata por Ventanilla, Pachacutec en rechazo a la dictadura cívico militar que tiene el control d…
+RT @PClimatologia: Interesante.
+
+Siempre nos sorprende @dr_xeo con sus gráficas.
+Hydro-Quebec, Canada’s largest hydroelectric utility, posted a record $3.4 billion profit last year after selling p… https://t.co/JtJMxaRMvY
+Interesting conversation ongoing about ag input/service … #PurdueFarmMgt https://t.co/lo6AetCjgS
+This paragraph is a clear description of a dynamic monopsony model.
+RT @yonhy_lescano: Este gobierno desleal, intolerante y torpe se pelea con otros gobernantes, se hace el tonto, dice que no puede cerrar el…
+&#39;Please,&#39; cried Frog, &#39;please go away!&#39; But no one went away.
+Beware the Ides of March. https://t.co/rEpjPzgMah
+#PurdueFarmMgt pertinent to our class module on farm stress and mental health https://t.co/HG9Xp3VgYW
+The ideas that firms have *wage policies* leading to different pay for similar workers used to be in econ textbooks… https://t.co/OvlnAUzLnj
+RT @BrennpunktUA: General A.D. #Vad lügt bei #b2502 unverfroren. Er behauptet, der U.S. Generalstabschef #Milley würde seine eigene Einschä…
+So I was off Twitter, getting some actual work done, and only recently learned that there&#39;s suddenly a popular theo… https://t.co/jUvgTeEC2h
+</pre></div>
+</div>
+</div>
+</div>
+<p>Getting tweets from <a class="reference external" href="https://twitter.com/yudapearl">Judea Pearl</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">userID</span> <span class="o">=</span> <span class="s2">&quot;yudapearl&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set uttils</span>
+<span class="n">auth</span> <span class="o">=</span> <span class="n">tweepy</span><span class="o">.</span><span class="n">OAuthHandler</span><span class="p">(</span><span class="n">consumer_key</span><span class="p">,</span> <span class="n">consumer_secret</span><span class="p">)</span>
+<span class="n">auth</span><span class="o">.</span><span class="n">set_access_token</span><span class="p">(</span><span class="n">access_token</span><span class="p">,</span> <span class="n">access_token_secret</span><span class="p">)</span>
+
+<span class="c1"># Set API</span>
+<span class="n">api</span> <span class="o">=</span> <span class="n">tweepy</span><span class="o">.</span><span class="n">API</span><span class="p">(</span><span class="n">auth</span><span class="p">)</span>
+
+<span class="c1"># Get Tweets</span>
+<span class="n">tweets_bi</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">user_timeline</span><span class="p">(</span><span class="n">screen_name</span> <span class="o">=</span> <span class="n">userID</span><span class="p">,</span> 
+                           <span class="c1"># 200 is the maximum allowed count</span>
+                           <span class="n">count</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span>
+                           <span class="n">include_rts</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                           <span class="c1"># Necessary to keep full_text </span>
+                           <span class="c1"># otherwise only the first 140 words are extracted</span>
+                           <span class="n">tweet_mode</span> <span class="o">=</span> <span class="s1">&#39;extended&#39;</span>
+                           <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="n">tweets_bi</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">id</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">tweets_bi</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">created_at</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">tweets_bi</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">full_text</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1629587274651537410
+2023-02-25 21:00:57
+I bet there are many carefully conducted observational studies where, lacking causal models, researchers were unable to decide what factors need adjustments in order to obtain an unbiased estimates of causal effects.
+Time for modern re-analyses of precious data. https://t.co/H9AnXsaZIB
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">info</span> <span class="ow">in</span> <span class="n">tweets_bi</span><span class="p">[:</span><span class="mi">3</span><span class="p">]:</span>
+     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ID: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">info</span><span class="o">.</span><span class="n">id</span><span class="p">))</span>
+     <span class="nb">print</span><span class="p">(</span><span class="n">info</span><span class="o">.</span><span class="n">created_at</span><span class="p">)</span>
+     <span class="nb">print</span><span class="p">(</span><span class="n">info</span><span class="o">.</span><span class="n">full_text</span><span class="p">)</span>
+     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ID: 1629587274651537410
+2023-02-25 21:00:57
+I bet there are many carefully conducted observational studies where, lacking causal models, researchers were unable to decide what factors need adjustments in order to obtain an unbiased estimates of causal effects.
+Time for modern re-analyses of precious data. https://t.co/H9AnXsaZIB
+
+
+ID: 1629583134990958592
+2023-02-25 20:44:30
+This is an opportunity for the CUNY community to expose Saly Abd Alla ,disqualifications by focusing on her Zionophobic racism, rather than falling into the antisemitic rabbit hole. Focus, focus, focus. https://t.co/1hgjAF7bvI
+
+
+ID: 1629457161473650688
+2023-02-25 12:23:55
+America has changed, Mr. Ambassador. How can it be that Berkeley Law School would proclaim Zionist speakers unwanted, and CUNY&#39;s President would designate a BDS activist to head &quot;diversity and inclusion&quot;?
+America has changed. https://t.co/8l4FxYaJXa
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tweets_bi</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">full_text</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;I bet there are many carefully conducted observational studies where, lacking causal models, researchers were unable to decide what factors need adjustments in order to obtain an unbiased estimates of causal effects.\nTime for modern re-analyses of precious data. https://t.co/H9AnXsaZIB&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pandas</span> <span class="kn">import</span> <span class="n">DataFrame</span>
+<span class="n">outtweets</span> <span class="o">=</span> <span class="p">[[</span><span class="n">tweet</span><span class="o">.</span><span class="n">id_str</span><span class="p">,</span> 
+              <span class="n">tweet</span><span class="o">.</span><span class="n">created_at</span><span class="p">,</span> 
+              <span class="n">tweet</span><span class="o">.</span><span class="n">favorite_count</span><span class="p">,</span> 
+              <span class="n">tweet</span><span class="o">.</span><span class="n">retweet_count</span><span class="p">,</span> 
+              <span class="n">tweet</span><span class="o">.</span><span class="n">full_text</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)]</span> 
+             <span class="k">for</span> <span class="n">idx</span><span class="p">,</span><span class="n">tweet</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">tweets_bi</span><span class="p">)]</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">DataFrame</span><span class="p">(</span><span class="n">outtweets</span><span class="p">,</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">,</span><span class="s2">&quot;created_at&quot;</span><span class="p">,</span><span class="s2">&quot;favorite_count&quot;</span><span class="p">,</span><span class="s2">&quot;retweet_count&quot;</span><span class="p">,</span> <span class="s2">&quot;text&quot;</span><span class="p">])</span>
+<span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">userID</span><span class="si">}</span><span class="s1">_tweets.csv&#39;</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="kc">False</span> <span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>created_at</th>
+      <th>favorite_count</th>
+      <th>retweet_count</th>
+      <th>text</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1629587274651537410</td>
+      <td>2023-02-25 21:00:57</td>
+      <td>6</td>
+      <td>1</td>
+      <td>I bet there are many carefully conducted obser...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1629583134990958592</td>
+      <td>2023-02-25 20:44:30</td>
+      <td>1</td>
+      <td>2</td>
+      <td>This is an opportunity for the CUNY community ...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1629457161473650688</td>
+      <td>2023-02-25 12:23:55</td>
+      <td>121</td>
+      <td>41</td>
+      <td>America has changed, Mr. Ambassador. How can i...</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>created_at</th>
+      <th>favorite_count</th>
+      <th>retweet_count</th>
+      <th>text</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1629587274651537410</td>
+      <td>2023-02-25 21:00:57</td>
+      <td>6</td>
+      <td>1</td>
+      <td>I bet there are many carefully conducted obser...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1629583134990958592</td>
+      <td>2023-02-25 20:44:30</td>
+      <td>1</td>
+      <td>2</td>
+      <td>This is an opportunity for the CUNY community ...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1629457161473650688</td>
+      <td>2023-02-25 12:23:55</td>
+      <td>121</td>
+      <td>41</td>
+      <td>America has changed, Mr. Ambassador. How can i...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1629451136053944322</td>
+      <td>2023-02-25 11:59:59</td>
+      <td>39</td>
+      <td>3</td>
+      <td>Sparks of light can be seen even on this "Day ...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1629447735756881920</td>
+      <td>2023-02-25 11:46:28</td>
+      <td>5</td>
+      <td>3</td>
+      <td>Another nice feature of the @soboleffspaces - ...</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>83</th>
+      <td>1627636460487872513</td>
+      <td>2023-02-20 11:49:06</td>
+      <td>2</td>
+      <td>0</td>
+      <td>@HL327 @stephensenn @f2harrell @AngeloDalli @R...</td>
+    </tr>
+    <tr>
+      <th>84</th>
+      <td>1627610213565222916</td>
+      <td>2023-02-20 10:04:49</td>
+      <td>0</td>
+      <td>0</td>
+      <td>@HL327 @stephensenn @f2harrell @AngeloDalli @R...</td>
+    </tr>
+    <tr>
+      <th>85</th>
+      <td>1627577912462561282</td>
+      <td>2023-02-20 07:56:27</td>
+      <td>2</td>
+      <td>0</td>
+      <td>@stephensenn @HL327 @f2harrell @AngeloDalli @R...</td>
+    </tr>
+    <tr>
+      <th>86</th>
+      <td>1627571557186048000</td>
+      <td>2023-02-20 07:31:12</td>
+      <td>2</td>
+      <td>0</td>
+      <td>@sim0ngates @f2harrell @HL327 @stephensenn @An...</td>
+    </tr>
+    <tr>
+      <th>87</th>
+      <td>1627399456999235584</td>
+      <td>2023-02-19 20:07:20</td>
+      <td>0</td>
+      <td>0</td>
+      <td>@heckerma1 @PSpirtes I got a broken link, can ...</td>
+    </tr>
+  </tbody>
+</table>
+<p>88 rows × 5 columns</p>
+</div></div></div>
+</div>
+</section>
+</section>
+<section id="a-id-8-3-8-3-request-tweet-a">
+<h2><a id ='8.3.'>8.3. Request tweet </a><a class="headerlink" href="#a-id-8-3-8-3-request-tweet-a" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># For sending GET requests from the API</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="c1"># For saving access tokens and for file management when creating and adding to the dataset</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="c1"># For dealing with json responses we receive from the API</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="c1"># For displaying the data after</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="c1"># For saving the response data in CSV format</span>
+<span class="kn">import</span> <span class="nn">csv</span>
+<span class="c1"># For parsing the dates received from twitter in readable formats</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+<span class="kn">import</span> <span class="nn">dateutil.parser</span>
+<span class="kn">import</span> <span class="nn">unicodedata</span>
+<span class="c1">#To add wait time between requests</span>
+<span class="kn">import</span> <span class="nn">time</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="a-id-8-3-1-8-3-1-getting-id-of-username-jmwooldridge-a">
+<h2><a id ='8.3.1.'>8.3.1. Getting ID of username - <a class="reference external" href="https://twitter.com/jmwooldridge">jmwooldridge</a> </a><a class="headerlink" href="#a-id-8-3-1-8-3-1-getting-id-of-username-jmwooldridge-a" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">request_id</span><span class="p">:</span>
+    
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">token</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">token</span> <span class="o">=</span> <span class="n">token</span>
+    
+    <span class="k">def</span> <span class="nf">create_url</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">user_name</span> <span class="p">):</span>
+        <span class="c1"># Specify the usernames that you want to lookup below</span>
+        <span class="c1"># You can enter up to 100 comma-separated values.</span>
+        <span class="n">usernames</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;usernames=</span><span class="si">{</span> <span class="n">user_name</span> <span class="si">}</span><span class="s2">&quot;</span>
+        <span class="n">user_fields</span> <span class="o">=</span> <span class="s2">&quot;user.fields=description,created_at&quot;</span>
+        <span class="c1"># User fields are adjustable, options include:</span>
+        <span class="c1"># created_at, description, entities, id, location, name,</span>
+        <span class="c1"># pinned_tweet_id, profile_image_url, protected,</span>
+        <span class="c1"># public_metrics, url, username, verified, and withheld</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.twitter.com/2/users/by?</span><span class="si">{}</span><span class="s2">&amp;</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">usernames</span><span class="p">,</span> <span class="n">user_fields</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="n">url</span>
+
+
+    <span class="k">def</span> <span class="nf">bearer_oauth</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">r</span> <span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Method required by bearer token authentication.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">r</span><span class="o">.</span><span class="n">headers</span><span class="p">[</span><span class="s2">&quot;Authorization&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Bearer </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">token</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="n">r</span><span class="o">.</span><span class="n">headers</span><span class="p">[</span><span class="s2">&quot;User-Agent&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;v2UserLookupPython&quot;</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">r</span> <span class="o">=</span> <span class="n">r</span>
+        <span class="k">return</span> <span class="n">r</span>
+
+
+    <span class="k">def</span> <span class="nf">connect_to_endpoint</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">url</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">bearer_oauth</span><span class="p">,)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">!=</span> <span class="mi">200</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span>
+                <span class="s2">&quot;Request returned an error: </span><span class="si">{}</span><span class="s2"> </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                    <span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">,</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
+            
+        <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Token</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Bearer_Token</span> <span class="o">=</span> <span class="s2">&quot;AAAAAAAAAAAAAAAAAAAAAHqDOQEAAAAA13Ox6r2pGXSajjvKhZUT%2BksIvnk%3DhdyhLtNoNYKm50YORIqKDBakGh5JTvjl828R3mToJzFmWjb1CJ&quot;</span>
+<span class="n">get_id_woold</span> <span class="o">=</span> <span class="n">request_id</span><span class="p">(</span> <span class="n">Bearer_Token</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Username</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">get_id_woold</span><span class="o">.</span><span class="n">create_url</span><span class="p">(</span> <span class="s1">&#39;jmwooldridge&#39;</span> <span class="p">)</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">get_id_woold</span><span class="o">.</span><span class="n">connect_to_endpoint</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>200
+</pre></div>
+</div>
+</div>
+</div>
+<p>Getting Data</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">id_woold</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;id&#39;</span><span class="p">]</span>
+<span class="n">id_woold</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;95230497&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="a-id-8-3-2-8-3-2-getting-tweets-timeline-jmwooldridge-a">
+<h2><a id = '8.3.2.'>8.3.2. <a class="reference external" href="https://developer.twitter.com/en/docs/twitter-api/tweets/timelines/introduction">Getting Tweets Timeline</a> - <a class="reference external" href="https://twitter.com/jmwooldridge">jmwooldridge</a> </a><a class="headerlink" href="#a-id-8-3-2-8-3-2-getting-tweets-timeline-jmwooldridge-a" title="Permalink to this heading">#</a></h2>
+<p>The endpoint can return the 3,200 most recent Tweets, Retweets, replies and Quote Tweets posted by the user. <br>
+The user Tweet timeline also supports the ability to specify <code class="docutils literal notranslate"><span class="pre">start_time</span></code> and <code class="docutils literal notranslate"><span class="pre">end_time</span></code> parameters to receive Tweets that were created within a certain window of time.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">create_url</span><span class="p">(</span>  <span class="n">user_id</span> <span class="p">):</span>
+    <span class="c1"># Replace with user ID below</span>
+    <span class="k">return</span> <span class="s2">&quot;https://api.twitter.com/2/users/</span><span class="si">{}</span><span class="s2">/tweets&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">user_id</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">get_params</span><span class="p">():</span>
+    <span class="c1"># Tweet fields are adjustable.</span>
+    <span class="c1"># Options include:</span>
+    <span class="c1"># attachments, author_id, context_annotations,</span>
+    <span class="c1"># conversation_id, created_at, entities, geo, id,</span>
+    <span class="c1"># in_reply_to_user_id, lang, non_public_metrics, organic_metrics,</span>
+    <span class="c1"># possibly_sensitive, promoted_metrics, public_metrics, referenced_tweets,</span>
+    <span class="c1"># source, text, and withheld</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;tweet.fields&quot;</span><span class="p">:</span> <span class="s2">&quot;created_at&quot;</span><span class="p">,</span> <span class="s2">&quot;max_results&quot;</span> <span class="p">:</span> <span class="mi">100</span> <span class="p">}</span>
+
+
+<span class="k">def</span> <span class="nf">bearer_oauth</span><span class="p">(</span><span class="n">r</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Method required by bearer token authentication.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">r</span><span class="o">.</span><span class="n">headers</span><span class="p">[</span><span class="s2">&quot;Authorization&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Bearer </span><span class="si">{</span><span class="n">bearer_token</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="n">r</span><span class="o">.</span><span class="n">headers</span><span class="p">[</span><span class="s2">&quot;User-Agent&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;v2UserTweetsPython&quot;</span>
+    <span class="k">return</span> <span class="n">r</span>
+
+
+<span class="k">def</span> <span class="nf">connect_to_endpoint</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="p">,</span> <span class="n">next_token</span> <span class="o">=</span> <span class="kc">None</span> <span class="p">):</span>
+    <span class="n">params</span><span class="p">[</span><span class="s1">&#39;pagination_token&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">next_token</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="n">bearer_oauth</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">!=</span> <span class="mi">200</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span>
+            <span class="s2">&quot;Request returned an error: </span><span class="si">{}</span><span class="s2"> </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                <span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">,</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+    <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bearer_token</span> <span class="o">=</span> <span class="s1">&#39;AAAAAAAAAAAAAAAAAAAAAHqDOQEAAAAA13Ox6r2pGXSajjvKhZUT%2BksIvnk%3DhdyhLtNoNYKm50YORIqKDBakGh5JTvjl828R3mToJzFmWjb1CJ&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="n">create_url</span><span class="p">(</span> <span class="n">id_woold</span> <span class="p">)</span>
+<span class="n">param</span> <span class="o">=</span> <span class="n">get_params</span><span class="p">()</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">connect_to_endpoint</span><span class="p">(</span> <span class="n">url</span><span class="p">,</span> <span class="n">param</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>200
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;meta&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;result_count&#39;: 100,
+ &#39;newest_id&#39;: &#39;1629595151675924480&#39;,
+ &#39;oldest_id&#39;: &#39;1624164394186727442&#39;,
+ &#39;next_token&#39;: &#39;7140dibdnow9c7btw4515z8c1bcjb3oy28yubpi2r6eya&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">next_token</span> <span class="o">=</span> <span class="s1">&#39;next_token&#39;</span> <span class="ow">in</span> <span class="n">result</span><span class="p">[</span><span class="s1">&#39;meta&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+<span class="n">page</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">while</span> <span class="n">next_token</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">restult</span> <span class="o">=</span> <span class="n">connect_to_endpoint</span><span class="p">(</span> <span class="n">url</span><span class="p">,</span> <span class="n">param</span><span class="p">,</span> <span class="n">result</span><span class="p">[</span><span class="s1">&#39;meta&#39;</span><span class="p">][</span><span class="s1">&#39;next_token&#39;</span><span class="p">]</span> <span class="p">)</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">data</span> <span class="o">+</span> <span class="n">result</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">]</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="n">next_token</span> <span class="o">=</span> <span class="kc">False</span>
+    
+    <span class="k">if</span> <span class="n">page</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">:</span>
+        <span class="n">next_token</span> <span class="o">=</span> <span class="kc">False</span>
+    
+    <span class="n">page</span> <span class="o">=</span> <span class="n">page</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>200
+200
+200
+200
+200
+200
+200
+200
+200
+200
+200
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span> <span class="n">data</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>created_at</th>
+      <th>edit_history_tweet_ids</th>
+      <th>id</th>
+      <th>text</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2023-02-25T21:32:15.000Z</td>
+      <td>[1629595151675924480]</td>
+      <td>1629595151675924480</td>
+      <td>@RoxaBarrantes I wondered that. I think I’m on...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2023-02-25T16:59:18.000Z</td>
+      <td>[1629526462318653440]</td>
+      <td>1629526462318653440</td>
+      <td>@Stella33448324 Given my lack of sleep, I can’...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2023-02-25T16:57:39.000Z</td>
+      <td>[1629526045832658944]</td>
+      <td>1629526045832658944</td>
+      <td>@danilaserra_eco If I toss in my hate for 2023...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2023-02-25T16:41:50.000Z</td>
+      <td>[1629522068294496256]</td>
+      <td>1629522068294496256</td>
+      <td>It never rains in California \nBut girl, don’t...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2023-02-25T14:04:47.000Z</td>
+      <td>[1629482542113107971]</td>
+      <td>1629482542113107971</td>
+      <td>@nikir1 Huh. I hit zero by applying any refund...</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1195</th>
+      <td>2023-02-11T20:58:34.000Z</td>
+      <td>[1624513245024342018]</td>
+      <td>1624513245024342018</td>
+      <td>Not gonna lie: I thought my Poisson regression...</td>
+    </tr>
+    <tr>
+      <th>1196</th>
+      <td>2023-02-11T20:09:42.000Z</td>
+      <td>[1624500949262782468]</td>
+      <td>1624500949262782468</td>
+      <td>“Not my favorite #Caturday, but I’m hanging in...</td>
+    </tr>
+    <tr>
+      <th>1197</th>
+      <td>2023-02-11T15:11:43.000Z</td>
+      <td>[1624425960178155521]</td>
+      <td>1624425960178155521</td>
+      <td>@flynnpolsci Thanks for this! Neal also seems ...</td>
+    </tr>
+    <tr>
+      <th>1198</th>
+      <td>2023-02-11T02:10:54.000Z</td>
+      <td>[1624229461263630337]</td>
+      <td>1624229461263630337</td>
+      <td>@SHUWalshgym Strangest, most entertaining endi...</td>
+    </tr>
+    <tr>
+      <th>1199</th>
+      <td>2023-02-10T21:52:21.000Z</td>
+      <td>[1624164394186727442]</td>
+      <td>1624164394186727442</td>
+      <td>Not an easy week for Neal, who had to have a c...</td>
+    </tr>
+  </tbody>
+</table>
+<p>1200 rows × 4 columns</p>
+</div></div></div>
+</div>
+<p>We are allowed to request only 3200 tweets.</p>
+</section>
+<section id="a-id-8-4-8-4-references-a">
+<h2><a id='8.4.'>8.4. References</a><a class="headerlink" href="#a-id-8-4-8-4-references-a" title="Permalink to this heading">#</a></h2>
+<p><a class="reference external" href="https://towardsdatascience.com/an-extensive-guide-to-collecting-tweets-from-twitter-api-v2-for-academic-research-using-python-3-518fcb71df2a">https://towardsdatascience.com/an-extensive-guide-to-collecting-tweets-from-twitter-api-v2-for-academic-research-using-python-3-518fcb71df2a</a></p>
+<p><a class="reference external" href="https://fairyonice.github.io/extract-someones-tweet-using-tweepy.html">https://fairyonice.github.io/extract-someones-tweet-using-tweepy.html</a></p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Tutorial_Geocoding.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">&lt;no title&gt;</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="group_5_ass_7_2023.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Assigment 7</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-id-8-1-8-1-generate-twitter-api-key-a"><a id="8.1.">8.1. Generate Twitter API Key</a></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-id-8-2-8-2-tweepy-a"><a id="8.2.">8.2. Tweepy </a></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-id-8-3-8-3-request-tweet-a"><a id="8.3.">8.3. Request tweet </a></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-id-8-3-1-8-3-1-getting-id-of-username-jmwooldridge-a"><a id="8.3.1.">8.3.1. Getting ID of username - jmwooldridge </a></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-id-8-3-2-8-3-2-getting-tweets-timeline-jmwooldridge-a"><a id="8.3.2.">8.3.2. Getting Tweets Timeline - jmwooldridge </a></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-id-8-4-8-4-references-a"><a id="8.4.">8.4. References</a></a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Cristian Serrano
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

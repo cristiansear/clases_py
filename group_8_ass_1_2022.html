@@ -1,0 +1,1187 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>1 Assignment &#8212; Clases de Python</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'group_8_ass_1_2022';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="3. Pandas" href="Lecture_3.html" />
+    <link rel="prev" title="&lt;no title&gt;" href="groups_generate.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Clases de Pyhton de la Diplomatura de Ciencia de Datos
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Lecture_2.html">Introduction to Python: Tuples, Lists, Dictionaries, Arrays</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">1 Assignment</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Lecture_3.html">3. <a id="intro">Pandas</a></a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="group_8_ass_2_2022.html">1 Assignment</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="group_1_ass_3_2022.html">1 Assignment 3</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Lecture_4.html">4. If and Loops</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="group_1_ass_4_2022.html">Assigment 4</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture_5.html">5. Functions and Class</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Lecture_6.html">Inheritance, Private Variables, Fixed attributes, Costumize Exceptions with Python</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="lecture_7R.html">7. Web Scraping</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Lecture_8.html">8. API</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Visualitazion.html">1. Quantities:</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Geopandas1.html">¿Geopandas?</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Folium.html">FOLIUM:</a></li>
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Causal_Infenrece.html">1 Causal Inference</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="NLP_Tutorial.html">NLP</a></li>
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fgroup_8_ass_1_2022.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/group_8_ass_1_2022.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>1 Assignment</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tuple">1.1 Tuple</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lists">1.2 Lists</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#strings">1.3 Strings</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="assignment">
+<h1>1 Assignment<a class="headerlink" href="#assignment" title="Permalink to this heading">#</a></h1>
+<p>It is totally prohibited to use any kind of loop. You can use stackoverflow. If you copy codes from previous answers, explain each step. No explanation is <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">points</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tuple1</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;Orange&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">],</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">25</span><span class="p">))</span>
+<span class="n">tuple2</span> <span class="o">=</span> <span class="p">([</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">7</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="tuple">
+<h2>1.1 Tuple<a class="headerlink" href="#tuple" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Print the first item of the second item of <code class="docutils literal notranslate"><span class="pre">tuple1</span></code> object. <strong>Hint: Use indexing</strong></p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tuple1</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;Orange&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">],</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">25</span><span class="p">))</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">tuple1</span><span class="p">)</span>
+<span class="n">tuple1_1</span><span class="o">=</span><span class="n">tuple1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="c1">#imprime el segundo item de tuple1</span>
+<span class="n">tuple1_1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1">#imprime el primer item del  segundo item de tuple1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;Orange&#39;, [10, 20, 30], (5, 15, 25))
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Print the last item of the <code class="docutils literal notranslate"><span class="pre">tuple1</span></code> object.<strong>Hint: Use indexing</strong></p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tuple1</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># Accedí al último ítem de la tupla con un índice negativo</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(5, 15, 25)
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Change the value “orange” for “pink grapefruit”. Comment the output. <strong>Hint: Is it possible?</strong></p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># No, no es posible porque una tupla es inmutable, no se puede cambiar el tamaño </span>
+<span class="n">tuple1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;pink grapefruit&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span>\<span class="n">ipykernel_1376</span>\<span class="mf">488294747.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># No, no es posible porque una tupla es inmutable, no se puede cambiar el tamaño</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">tuple1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;pink grapefruit&quot;</span>
+
+<span class="ne">TypeError</span>: &#39;tuple&#39; object does not support item assignment
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Print the length of <code class="docutils literal notranslate"><span class="pre">tuple1</span></code>. <strong>Hint: Length function</strong></p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tuple1</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;Orange&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">],</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">25</span><span class="p">))</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">tuple1</span><span class="p">)</span> <span class="c1">#Devuelve longitud tuple1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>Sum all the elements of tuple2 and describe your steps and explain each of them. <strong>Hint: Use <code class="docutils literal notranslate"><span class="pre">map</span></code> function.</strong></p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tuple1</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;Orange&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">],</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">25</span><span class="p">))</span>
+<span class="n">tuple2</span> <span class="o">=</span> <span class="p">([</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">7</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">reduce</span>
+<span class="n">result</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">sum</span><span class="p">,</span> <span class="n">tuple2</span><span class="p">)</span>
+<span class="n">Sum</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="n">Sum</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>42
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="6">
+<li><p>Generate a new tuple object named as <code class="docutils literal notranslate"><span class="pre">tuple3</span></code> with the half values of <code class="docutils literal notranslate"><span class="pre">tuple2</span></code>. This tuple should be similar as <code class="docutils literal notranslate"><span class="pre">tuple2</span></code>, tuple of lists.  <strong>Hint: Use <code class="docutils literal notranslate"><span class="pre">map</span></code> funciont.</strong></p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># solucion 6 tupla</span>
+<span class="c1">#definimos la funcion que nos permita obtener la mitad</span>
+<span class="k">def</span> <span class="nf">half</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">number</span><span class="o">/</span><span class="mi">2</span>
+
+<span class="c1">#usamos la funcion map para aplicar la funcion half a todos los elementos de la lista y agrupamos en la tupla3</span>
+<span class="n">tuple3</span> <span class="o">=</span> <span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">half</span><span class="p">,</span><span class="n">tuple2</span><span class="p">[</span><span class="mi">0</span><span class="p">])),</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">half</span><span class="p">,</span><span class="n">tuple2</span><span class="p">[</span><span class="mi">1</span><span class="p">])),</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">half</span><span class="p">,</span><span class="n">tuple2</span><span class="p">[</span><span class="mi">2</span><span class="p">])))</span>
+<span class="n">tuple3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>([3.5, 4.0], [4.5, 0.5], [5.0, 3.5])
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="lists">
+<h2>1.2 Lists<a class="headerlink" href="#lists" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">f_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span> <span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="s2">&quot;Austria&quot;</span><span class="p">,</span> <span class="s2">&quot;Germany&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="s2">&quot;Pakistan&quot;</span><span class="p">,</span> <span class="s2">&quot;np.nan&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span> <span class="p">]</span>
+<span class="n">text1</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;My&#39;</span><span class="p">,</span> <span class="s1">&#39;teacher&#39;</span><span class="p">,</span> <span class="s1">&#39;assistant&#39;</span><span class="p">,</span> <span class="s1">&#39;is&#39;</span><span class="p">,</span> <span class="s1">&#39;so&#39;</span><span class="p">,</span> <span class="s1">&#39;boring.&#39;</span><span class="p">]</span>
+<span class="n">p2_list</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">2</span> <span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span> <span class="p">]</span>
+<span class="n">values1</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">86</span><span class="p">,</span> <span class="mi">86</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">83</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">84</span><span class="p">,</span> <span class="mi">1</span> <span class="p">]</span> 
+<span class="n">last_and_name</span> <span class="o">=</span> <span class="p">[</span> <span class="s2">&quot;CORNEJO SANCHEZ, CHRISTIAN SANTOS&quot;</span><span class="p">,</span> <span class="s2">&quot;ORELLANA QUISPE, CRISTIAN NASSER&quot;</span><span class="p">,</span> <span class="s2">&quot;MORALES CHOQUEHUANCA, ANGELICA KARINA&quot;</span><span class="p">,</span> <span class="s2">&quot;GUIMARAY RIBEYRO, JOSE ROBERTO&quot;</span><span class="p">,</span> <span class="s2">&quot;CAMACHO GAVIDIA, ABEL FERNANDO&quot;</span><span class="p">,</span> <span class="s2">&quot;TINTAYA ORIHUELA, MEIR ALVARO&quot;</span><span class="p">,</span> <span class="s2">&quot;CHAVEZ MARTINEZ, JOSELIN ALEXANDRA&quot;</span><span class="p">,</span> <span class="s2">&quot;FIGUEROA MURO, LEONEL ARTURO&quot;</span><span class="p">,</span> <span class="s2">&quot;GOMEZ CRIBILLERO, JOSE FELIPE&quot;</span><span class="p">,</span> <span class="s2">&quot;PALOMINO SEGUÍN, AFRANIA&quot;</span><span class="p">,</span> <span class="s2">&quot;LUZON CUEVA, BIANCA MARIETTE&quot;</span><span class="p">,</span> <span class="s2">&quot;SUAÑA ZEGARRA, ADRIAN ANDRE&quot;</span><span class="p">,</span> <span class="s2">&quot;SOTO POMACHAGUA, DORKAS YOMIRA JHERMY&quot;</span><span class="p">,</span> <span class="s2">&quot;FIORENTINO MARTINEZ, LADY ALY&quot;</span><span class="p">,</span> <span class="s2">&quot;LAMA MAVILA, HECTOR ANDRE&quot;</span><span class="p">,</span> <span class="s2">&quot;MEZA HINOJO, GUSTAVO&quot;</span><span class="p">,</span> <span class="s2">&quot;LOZADA MURILLO, PERSEO MARCELO&quot;</span><span class="p">,</span> <span class="s2">&quot;ZAMBRANO JIMENEZ, MIGUEL ALONZO&quot;</span><span class="p">,</span> <span class="s2">&quot;JACOBS LUQUE, NICOLAS&quot;</span><span class="p">,</span> <span class="s2">&quot;VIDAL VIDAL, ROCIO GABRIELA&quot;</span><span class="p">,</span> <span class="s2">&quot;TORRES ANICAMA, JANE CAMILA&quot;</span><span class="p">,</span> <span class="s2">&quot;LOPEZ ESTRADA, MARIA ELISA&quot;</span><span class="p">,</span> <span class="s2">&quot;BOYCO ORAMS, ALEJANDRO&quot;</span><span class="p">,</span> <span class="s2">&quot;DIAZ BERROSPI, KARLINE ROSMELI&quot;</span><span class="p">,</span> <span class="s2">&quot;RIEGA ESCALANTE, STEPHY ROSARIO&quot;</span><span class="p">,</span> <span class="s2">&quot;LEVANO TORRES, VALERIA CECILIA&quot;</span><span class="p">,</span> <span class="s2">&quot;ESQUIVES BRAVO, SEBASTIAN RENATO&quot;</span><span class="p">,</span> <span class="s2">&quot;PEREZ GONZALES, JUAN CARLOS&quot;</span><span class="p">,</span> <span class="s2">&quot;OTERO MAGUIÑA, MARIANA&quot;</span><span class="p">,</span> <span class="s2">&quot;CLAVO CAMPOS, ANDREA BRIZETH&quot;</span><span class="p">,</span> <span class="s2">&quot;AGUILAR GARCIA, ERICK JOSUE&quot;</span><span class="p">,</span> <span class="s2">&quot;CALDAS VELASQUEZ, JOSUE DANIEL&quot;</span><span class="p">,</span> <span class="s2">&quot;SALAS NUÑEZ BORJA, FABIO MANUEL&quot;</span><span class="p">,</span> <span class="s2">&quot;PIZARRO VILLANES, FERNANDA NICOLLE&quot;</span><span class="p">,</span> <span class="s2">&quot;QUILLATUPA MORALES, ANGELA ADELINA&quot;</span><span class="p">,</span> <span class="s2">&quot;HUANCAYA IDONE, CESAR DANTE&quot;</span><span class="p">,</span> <span class="s2">&quot;CALVO PORTOCARRERO, GABRIELA ISABEL&quot;</span><span class="p">,</span> <span class="s2">&quot;IBAÑEZ ABANTO, ANGEL MAURICIO&quot;</span><span class="p">,</span> <span class="s2">&quot;MELÉNDEZ APONTE, JUAN DIEGO&quot;</span><span class="p">,</span> <span class="s2">&quot;CRISTIAN SERRANO, ARONE&quot;</span><span class="p">,</span> <span class="s2">&quot;HINOJOSA CAHUANA, PERCY ALBERTH&quot;</span><span class="p">,</span> <span class="s2">&quot;ANGLAS GARCÍA, KEVIN ARTURO&quot;</span><span class="p">,</span> <span class="s2">&quot;ALDAVE ACOSTA, CESAR ERNESTO&quot;</span><span class="p">,</span> <span class="s2">&quot;NÚÑEZ HUAMÁN, CÉSAR AGUSTO&quot;</span><span class="p">,</span> <span class="s2">&quot;OBREGON HUAMAN, DIANA EDITH&quot;</span><span class="p">,</span> <span class="s2">&quot;SOTO PACHERRES, RODRIGO FRANCO&quot;</span><span class="p">,</span> <span class="s2">&quot;INGARUCA RIVERA, GRETTEL ALEXANDRA&quot;</span><span class="p">,</span> <span class="s2">&quot;ROJAS HUAMAN, ROSA ANGELA&quot;</span><span class="p">,</span> <span class="s2">&quot;NEYRA SALAS, DANTE OMAR&quot;</span><span class="p">,</span> <span class="s2">&quot;HUERTA ESPINOZA, YAJAIRA ALEXANDRA&quot;</span><span class="p">,</span> <span class="s2">&quot;HUANCA MARTINEZ, JORGE ALBERTO&quot;</span><span class="p">,</span> <span class="s2">&quot;FLORES CADILLO, ALEXIS&quot;</span> <span class="p">]</span>
+<span class="n">emails</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;cscornejo@pucp.edu.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;orellana.cn@pucp.edu.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;karina.morales@pucp.edu.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;a20083223@pucp.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;abel.camacho@pucp.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;mtintaya@pucp.edu.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;joselin.chavez@pucp.edu.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;a20105737@pucp.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;jfgomezc@pucp.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;afrania.palomino@pucp.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;luzon.bianca@pucp.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;adrian.suanaz@pucp.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;soto.y@pucp.edu.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;a20132766@pucp.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;andre.lama@pucp.edu.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;gustavo.meza@pucp.edu.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;pmlozada@pucp.edu.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;m.zambranoj@pucp.edu.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;nicolas.jacobs@pucp.edu.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;gvidal@pucp.edu.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;jane.torres@pucp.edu.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;m.lopez@pucp.edu.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;alejandro.boyco@pucp.edu.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;a20167070@pucp.edu.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;riega.stephy@pucp.edu.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;vlevanot@pucp.edu.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;sesquives@pucp.edu.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;perez.juanc@pucp.edu.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;mariana.otero@pucp.edu.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;aclavo@pucp.edu.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;a20182474@pucp.edu.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;josue.caldas@pucp.edu.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;fabio.salas@pucp.edu.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;fernanda.pizarro@pucp.edu.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;aquillatupa@pucp.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;f0873079@pucp.edu.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;flores.alexis@pucp.edu.pe&quot;</span><span class="p">,</span> <span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple">
+<li><p>Show the indices of the <code class="docutils literal notranslate"><span class="pre">np.nan</span></code> values  in the <code class="docutils literal notranslate"><span class="pre">f_list</span></code> list. We want to see this output: <code class="docutils literal notranslate"><span class="pre">The</span> <span class="pre">indices</span> <span class="pre">0,</span> <span class="pre">1,</span> <span class="pre">4,</span> <span class="pre">7</span> <span class="pre">have</span> <span class="pre">np.nan</span> <span class="pre">values.</span></code> <strong>Hint: Use print function and <a class="reference external" href="https://realpython.com/python-f-strings/">f-strings</a> to insert the indices values.</strong></p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">clear_non_nans</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+  <span class="n">idx</span><span class="p">,</span> <span class="n">val</span> <span class="o">=</span> <span class="n">x</span>
+  <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">val</span><span class="p">)</span> <span class="o">==</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">return</span> <span class="kc">False</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+  <span class="k">return</span> <span class="kc">False</span>
+
+<span class="n">res</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="nb">filter</span><span class="p">(</span><span class="n">clear_non_nans</span><span class="p">,</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">f_list</span><span class="p">))))</span>
+<span class="sa">f</span><span class="s1">&#39;The indices </span><span class="si">{</span><span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">res</span><span class="p">)</span><span class="si">}</span><span class="s1"> have np.nan values.&#39;</span>
+
+<span class="c1"># Primero uso la función filter, donde he escrito la función, </span>
+<span class="c1"># la cual se encarga de retornar un valor verdadero o falso si es que encuentra un np.nan</span>
+<span class="c1"># Una vez adquirida la lista de np.nan con su índice respectivo, se aplica un map donde el lambda</span>
+<span class="c1"># solo retorna el primer valor (o sea el índice).</span>
+<span class="c1"># Finalmente recibo una nueva lista con los índices convertidos en string de los np.nan.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;The indices 0, 1, 4, 7 have np.nan values.&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Replicate 4 times the values of the list <code class="docutils literal notranslate"><span class="pre">p2_list</span></code>. We expect an ouput like this: <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">2</span> <span class="pre">,</span> <span class="pre">3,</span> <span class="pre">4,</span> <span class="pre">5,</span> <span class="pre">2</span> <span class="pre">,</span> <span class="pre">3,</span> <span class="pre">4,</span> <span class="pre">5,</span> <span class="pre">2</span> <span class="pre">,</span> <span class="pre">3,</span> <span class="pre">4,</span> <span class="pre">5,</span> <span class="pre">2</span> <span class="pre">,</span> <span class="pre">3,</span> <span class="pre">4,</span> <span class="pre">5]</span></code>.  <strong>Hint: Use multiplication function in <code class="docutils literal notranslate"><span class="pre">lists</span></code>and see the output.</strong></p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p2_list</span><span class="o">=</span><span class="p">[</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span> <span class="p">]</span>
+<span class="n">p2_list_1</span><span class="o">=</span><span class="n">p2_list</span><span class="o">*</span><span class="mi">4</span> <span class="c1"># repite 4 veces los elementos de la lista p2-list, conservando el orden inicial.</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">p2_list_1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Print the length of <code class="docutils literal notranslate"><span class="pre">f_list</span></code>. <strong>Hint: Length function</strong></p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> <span class="c1">#se define como numérico a np</span>
+<span class="n">f_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span> <span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="s2">&quot;Austria&quot;</span><span class="p">,</span> <span class="s2">&quot;Germany&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="s2">&quot;Pakistan&quot;</span><span class="p">,</span> <span class="s2">&quot;np.nan&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span> <span class="p">]</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">f_list</span><span class="p">)</span> <span class="c1">#devuelve el número de términos de f_list</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span> <span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="s2">&quot;Austria&quot;</span><span class="p">,</span> <span class="s2">&quot;Germany&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="s2">&quot;Pakistan&quot;</span><span class="p">,</span> <span class="s2">&quot;np.nan&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span> <span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text1</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;My&#39;</span><span class="p">,</span> <span class="s1">&#39;teacher&#39;</span><span class="p">,</span> <span class="s1">&#39;assistant&#39;</span><span class="p">,</span> <span class="s1">&#39;is&#39;</span><span class="p">,</span> <span class="s1">&#39;so&#39;</span><span class="p">,</span> <span class="s1">&#39;boring.&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p2_list</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">2</span> <span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span> <span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">values1</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">86</span><span class="p">,</span> <span class="mi">86</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">83</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">84</span><span class="p">,</span> <span class="mi">1</span> <span class="p">]</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># These two lists a</span>
+<span class="n">last_and_name</span> <span class="o">=</span> <span class="p">[</span> <span class="s2">&quot;CORNEJO SANCHEZ, CHRISTIAN SANTOS&quot;</span><span class="p">,</span> <span class="s2">&quot;ORELLANA QUISPE, CRISTIAN NASSER&quot;</span><span class="p">,</span> <span class="s2">&quot;MORALES CHOQUEHUANCA, ANGELICA KARINA&quot;</span><span class="p">,</span> <span class="s2">&quot;GUIMARAY RIBEYRO, JOSE ROBERTO&quot;</span><span class="p">,</span> <span class="s2">&quot;CAMACHO GAVIDIA, ABEL FERNANDO&quot;</span><span class="p">,</span> <span class="s2">&quot;TINTAYA ORIHUELA, MEIR ALVARO&quot;</span><span class="p">,</span> <span class="s2">&quot;CHAVEZ MARTINEZ, JOSELIN ALEXANDRA&quot;</span><span class="p">,</span> <span class="s2">&quot;FIGUEROA MURO, LEONEL ARTURO&quot;</span><span class="p">,</span> <span class="s2">&quot;GOMEZ CRIBILLERO, JOSE FELIPE&quot;</span><span class="p">,</span> <span class="s2">&quot;PALOMINO SEGUÍN, AFRANIA&quot;</span><span class="p">,</span> <span class="s2">&quot;LUZON CUEVA, BIANCA MARIETTE&quot;</span><span class="p">,</span> <span class="s2">&quot;SUAÑA ZEGARRA, ADRIAN ANDRE&quot;</span><span class="p">,</span> <span class="s2">&quot;SOTO POMACHAGUA, DORKAS YOMIRA JHERMY&quot;</span><span class="p">,</span> <span class="s2">&quot;FIORENTINO MARTINEZ, LADY ALY&quot;</span><span class="p">,</span> <span class="s2">&quot;LAMA MAVILA, HECTOR ANDRE&quot;</span><span class="p">,</span> <span class="s2">&quot;MEZA HINOJO, GUSTAVO&quot;</span><span class="p">,</span> <span class="s2">&quot;LOZADA MURILLO, PERSEO MARCELO&quot;</span><span class="p">,</span> <span class="s2">&quot;ZAMBRANO JIMENEZ, MIGUEL ALONZO&quot;</span><span class="p">,</span> <span class="s2">&quot;JACOBS LUQUE, NICOLAS&quot;</span><span class="p">,</span> <span class="s2">&quot;VIDAL VIDAL, ROCIO GABRIELA&quot;</span><span class="p">,</span> <span class="s2">&quot;TORRES ANICAMA, JANE CAMILA&quot;</span><span class="p">,</span> <span class="s2">&quot;LOPEZ ESTRADA, MARIA ELISA&quot;</span><span class="p">,</span> <span class="s2">&quot;BOYCO ORAMS, ALEJANDRO&quot;</span><span class="p">,</span> <span class="s2">&quot;DIAZ BERROSPI, KARLINE ROSMELI&quot;</span><span class="p">,</span> <span class="s2">&quot;RIEGA ESCALANTE, STEPHY ROSARIO&quot;</span><span class="p">,</span> <span class="s2">&quot;LEVANO TORRES, VALERIA CECILIA&quot;</span><span class="p">,</span> <span class="s2">&quot;ESQUIVES BRAVO, SEBASTIAN RENATO&quot;</span><span class="p">,</span> <span class="s2">&quot;PEREZ GONZALES, JUAN CARLOS&quot;</span><span class="p">,</span> <span class="s2">&quot;OTERO MAGUIÑA, MARIANA&quot;</span><span class="p">,</span> <span class="s2">&quot;CLAVO CAMPOS, ANDREA BRIZETH&quot;</span><span class="p">,</span> <span class="s2">&quot;AGUILAR GARCIA, ERICK JOSUE&quot;</span><span class="p">,</span> <span class="s2">&quot;CALDAS VELASQUEZ, JOSUE DANIEL&quot;</span><span class="p">,</span> <span class="s2">&quot;SALAS NUÑEZ BORJA, FABIO MANUEL&quot;</span><span class="p">,</span> <span class="s2">&quot;PIZARRO VILLANES, FERNANDA NICOLLE&quot;</span><span class="p">,</span> <span class="s2">&quot;QUILLATUPA MORALES, ANGELA ADELINA&quot;</span><span class="p">,</span> <span class="s2">&quot;HUANCAYA IDONE, CESAR DANTE&quot;</span><span class="p">,</span> <span class="s2">&quot;CALVO PORTOCARRERO, GABRIELA ISABEL&quot;</span><span class="p">,</span> <span class="s2">&quot;IBAÑEZ ABANTO, ANGEL MAURICIO&quot;</span><span class="p">,</span> <span class="s2">&quot;MELÉNDEZ APONTE, JUAN DIEGO&quot;</span><span class="p">,</span> <span class="s2">&quot;CRISTIAN SERRANO, ARONE&quot;</span><span class="p">,</span> <span class="s2">&quot;HINOJOSA CAHUANA, PERCY ALBERTH&quot;</span><span class="p">,</span> <span class="s2">&quot;ANGLAS GARCÍA, KEVIN ARTURO&quot;</span><span class="p">,</span> <span class="s2">&quot;ALDAVE ACOSTA, CESAR ERNESTO&quot;</span><span class="p">,</span> <span class="s2">&quot;NÚÑEZ HUAMÁN, CÉSAR AGUSTO&quot;</span><span class="p">,</span> <span class="s2">&quot;OBREGON HUAMAN, DIANA EDITH&quot;</span><span class="p">,</span> <span class="s2">&quot;SOTO PACHERRES, RODRIGO FRANCO&quot;</span><span class="p">,</span> <span class="s2">&quot;INGARUCA RIVERA, GRETTEL ALEXANDRA&quot;</span><span class="p">,</span> <span class="s2">&quot;ROJAS HUAMAN, ROSA ANGELA&quot;</span><span class="p">,</span> <span class="s2">&quot;NEYRA SALAS, DANTE OMAR&quot;</span><span class="p">,</span> <span class="s2">&quot;HUERTA ESPINOZA, YAJAIRA ALEXANDRA&quot;</span><span class="p">,</span> <span class="s2">&quot;HUANCA MARTINEZ, JORGE ALBERTO&quot;</span><span class="p">,</span> <span class="s2">&quot;FLORES CADILLO, ALEXIS&quot;</span> <span class="p">]</span>
+<span class="n">emails</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;cscornejo@pucp.edu.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;orellana.cn@pucp.edu.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;karina.morales@pucp.edu.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;a20083223@pucp.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;abel.camacho@pucp.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;mtintaya@pucp.edu.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;joselin.chavez@pucp.edu.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;a20105737@pucp.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;jfgomezc@pucp.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;afrania.palomino@pucp.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;luzon.bianca@pucp.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;adrian.suanaz@pucp.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;soto.y@pucp.edu.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;a20132766@pucp.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;andre.lama@pucp.edu.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;gustavo.meza@pucp.edu.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;pmlozada@pucp.edu.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;m.zambranoj@pucp.edu.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;nicolas.jacobs@pucp.edu.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;gvidal@pucp.edu.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;jane.torres@pucp.edu.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;m.lopez@pucp.edu.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;alejandro.boyco@pucp.edu.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;a20167070@pucp.edu.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;riega.stephy@pucp.edu.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;vlevanot@pucp.edu.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;sesquives@pucp.edu.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;perez.juanc@pucp.edu.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;mariana.otero@pucp.edu.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;aclavo@pucp.edu.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;a20182474@pucp.edu.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;josue.caldas@pucp.edu.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;fabio.salas@pucp.edu.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;fernanda.pizarro@pucp.edu.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;aquillatupa@pucp.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;f0873079@pucp.edu.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;flores.alexis@pucp.edu.pe&quot;</span><span class="p">,</span> <span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Print <code class="docutils literal notranslate"><span class="pre">My</span> <span class="pre">teacher</span> <span class="pre">assistant</span> <span class="pre">is</span> <span class="pre">so</span> <span class="pre">boring.</span></code> using <code class="docutils literal notranslate"><span class="pre">text1</span></code> list. <strong>Hint: Use the <a class="reference external" href="https://stackoverflow.com/questions/493819/why-is-it-string-joinlist-instead-of-list-joinstring"><code class="docutils literal notranslate"><span class="pre">join</span></code> function</a></strong></p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">text1</span><span class="p">)</span> <span class="c1"># Usé la función join para unir la lista con un espacio.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;My teacher assistant is so boring.&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>Print <code class="docutils literal notranslate"><span class="pre">My</span> <span class="pre">TA</span> <span class="pre">is</span> <span class="pre">so</span> <span class="pre">boring,</span> <span class="pre">but</span> <span class="pre">is</span> <span class="pre">very</span> <span class="pre">funny.</span></code> using <code class="docutils literal notranslate"><span class="pre">text1</span></code> list.<strong>Hint: Use the <code class="docutils literal notranslate"><span class="pre">join</span></code> function, and <code class="docutils literal notranslate"><span class="pre">extend</span></code> method.</strong></p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">text1</span><span class="p">)</span>
+<span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;TA&quot;</span>
+<span class="n">x</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">&quot;assistant&quot;</span><span class="p">)</span>
+<span class="n">x</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;boring,&quot;</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;but&quot;</span><span class="p">,</span><span class="s2">&quot;is&quot;</span><span class="p">,</span><span class="s2">&quot;very&quot;</span><span class="p">,</span><span class="s2">&quot;funny.&quot;</span><span class="p">]</span>
+<span class="n">x</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>My TA is so boring, but is very funny.
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="6">
+<li><p>Print <br>
+<code class="docutils literal notranslate"><span class="pre">The</span> <span class="pre">max</span> <span class="pre">value</span> <span class="pre">of</span> <span class="pre">values1</span> <span class="pre">is</span> <span class="pre">86</span> <span class="pre">and</span> <span class="pre">is</span> <span class="pre">located</span> <span class="pre">in</span> <span class="pre">the</span> <span class="pre">0</span> <span class="pre">index.</span> </code> <br>
+<code class="docutils literal notranslate"><span class="pre">The</span> <span class="pre">min</span> <span class="pre">value</span> <span class="pre">of</span> <span class="pre">values1</span> <span class="pre">is</span> <span class="pre">0</span> <span class="pre">and</span> <span class="pre">is</span> <span class="pre">located</span> <span class="pre">in</span> <span class="pre">the</span> <span class="pre">7</span> <span class="pre">index.</span> </code> <br> <strong>Hint: Use the <code class="docutils literal notranslate"><span class="pre">f-string</span></code>, <code class="docutils literal notranslate"><span class="pre">min</span></code>, and <code class="docutils literal notranslate"><span class="pre">max</span></code> functions.</strong>
+<br></p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The max value of values1 is </span><span class="si">{</span><span class="nb">max</span><span class="p">(</span><span class="n">values1</span><span class="p">)</span><span class="si">}</span><span class="s1"> and is located in the </span><span class="si">{</span><span class="n">values1</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">values1</span><span class="p">))</span><span class="si">}</span><span class="s1"> index.&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The min value of values1 is </span><span class="si">{</span><span class="nb">min</span><span class="p">(</span><span class="n">values1</span><span class="p">)</span><span class="si">}</span><span class="s1"> and is located in the </span><span class="si">{</span><span class="n">values1</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">values1</span><span class="p">))</span><span class="si">}</span><span class="s1"> index.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The max value of values1 is 86 and is located in the 0 index.
+The min value of values1 is 0 and is located in the 7 index.
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="7">
+<li><p>Get two lists: <code class="docutils literal notranslate"><span class="pre">names</span></code> and <code class="docutils literal notranslate"><span class="pre">last_names</span></code> using <code class="docutils literal notranslate"><span class="pre">last_and_name</span></code> list. <strong>Hint: Use <code class="docutils literal notranslate"><span class="pre">map</span></code> and <code class="docutils literal notranslate"><span class="pre">split</span></code>.</strong></p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#solucion 7 list</span>
+<span class="c1">#se define una funcion, esta divide las cadenas de textos(nombres y apellidos) por medio de un coma y un espacio</span>
+<span class="c1"># luego obtiene la cadena de posicion 1 (nombres )</span>
+<span class="k">def</span> <span class="nf">div_str1</span><span class="p">(</span><span class="n">nombres</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">nombres</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;, &#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="c1"># funcion map ejecuta la funcion div_str a cada elemento de la lista last_and_name</span>
+<span class="c1"># y se agrupan mediante la funcion list    </span>
+<span class="n">names</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">div_str1</span><span class="p">,</span> <span class="n">last_and_name</span><span class="p">))</span>
+<span class="n">names</span>   
+
+<span class="c1">#de igual forma para los apellidos</span>
+<span class="k">def</span> <span class="nf">div_str2</span><span class="p">(</span><span class="n">apellidos</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">apellidos</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;, &#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># funcion map ejecuta la funcion div_str a cada elemento de la lista last_and_name</span>
+<span class="c1"># y se agrupan mediante la funcion list    </span>
+<span class="n">last_names</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">div_str2</span><span class="p">,</span> <span class="n">last_and_name</span><span class="p">))</span>
+<span class="n">last_names</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;CORNEJO SANCHEZ&#39;,
+ &#39;ORELLANA QUISPE&#39;,
+ &#39;MORALES CHOQUEHUANCA&#39;,
+ &#39;GUIMARAY RIBEYRO&#39;,
+ &#39;CAMACHO GAVIDIA&#39;,
+ &#39;TINTAYA ORIHUELA&#39;,
+ &#39;CHAVEZ MARTINEZ&#39;,
+ &#39;FIGUEROA MURO&#39;,
+ &#39;GOMEZ CRIBILLERO&#39;,
+ &#39;PALOMINO SEGUÍN&#39;,
+ &#39;LUZON CUEVA&#39;,
+ &#39;SUAÑA ZEGARRA&#39;,
+ &#39;SOTO POMACHAGUA&#39;,
+ &#39;FIORENTINO MARTINEZ&#39;,
+ &#39;LAMA MAVILA&#39;,
+ &#39;MEZA HINOJO&#39;,
+ &#39;LOZADA MURILLO&#39;,
+ &#39;ZAMBRANO JIMENEZ&#39;,
+ &#39;JACOBS LUQUE&#39;,
+ &#39;VIDAL VIDAL&#39;,
+ &#39;TORRES ANICAMA&#39;,
+ &#39;LOPEZ ESTRADA&#39;,
+ &#39;BOYCO ORAMS&#39;,
+ &#39;DIAZ BERROSPI&#39;,
+ &#39;RIEGA ESCALANTE&#39;,
+ &#39;LEVANO TORRES&#39;,
+ &#39;ESQUIVES BRAVO&#39;,
+ &#39;PEREZ GONZALES&#39;,
+ &#39;OTERO MAGUIÑA&#39;,
+ &#39;CLAVO CAMPOS&#39;,
+ &#39;AGUILAR GARCIA&#39;,
+ &#39;CALDAS VELASQUEZ&#39;,
+ &#39;SALAS NUÑEZ BORJA&#39;,
+ &#39;PIZARRO VILLANES&#39;,
+ &#39;QUILLATUPA MORALES&#39;,
+ &#39;HUANCAYA IDONE&#39;,
+ &#39;CALVO PORTOCARRERO&#39;,
+ &#39;IBAÑEZ ABANTO&#39;,
+ &#39;MELÉNDEZ APONTE&#39;,
+ &#39;CRISTIAN SERRANO&#39;,
+ &#39;HINOJOSA CAHUANA&#39;,
+ &#39;ANGLAS GARCÍA&#39;,
+ &#39;ALDAVE ACOSTA&#39;,
+ &#39;NÚÑEZ HUAMÁN&#39;,
+ &#39;OBREGON HUAMAN&#39;,
+ &#39;SOTO PACHERRES&#39;,
+ &#39;INGARUCA RIVERA&#39;,
+ &#39;ROJAS HUAMAN&#39;,
+ &#39;NEYRA SALAS&#39;,
+ &#39;HUERTA ESPINOZA&#39;,
+ &#39;HUANCA MARTINEZ&#39;,
+ &#39;FLORES CADILLO&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="8">
+<li><p>Give only the last names of students who do not have email. Use the <code class="docutils literal notranslate"><span class="pre">emails</span></code> and <code class="docutils literal notranslate"><span class="pre">last_names</span></code> listt. <strong>Hint: Use <code class="docutils literal notranslate"><span class="pre">map</span></code> and <code class="docutils literal notranslate"><span class="pre">split</span></code>.</strong></p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Agrupamos los apellidos  correo electrónico con zip creando email_G</span>
+<span class="n">email_g</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="n">last_and_name</span><span class="p">,</span> <span class="n">emails</span><span class="p">)</span>
+
+<span class="c1">#identificamos los elementos que no tienen correo dentro de email_g con lambda, filtrando los elementos que cumplen con la condición planteada </span>
+<span class="n">f_p</span> <span class="o">=</span> <span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">email_g</span><span class="p">)</span>
+
+<span class="c1">#Dentro de last_names separamos los elementos anteriores a la &quot;,&quot; creando la lista de apellidos sin email</span>
+<span class="n">last_names_wo_em</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="n">f_p</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">last_names_wo_em</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;HUANCAYA IDONE&#39;, &#39;CALVO PORTOCARRERO&#39;, &#39;IBAÑEZ ABANTO&#39;, &#39;MELÉNDEZ APONTE&#39;, &#39;CRISTIAN SERRANO&#39;, &#39;ANGLAS GARCÍA&#39;, &#39;ALDAVE ACOSTA&#39;, &#39;NÚÑEZ HUAMÁN&#39;, &#39;OBREGON HUAMAN&#39;, &#39;SOTO PACHERRES&#39;, &#39;INGARUCA RIVERA&#39;, &#39;ROJAS HUAMAN&#39;, &#39;NEYRA SALAS&#39;, &#39;HUERTA ESPINOZA&#39;, &#39;HUANCA MARTINEZ&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="strings">
+<h2>1.3 Strings<a class="headerlink" href="#strings" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">str1</span> <span class="o">=</span> <span class="s1">&#39;I am                            too                                                        old&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">emails</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;cscornejo@pucp.edu.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;orellana.cn@pucp.edu.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;karina.morales@pucp.edu.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;a20083223@pucp.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;abel.camacho@pucp.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;mtintaya@pucp.edu.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;joselin.chavez@pucp.edu.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;a20105737@pucp.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;jfgomezc@pucp.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;afrania.palomino@pucp.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;luzon.bianca@pucp.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;adrian.suanaz@pucp.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;soto.y@pucp.edu.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;a20132766@pucp.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;andre.lama@pucp.edu.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;gustavo.meza@pucp.edu.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;pmlozada@pucp.edu.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;m.zambranoj@pucp.edu.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;nicolas.jacobs@pucp.edu.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;gvidal@pucp.edu.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;jane.torres@pucp.edu.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;m.lopez@pucp.edu.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;alejandro.boyco@pucp.edu.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;a20167070@pucp.edu.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;riega.stephy@pucp.edu.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;vlevanot@pucp.edu.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;sesquives@pucp.edu.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;perez.juanc@pucp.edu.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;mariana.otero@pucp.edu.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;aclavo@pucp.edu.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;a20182474@pucp.edu.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;josue.caldas@pucp.edu.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;fabio.salas@pucp.edu.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;fernanda.pizarro@pucp.edu.pe&quot;</span><span class="p">,</span> <span class="s2">&quot;aquillatupa@pucp.pe&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple">
+<li><p>Drop the duplicated blank spaces in <code class="docutils literal notranslate"><span class="pre">str1</span></code>. Do not use the regular expresions. Do not use the code shown in class. Explain your steps.<strong>Hint: Use <code class="docutils literal notranslate"><span class="pre">split</span></code> method and <code class="docutils literal notranslate"><span class="pre">join</span></code> function.</strong></p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># solucion 1 strings</span>
+<span class="c1">#por medio del metodo split quitamos todos los espacios en blanco</span>
+<span class="n">str1_1</span> <span class="o">=</span> <span class="n">str1</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="c1">#luego por metodo join unimos los elementos de lista añadiendo un espacio en blanco</span>
+<span class="n">str1_2</span> <span class="o">=</span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">str1_1</span><span class="p">)</span>
+<span class="n">str1_2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;I am too old&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Get the number of letters in the string .<strong>Hint: Use <code class="docutils literal notranslate"><span class="pre">len</span></code>function.</strong></p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#solucion 2 strings</span>
+<span class="c1">#definimos una funcion para contar letras</span>
+<span class="k">def</span> <span class="nf">contar</span><span class="p">(</span><span class="n">letters</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">letters</span><span class="p">)</span>
+<span class="c1"># mediante la funcion aplicamos la funcion contar a cada elemento de la lista str1_1</span>
+<span class="c1">#luego sumamos los resultados de funcion contar que se han enlistado</span>
+<span class="n">num_let</span> <span class="o">=</span><span class="nb">sum</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">contar</span><span class="p">,</span><span class="n">str1_1</span><span class="p">)))</span>
+<span class="n">num_let</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Get the number of blank spaces (all of them) in the string. <strong>Hint: Use <code class="docutils literal notranslate"><span class="pre">len</span></code>function.</strong></p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Son&quot;</span><span class="p">,</span><span class="n">str1</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">),</span><span class="s2">&quot;los espacios en blanco&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Son 85 los espacios en blanco
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Get the position of <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> in each string in the emails list. <strong>Hint: Use <code class="docutils literal notranslate"><span class="pre">map</span></code>function and <code class="docutils literal notranslate"><span class="pre">find</span></code> method.</strong></p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;@&#39;</span><span class="p">),</span> <span class="n">emails</span><span class="p">)</span>
+<span class="nb">list</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+             
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[9,
+ 11,
+ 14,
+ 9,
+ 12,
+ 8,
+ 14,
+ 9,
+ 8,
+ 16,
+ 12,
+ 13,
+ 6,
+ 9,
+ 10,
+ 12,
+ 8,
+ 11,
+ 14,
+ 6,
+ 11,
+ 7,
+ 15,
+ 9,
+ 12,
+ 8,
+ 9,
+ 11,
+ 13,
+ 6,
+ 9,
+ 12,
+ 11,
+ 16,
+ 11]
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>Identifies if exists <code class="docutils literal notranslate"><span class="pre">.edu.</span></code> in each string in the <code class="docutils literal notranslate"><span class="pre">emails</span></code> list. Get a list of Booleans. <strong>Hint: Use <code class="docutils literal notranslate"><span class="pre">map</span></code> function and <code class="docutils literal notranslate"><span class="pre">find</span></code> method.</strong></p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">find_edu</span><span class="p">(</span><span class="n">email</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">email</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;.edu.&#39;</span><span class="p">)</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+
+<span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">find_edu</span><span class="p">,</span> <span class="n">emails</span><span class="p">))</span> 
+<span class="c1"># Usé la función map, la cual aplicó mi función find_edu en cada ítem de la lista,</span>
+<span class="c1"># la función internamente utiliza la función de python &quot;find&quot;, que retorna -1 si es que no encuentra &quot;.edu.&quot;.</span>
+<span class="c1"># Finalmente si se encontró &quot;.edu.&quot; dentro del correo la función find_edu retorna TRUE, y en caso contrario FALSE.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[True,
+ True,
+ True,
+ False,
+ False,
+ True,
+ True,
+ False,
+ False,
+ False,
+ False,
+ False,
+ True,
+ False,
+ True,
+ True,
+ True,
+ True,
+ True,
+ True,
+ True,
+ True,
+ True,
+ True,
+ True,
+ True,
+ True,
+ True,
+ True,
+ True,
+ True,
+ True,
+ True,
+ True,
+ False]
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="6">
+<li><p>Get all the strings before the first dot <code class="docutils literal notranslate"><span class="pre">.</span></code>in each string in the <code class="docutils literal notranslate"><span class="pre">emails</span></code> list. Identifies how many of them has <code class="docutils literal notranslate"><span class="pre">&#64;</span></code>. <strong>Hint: Use <code class="docutils literal notranslate"><span class="pre">map</span></code>function and <code class="docutils literal notranslate"><span class="pre">find</span></code> method.</strong></p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">str136</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">i</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">[:</span><span class="n">i</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)]),</span> <span class="n">emails</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;la lista de cadena antes del primer punto es:&quot;</span><span class="p">,</span> <span class="n">str136</span><span class="p">)</span>
+
+<span class="c1">#Lista de string antes del punto</span>
+
+<span class="c1"># Map y count para identificar cuantos @ hay .</span>
+<span class="n">str136</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">i</span><span class="p">:</span> <span class="n">i</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;@&quot;</span><span class="p">),</span> <span class="n">str136</span><span class="p">))</span> 
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Son&quot;</span><span class="p">,</span><span class="n">str136</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="s2">&quot;los @ contados&quot;</span><span class="p">)</span>  
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>la lista de cadena antes del primer punto es: [&#39;cscornejo@pucp&#39;, &#39;orellana&#39;, &#39;karina&#39;, &#39;a20083223@pucp&#39;, &#39;abel&#39;, &#39;mtintaya@pucp&#39;, &#39;joselin&#39;, &#39;a20105737@pucp&#39;, &#39;jfgomezc@pucp&#39;, &#39;afrania&#39;, &#39;luzon&#39;, &#39;adrian&#39;, &#39;soto&#39;, &#39;a20132766@pucp&#39;, &#39;andre&#39;, &#39;gustavo&#39;, &#39;pmlozada@pucp&#39;, &#39;m&#39;, &#39;nicolas&#39;, &#39;gvidal@pucp&#39;, &#39;jane&#39;, &#39;m&#39;, &#39;alejandro&#39;, &#39;a20167070@pucp&#39;, &#39;riega&#39;, &#39;vlevanot@pucp&#39;, &#39;sesquives@pucp&#39;, &#39;perez&#39;, &#39;mariana&#39;, &#39;aclavo@pucp&#39;, &#39;a20182474@pucp&#39;, &#39;josue&#39;, &#39;fabio&#39;, &#39;fernanda&#39;, &#39;aquillatupa@pucp&#39;]
+son 14 los @ contados
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="groups_generate.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">&lt;no title&gt;</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Lecture_3.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">3. <a id='intro'>Pandas</a></p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tuple">1.1 Tuple</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lists">1.2 Lists</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#strings">1.3 Strings</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Cristian Serrano
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

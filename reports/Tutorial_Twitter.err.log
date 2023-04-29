@@ -1,0 +1,43 @@
+Traceback (most recent call last):
+  File "C:\Anaconda\lib\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
+    executenb(
+  File "C:\Anaconda\lib\site-packages\nbclient\client.py", line 1204, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "C:\Anaconda\lib\site-packages\nbclient\util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "C:\Anaconda\lib\site-packages\nbclient\util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+  File "C:\Anaconda\lib\asyncio\base_events.py", line 647, in run_until_complete
+    return future.result()
+  File "C:\Anaconda\lib\site-packages\nbclient\client.py", line 663, in async_execute
+    await self.async_execute_cell(
+  File "C:\Anaconda\lib\site-packages\nbclient\client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Anaconda\lib\site-packages\nbclient\client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+import tweepy
+consumer_key = "Rr3sWjlZW6bdDlL2pRf1pbtia"
+consumer_secret = "mxhZpvR8BX96Sd347oCcNRDDjpdwHVxItwWE28ahKpiuQgvRe4"
+auth = tweepy.OAuthHandler( consumer_key, consumer_secret )
+
+access_token = "1270850339223343105-DLleC3HxuR45fyVJOJHsQ5YEaXv8kO"
+access_token_secret = "lNJ1iQVmHJIw0QZHaC19svWk2GbCthmzhsk4jXaVStmcM"
+auth.set_access_token( access_token, access_token_secret )
+
+api = tweepy.API(auth)
+------------------
+
+[1;31m---------------------------------------------------------------------------[0m
+[1;31mModuleNotFoundError[0m                       Traceback (most recent call last)
+[1;32m~\AppData\Local\Temp\ipykernel_16096\1514169498.py[0m in [0;36m<module>[1;34m[0m
+[1;32m----> 1[1;33m [1;32mimport[0m [0mtweepy[0m[1;33m[0m[1;33m[0m[0m
+[0m[0;32m      2[0m [0mconsumer_key[0m [1;33m=[0m [1;34m"Rr3sWjlZW6bdDlL2pRf1pbtia"[0m[1;33m[0m[1;33m[0m[0m
+[0;32m      3[0m [0mconsumer_secret[0m [1;33m=[0m [1;34m"mxhZpvR8BX96Sd347oCcNRDDjpdwHVxItwWE28ahKpiuQgvRe4"[0m[1;33m[0m[1;33m[0m[0m
+[0;32m      4[0m [0mauth[0m [1;33m=[0m [0mtweepy[0m[1;33m.[0m[0mOAuthHandler[0m[1;33m([0m [0mconsumer_key[0m[1;33m,[0m [0mconsumer_secret[0m [1;33m)[0m[1;33m[0m[1;33m[0m[0m
+[0;32m      5[0m [1;33m[0m[0m
+
+[1;31mModuleNotFoundError[0m: No module named 'tweepy'
+ModuleNotFoundError: No module named 'tweepy'
+
